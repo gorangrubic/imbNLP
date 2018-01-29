@@ -1,0 +1,308 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{3F7D6E9B-9442-47DB-AC2E-3BFE38E644D5}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>imbNLP.PartOfSpeech</RootNamespace>
+    <AssemblyName>imbNLP.PartOfSpeech</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>1</WarningLevel>
+    <DocumentationFile>bin\Debug\imbNLP.PartOfSpeech.xml</DocumentationFile>
+    <CodeAnalysisRuleSet>ManagedMinimumRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\..\..\imbWBI_Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>..\..\..\imbWBI_Release\imbNLP.PartOfSpeech.xml</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>imbNLP.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Accord, Version=3.8.0.0, Culture=neutral, PublicKeyToken=fa1a88e29555ccf7, processorArchitecture=MSIL">
+      <HintPath>..\..\imbWBI\packages\Accord.3.8.0\lib\net40\Accord.dll</HintPath>
+    </Reference>
+    <Reference Include="Accord.Math, Version=3.8.0.0, Culture=neutral, PublicKeyToken=fa1a88e29555ccf7, processorArchitecture=MSIL">
+      <HintPath>..\..\imbWBI\packages\Accord.Math.3.8.0\lib\net40\Accord.Math.dll</HintPath>
+    </Reference>
+    <Reference Include="Accord.Math.Core, Version=3.8.0.0, Culture=neutral, PublicKeyToken=fa1a88e29555ccf7, processorArchitecture=MSIL">
+      <HintPath>..\..\imbWBI\packages\Accord.Math.3.8.0\lib\net40\Accord.Math.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Accord.Statistics, Version=3.8.0.0, Culture=neutral, PublicKeyToken=fa1a88e29555ccf7, processorArchitecture=MSIL">
+      <HintPath>..\..\imbWBI\packages\Accord.Statistics.3.8.0\lib\net40\Accord.Statistics.dll</HintPath>
+    </Reference>
+    <Reference Include="AForge, Version=2.2.5.0, Culture=neutral, PublicKeyToken=c1db6ff4eaa06aeb, processorArchitecture=MSIL">
+      <HintPath>..\..\imbWBI\packages\AForge.2.2.5\lib\AForge.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="AForge.Imaging, Version=2.2.5.0, Culture=neutral, PublicKeyToken=ba8ddea9676ca48b, processorArchitecture=MSIL">
+      <HintPath>..\..\imbWBI\packages\AForge.Imaging.2.2.5\lib\AForge.Imaging.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="AForge.Math, Version=2.2.5.0, Culture=neutral, PublicKeyToken=abba2e25397ee8c9, processorArchitecture=MSIL">
+      <HintPath>..\..\imbWBI\packages\AForge.Math.2.2.5\lib\AForge.Math.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Bdev.Net.Dns, Version=1.0.4.0, Culture=neutral, PublicKeyToken=217d47f649bccd2c, processorArchitecture=MSIL">
+      <HintPath>..\..\imbWBI\packages\Bdev.Net.Dns.1.0.4\lib\Bdev.Net.Dns.dll</HintPath>
+    </Reference>
+    <Reference Include="CsvHelper, Version=2.0.0.0, Culture=neutral, PublicKeyToken=8c4959082be5c823, processorArchitecture=MSIL">
+      <HintPath>..\..\imbWBI\packages\CsvHelper.2.16.3.0\lib\net40\CsvHelper.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetZip, Version=1.10.1.0, Culture=neutral, PublicKeyToken=6583c7c814667745, processorArchitecture=MSIL">
+      <HintPath>..\..\imbWBI\packages\DotNetZip.1.10.1\lib\net20\DotNetZip.dll</HintPath>
+    </Reference>
+    <Reference Include="EPPlus, Version=4.1.1.0, Culture=neutral, PublicKeyToken=ea159fdaa78159a1, processorArchitecture=MSIL">
+      <HintPath>..\..\imbWBI\packages\EPPlus.4.1.1\lib\net40\EPPlus.dll</HintPath>
+    </Reference>
+    <Reference Include="HtmlAgilityPack, Version=1.6.5.0, Culture=neutral, PublicKeyToken=bd319b19eaf3b43a, processorArchitecture=MSIL">
+      <HintPath>..\packages\HtmlAgilityPack.1.6.5\lib\Net40\HtmlAgilityPack.dll</HintPath>
+    </Reference>
+    <Reference Include="imbACE.Core, Version=0.1.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\imbACE.0.1.2.8\lib\net40\imbACE.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="imbACE.Network, Version=0.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\imbACE.0.1.2.8\lib\net40\imbACE.Network.dll</HintPath>
+    </Reference>
+    <Reference Include="imbACE.Services, Version=0.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\imbACE.0.1.2.8\lib\net40\imbACE.Services.dll</HintPath>
+    </Reference>
+    <Reference Include="imbCommonModels, Version=0.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\imbWEM.CommonData.0.1.2.15\lib\net40\imbCommonModels.dll</HintPath>
+    </Reference>
+    <Reference Include="imbMiningContext, Version=0.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\imbWEM.CommonData.0.1.2.15\lib\net40\imbMiningContext.dll</HintPath>
+    </Reference>
+    <Reference Include="imbNLP.Transliteration, Version=0.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\imbWBI\packages\imbNLP.Transliteration.0.1.2.1\lib\net40\imbNLP.Transliteration.dll</HintPath>
+    </Reference>
+    <Reference Include="imbSCI.Core, Version=0.1.6601.43128, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\imbWBI\packages\imbSCI.0.1.2.24\lib\net40\imbSCI.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="imbSCI.Data, Version=0.1.6599.15407, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\imbWBI\packages\imbSCI.0.1.2.24\lib\net40\imbSCI.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="imbSCI.DataComplex, Version=0.1.6601.43129, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\imbWBI\packages\imbSCI.0.1.2.24\lib\net40\imbSCI.DataComplex.dll</HintPath>
+    </Reference>
+    <Reference Include="imbSCI.Graph, Version=0.0.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\imbSCI.Graph.0.1.0\lib\net40\imbSCI.Graph.dll</HintPath>
+    </Reference>
+    <Reference Include="imbSCI.Reporting, Version=0.1.6601.43129, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\imbWBI\packages\imbSCI.0.1.2.24\lib\net40\imbSCI.Reporting.dll</HintPath>
+    </Reference>
+    <Reference Include="LinqStatistics, Version=2.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\LinqStatistics.2.1.0\lib\net40\LinqStatistics.dll</HintPath>
+    </Reference>
+    <Reference Include="MathNet.Numerics, Version=3.20.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MathNet.Numerics.3.20.2\lib\net40\MathNet.Numerics.dll</HintPath>
+    </Reference>
+    <Reference Include="MathNet.Spatial, Version=0.4.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MathNet.Spatial.0.4.0\lib\net40\MathNet.Spatial.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data, Version=6.9.10.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>..\..\imbWBI\packages\MySql.Data.6.9.10\lib\net40\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="PGK.Extensions, Version=1.0.0.0, Culture=neutral, PublicKeyToken=f93e897f802ddcb7, processorArchitecture=MSIL">
+      <HintPath>..\packages\PGK.Extensions.2011.6\lib\PGK.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="decomposing\block\blockComposerSM.cs" />
+    <Compile Include="decomposing\block\IBlockComposer.cs" />
+    <Compile Include="decomposing\chunk\chunkComposerBasic.cs" />
+    <Compile Include="decomposing\chunk\chunkComposerBasicSettings.cs" />
+    <Compile Include="decomposing\chunk\chunkMatchRule.cs" />
+    <Compile Include="decomposing\chunk\chunkMatchRuleSet.cs" />
+    <Compile Include="decomposing\html\tools.cs" />
+    <Compile Include="decomposing\stream\IStreamComposer.cs" />
+    <Compile Include="decomposing\stream\streamComposerBasic.cs" />
+    <Compile Include="decomposing\token\ITokenComposer.cs" />
+    <Compile Include="decomposing\token\tokenComposerBasic.cs" />
+    <Compile Include="flags\basic\pos_adjectiveType.cs" />
+    <Compile Include="flags\basic\pos_adverbType.cs" />
+    <Compile Include="flags\basic\pos_animatness.cs" />
+    <Compile Include="flags\basic\pos_clitic.cs" />
+    <Compile Include="flags\basic\pos_conjunctionFormation.cs" />
+    <Compile Include="flags\basic\pos_conjunctionType.cs" />
+    <Compile Include="flags\basic\pos_definitness.cs" />
+    <Compile Include="flags\basic\pos_degree.cs" />
+    <Compile Include="flags\basic\pos_gender.cs" />
+    <Compile Include="flags\basic\pos_gramaticalCase.cs" />
+    <Compile Include="flags\basic\pos_negation.cs" />
+    <Compile Include="flags\basic\pos_nounGroup.cs" />
+    <Compile Include="flags\basic\pos_nounType.cs" />
+    <Compile Include="flags\basic\pos_number.cs" />
+    <Compile Include="flags\basic\pos_numeralForm.cs" />
+    <Compile Include="flags\basic\pos_numeralType.cs" />
+    <Compile Include="flags\basic\pos_particleType.cs" />
+    <Compile Include="flags\basic\pos_person.cs" />
+    <Compile Include="flags\basic\pos_pronounType.cs" />
+    <Compile Include="flags\basic\pos_residualType.cs" />
+    <Compile Include="flags\basic\pos_type.cs" />
+    <Compile Include="flags\basic\pos_verbform.cs" />
+    <Compile Include="flags\basic\pos_verbType.cs" />
+    <Compile Include="flags\data\dat_business.cs" />
+    <Compile Include="flags\equalizationTable.cs" />
+    <Compile Include="flags\token\cnt_containerType.cs" />
+    <Compile Include="flags\token\cnt_level.cs" />
+    <Compile Include="flags\token\tkn_contains.cs" />
+    <Compile Include="flags\token\tkn_letterword.cs" />
+    <Compile Include="flags\token\tkn_numeric.cs" />
+    <Compile Include="flags\token\tkn_potential.cs" />
+    <Compile Include="flags\token\tkn_specialforms.cs" />
+    <Compile Include="flags\token\tkn_stream.cs" />
+    <Compile Include="GlobalSuppressions.cs" />
+    <Compile Include="lexicUnit\lexicFormatType.cs" />
+    <Compile Include="lexicUnit\lexicGrammarCase.cs" />
+    <Compile Include="lexicUnit\lexicGraph.cs" />
+    <Compile Include="lexicUnit\lexicGraphNodeType.cs" />
+    <Compile Include="lexicUnit\lexicGraphSet.cs" />
+    <Compile Include="lexicUnit\lexicGraphSetWithLemma.cs" />
+    <Compile Include="lexicUnit\lexicInflection.cs" />
+    <Compile Include="lexicUnit\lexicLemmaInTypeNode.cs" />
+    <Compile Include="lexicUnit\lexicQuery.cs" />
+    <Compile Include="map\textMap.cs" />
+    <Compile Include="map\textMapContainer.cs" />
+    <Compile Include="nlpTools\itmConstructorTypeManager.cs" />
+    <Compile Include="nlpTools\nlpTypeManager.cs" />
+    <Compile Include="nlpTools\pipelineModelTypeManager.cs" />
+    <Compile Include="nlpTools\wlfConstructorTypeManager.cs" />
+    <Compile Include="pipelineForPos\node\pipelineHTMLTagDetection.cs" />
+    <Compile Include="pipelineForPos\render\contentTokenSubjectRender.cs" />
+    <Compile Include="pipelineForPos\render\contentTokenSubjectRenderMode.cs" />
+    <Compile Include="pipelineForPos\render\subjectRenderLayers.cs" />
+    <Compile Include="pipelineForPos\subject\pipelineSubjectTools.cs" />
+    <Compile Include="pipelineForPos\subject\pipelineTaskTFDFContentToken.cs" />
+    <Compile Include="pipeline\core\IPipelineModel.cs" />
+    <Compile Include="pipeline\core\IPipelineNode.cs" />
+    <Compile Include="pipeline\core\IPipelineNodeBin.cs" />
+    <Compile Include="pipeline\core\IPipelineNodeForContentToken.cs" />
+    <Compile Include="pipeline\core\IPipelineNodeRegular.cs" />
+    <Compile Include="pipeline\core\pipelineFlagRuleDistributor.cs" />
+    <Compile Include="pipeline\core\pipelineModelForContentToken.cs" />
+    <Compile Include="pipeline\core\pipelineModel.cs" />
+    <Compile Include="pipeline\core\pipelineNode.cs" />
+    <Compile Include="pipeline\core\pipelineNodeBin.cs" />
+    <Compile Include="pipeline\core\pipelineNodeRegular.cs" />
+    <Compile Include="pipeline\core\pipelineNodeTypeEnum.cs" />
+    <Compile Include="pipeline\machine\IPipelineTask.cs" />
+    <Compile Include="pipeline\machine\IPipelineTaskSubject.cs" />
+    <Compile Include="pipeline\machine\pipelineMachine.cs" />
+    <Compile Include="pipeline\machine\pipelineMachineSettings.cs" />
+    <Compile Include="pipeline\machine\pipelineMachineState.cs" />
+    <Compile Include="pipeline\machine\pipelineModelExecutionContext.cs" />
+    <Compile Include="pipeline\machine\pipelineTask.cs" />
+    <Compile Include="pipelineForPos\subject\pipelineTaskMCPageSubject.cs" />
+    <Compile Include="pipelineForPos\subject\pipelineTaskMCRepoSubject.cs" />
+    <Compile Include="pipelineForPos\subject\pipelineTaskMCSiteSubject.cs" />
+    <Compile Include="pipeline\machine\pipelineTaskStateEnum.cs" />
+    <Compile Include="pipelineForPos\subject\pipelineTaskSubjectContentToken.cs" />
+    <Compile Include="pipeline\mcRepoNodes\pipelineBlockTaskBuilderNode.cs" />
+    <Compile Include="pipeline\mcRepoNodes\pipelinePageTaskBuilderNode.cs" />
+    <Compile Include="pipeline\mcRepoNodes\pipelineRepoTaskBuilderNode.cs" />
+    <Compile Include="pipeline\mcRepoNodes\pipelineSiteTaskBuilderNode.cs" />
+    <Compile Include="pipeline\mcRepoNodes\pipelineStreamTaskBuilderNode.cs" />
+    <Compile Include="pipelineForMC\model\IMCRepoProcessModel.cs" />
+    <Compile Include="pipelineForMC\model\standardModel.cs" />
+    <Compile Include="pipeline\plugin\pipelineModelConsolePlugin.cs" />
+    <Compile Include="pipelineForPos\node\pipelineAnnotationNode.cs" />
+    <Compile Include="pipelineForPos\node\pipelineContentTokenLevelDistribution.cs" />
+    <Compile Include="pipelineForPos\node\pipelineLexicResourceResolverNode.cs" />
+    <Compile Include="pipelineForPos\node\pipelineProperFormTransformer.cs" />
+    <Compile Include="pipelineForPos\node\pipelineRegexTestNode.cs" />
+    <Compile Include="pipelineForPos\node\pipelineRegexTestTypeEnum.cs" />
+    <Compile Include="pipelineForPos\node\pipelineTokenGenericAnnotation.cs" />
+    <Compile Include="pipelineForPos\node\pipelineTransliterationNode.cs" />
+    <Compile Include="pipeline\postprocessor\pipelinePostprocessBase.cs" />
+    <Compile Include="pipeline\postprocessor\pipelinePostprocessSettings.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="pipelineForPos\resourceProviders\core\grammaticTagCollection.cs" />
+    <Compile Include="pipelineForPos\resourceProviders\core\ITextResourceResolver.cs" />
+    <Compile Include="pipelineForPos\resourceProviders\core\lexicResourceTextEntry.cs" />
+    <Compile Include="pipelineForPos\resourceProviders\lexicResolverSettings.cs" />
+    <Compile Include="pipelineForPos\resourceProviders\multitext\multitextIndexedResolver.cs" />
+    <Compile Include="pipelineForPos\resourceProviders\core\resourceConverterForGramaticTags.cs" />
+    <Compile Include="pipelineForPos\resourceProviders\core\tableAnnotationResolver.cs" />
+    <Compile Include="pipelineForPos\resourceProviders\core\tableReplaceResolver.cs" />
+    <Compile Include="pipelineForPos\resourceProviders\core\tableReplaceResolverItem.cs" />
+    <Compile Include="pipelineForPos\resourceProviders\core\tableResourceResolverBase.cs" />
+    <Compile Include="pipelineForPos\resourceProviders\core\textResourceIndexBase.cs" />
+    <Compile Include="pipelineForPos\resourceProviders\core\textResourceIndexResolveMode.cs" />
+    <Compile Include="pipelineForPos\resourceProviders\core\textResourceResolverBase.cs" />
+    <Compile Include="pipelineForPos\resourceProviders\multitext\multitextResourceParser.cs" />
+    <Compile Include="pipelineForPos\resourceProviders\NamespaceDoc.cs" />
+    <Compile Include="TFModels\industryLemma\core\IIndustryTermModelConstructor.cs" />
+    <Compile Include="TFModels\industryLemma\itmConstructorBasic.cs" />
+    <Compile Include="TFModels\industryLemma\itmConstructorSettings.cs" />
+    <Compile Include="TFModels\semanticCloudMatrix\cloudMatrix.cs" />
+    <Compile Include="TFModels\semanticCloudMatrix\cloudMatrixSettings.cs" />
+    <Compile Include="TFModels\semanticCloud\cloudConstructor.cs" />
+    <Compile Include="TFModels\semanticCloud\cloudConstructorSettings.cs" />
+    <Compile Include="TFModels\semanticCloud\lemmaSemanticCloud.cs" />
+    <Compile Include="TFModels\semanticCloud\lemmaSemanticConstruct.cs" />
+    <Compile Include="TFModels\semanticCloud\SSRMComputation.cs" />
+    <Compile Include="TFModels\webLemma\chunkConstructorTF.cs" />
+    <Compile Include="TFModels\webLemma\ConstructorTFIDFBase.cs" />
+    <Compile Include="TFModels\webLemma\core\IWLFConstructor.cs" />
+    <Compile Include="TFModels\webLemma\table\webLemmaTerm.cs" />
+    <Compile Include="TFModels\webLemma\table\webLemmaTermExtensions.cs" />
+    <Compile Include="TFModels\webLemma\table\webLemmaTermPackage.cs" />
+    <Compile Include="TFModels\webLemma\table\webLemmaTermPair.cs" />
+    <Compile Include="TFModels\webLemma\table\webLemmaTermPairCollection.cs" />
+    <Compile Include="TFModels\webLemma\table\webLemmaTermTable.cs" />
+    <Compile Include="TFModels\webLemma\table\webLemmaTermTableSufix.cs" />
+    <Compile Include="TFModels\webLemma\wlfConstructorSettings.cs" />
+    <Compile Include="TFModels\webLemma\wlfConstructorTFIDF.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="imbNLP.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="imbNLP.PartOfSpeech.licenseheader" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="pipelineForPos\postprocess\" />
+    <Folder Include="TFModels\semanticCloud\core\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="..\packages\Accord.3.8.0\build\Accord.targets" Condition="Exists('..\packages\Accord.3.8.0\build\Accord.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Accord.3.8.0\build\Accord.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Accord.3.8.0\build\Accord.targets'))" />
+    <Error Condition="!Exists('..\..\imbWBI\packages\Accord.3.8.0\build\Accord.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\imbWBI\packages\Accord.3.8.0\build\Accord.targets'))" />
+  </Target>
+  <Import Project="..\..\imbWBI\packages\Accord.3.8.0\build\Accord.targets" Condition="Exists('..\..\imbWBI\packages\Accord.3.8.0\build\Accord.targets')" />
+</Project>
