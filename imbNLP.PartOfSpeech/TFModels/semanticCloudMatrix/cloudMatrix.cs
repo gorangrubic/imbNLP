@@ -99,9 +99,10 @@ namespace imbNLP.PartOfSpeech.TFModels.semanticCloudMatrix
         public String description { get; set; } = "";
 
         /// <summary>
-        /// Gets the cell number.
+        /// Gets the value for cell targeted
         /// </summary>
-        /// <param name="selected">The selected.</param>
+        /// <param name="x">The x.</param>
+        /// <param name="y">The y.</param>
         /// <param name="type">The type.</param>
         /// <param name="counter">The counter.</param>
         /// <returns></returns>
@@ -261,7 +262,7 @@ namespace imbNLP.PartOfSpeech.TFModels.semanticCloudMatrix
 
             for (int i = 0; i < clouds.Count; i++)
             {
-                table.Add(clouds[i].name, clouds[i].description, "C_" + i.ToString(), typeof(Double), imbSCI.Core.enums.dataPointImportance.normal, format, clouds[i].className);
+                table.Add(clouds[i].className, clouds[i].description, "C_" + i.ToString(), typeof(Double), imbSCI.Core.enums.dataPointImportance.normal, format, clouds[i].className);
             }
 
             table.Add("LemmasInitial", "Number of lemmas in the cloud, before reduction", "", typeof(Int32), imbSCI.Core.enums.dataPointImportance.important, "", "Lemmas - initial");
@@ -279,7 +280,14 @@ namespace imbNLP.PartOfSpeech.TFModels.semanticCloudMatrix
 
                 for (int x = 0; x < clouds.Count; x++)
                 {
-                    dr[clouds[x].name] = GetCellNumber(clouds[x],clouds[y], type, counter);
+                    if (y == x)
+                    {
+                        dr[clouds[x].className] = 0;
+                    }
+                    else
+                    {
+                        dr[clouds[x].className] = GetCellNumber(clouds[x], clouds[y], type, counter);
+                    }
                 }
 
                 dr["LemmasInitial"] = numberOfLemmas[clouds[y]];
@@ -297,9 +305,15 @@ namespace imbNLP.PartOfSpeech.TFModels.semanticCloudMatrix
 
                 dr["Class"] = "Weight sums";
 
-                for (int x = 0; x < clouds.Count; x++)
+                for (int y = 0; y < clouds.Count; y++)
                 {
-                    dr[clouds[x].name] = clouds[x].nodes.Sum(s => s.weight);
+                    Double sum = 0;
+                    for (int x = 0; x < clouds.Count; x++)
+                    {
+                         sum += this[clouds[x], clouds[y]].Sum(c => c.weight); // GetCellNumber(clouds[x], clouds[y], type, counter);
+                    }
+                    dr[clouds[y].className] = sum;
+                    //dr[clouds[x].name] = clouds[x].nodes.Sum(s => s.weight);
                 }
 
                 dr["LemmasInitial"] = 0;

@@ -86,9 +86,12 @@ namespace imbNLP.PartOfSpeech.TFModels.semanticCloud
         /// <param name="chunkTable">The chunk table.</param>
         /// <param name="termTable">The term table.</param>
         /// <param name="output">The output.</param>
+        /// <param name="logger">The logger.</param>
+        /// <param name="subjects">The subjects.</param>
+        /// <param name="resolver">The resolver.</param>
         /// <returns></returns>
         /// <exception cref="aceScienceException">This is stupid. Settings for cloudConstructor have assignChunkTableWeightToLink=true but it will not create new link in case the lemmas are already linked" +
-        ///                                             ", therefore resulting weight is assigned just by chance! Change cloudConstructor settings bro, to make some sense. - null - cloudConstructor has irrational settings</exception>
+        /// ", therefore resulting weight is assigned just by chance! Change cloudConstructor settings bro, to make some sense. - null - cloudConstructor has irrational settings</exception>
         public lemmaSemanticCloud process(webLemmaTermTable chunkTable, webLemmaTermTable termTable, lemmaSemanticCloud output, ILogBuilder logger, List<pipelineTaskMCSiteSubject> subjects, ITextResourceResolver resolver )
         {
             if (output == null) output = new lemmaSemanticCloud();
@@ -101,6 +104,9 @@ namespace imbNLP.PartOfSpeech.TFModels.semanticCloud
                 case cloudConstructorAlgorithm.standard:
                     output = processStandard(chunkTable, termTable, output,logger, subjects);
                     break;
+                case cloudConstructorAlgorithm.alternative:
+                    output = processAlternative(chunkTable, termTable, output, logger, subjects,resolver);
+                    break;
 
             }
 
@@ -112,6 +118,16 @@ namespace imbNLP.PartOfSpeech.TFModels.semanticCloud
             return output;
         }
 
+        /// <summary>
+        /// Processes the position enhanced.
+        /// </summary>
+        /// <param name="chunkTable">The chunk table.</param>
+        /// <param name="termTable">The term table.</param>
+        /// <param name="output">The output.</param>
+        /// <param name="logger">The logger.</param>
+        /// <param name="subjects">The subjects.</param>
+        /// <param name="resolver">The resolver.</param>
+        /// <returns></returns>
         protected lemmaSemanticCloud processPOSEnhanced(webLemmaTermTable chunkTable, webLemmaTermTable termTable, lemmaSemanticCloud output, ILogBuilder logger, List<pipelineTaskMCSiteSubject> subjects, ITextResourceResolver resolver)
         {
             
@@ -218,7 +234,17 @@ namespace imbNLP.PartOfSpeech.TFModels.semanticCloud
 
         }
 
-        protected lemmaSemanticCloud processComplex(webLemmaTermTable chunkTable, webLemmaTermTable termTable, lemmaSemanticCloud output, ILogBuilder logger, List<pipelineTaskMCSiteSubject> subjects, ITextResourceResolver resolver)
+        /// <summary>
+        /// Processes the complex.
+        /// </summary>
+        /// <param name="chunkTable">The chunk table.</param>
+        /// <param name="termTable">The term table.</param>
+        /// <param name="output">The output.</param>
+        /// <param name="logger">The logger.</param>
+        /// <param name="subjects">The subjects.</param>
+        /// <param name="resolver">The resolver.</param>
+        /// <returns></returns>
+        protected lemmaSemanticCloud processAlternative(webLemmaTermTable chunkTable, webLemmaTermTable termTable, lemmaSemanticCloud output, ILogBuilder logger, List<pipelineTaskMCSiteSubject> subjects, ITextResourceResolver resolver)
         {
             if (output == null) output = new lemmaSemanticCloud();
             lemmaSemanticConstruct c = new lemmaSemanticConstruct(subjects);
@@ -297,6 +323,20 @@ namespace imbNLP.PartOfSpeech.TFModels.semanticCloud
 
             return BuildCloud(c, chunkTable, termTable, output, logger, resolver);
         }
+
+
+        /// <summary>
+        /// Builds the cloud - common part of the algorithm
+        /// </summary>
+        /// <param name="c">The c.</param>
+        /// <param name="chunkTable">The chunk table.</param>
+        /// <param name="termTable">The term table.</param>
+        /// <param name="output">The output.</param>
+        /// <param name="logger">The logger.</param>
+        /// <param name="resolver">The resolver.</param>
+        /// <returns></returns>
+        /// <exception cref="aceScienceException">This is stupid. Settings for cloudConstructor have assignChunkTableWeightToLink=true but it will not create new link in case the lemmas are already linked" +
+        ///                                                 ", therefore resulting weight is assigned just by chance! Change cloudConstructor settings bro, to make some sense. - null - cloudConstructor has irrational settings</exception>
         protected lemmaSemanticCloud BuildCloud (lemmaSemanticConstruct c, webLemmaTermTable chunkTable, webLemmaTermTable termTable, lemmaSemanticCloud output, ILogBuilder logger, ITextResourceResolver resolver) {
 
             c.TrashBin.ForEach(x => c.nodeNames.Remove(x));

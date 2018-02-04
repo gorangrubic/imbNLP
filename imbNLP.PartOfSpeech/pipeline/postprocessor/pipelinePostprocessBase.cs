@@ -34,6 +34,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Xml.Serialization;
 
 namespace imbNLP.PartOfSpeech.pipeline.postprocessor
 {
@@ -63,6 +64,7 @@ namespace imbNLP.PartOfSpeech.pipeline.postprocessor
 
         protected abstract List<T> processIteration(T item);
 
+        [XmlIgnore]
         public Int32 currentIteration { get; set; } = 0;
 
 

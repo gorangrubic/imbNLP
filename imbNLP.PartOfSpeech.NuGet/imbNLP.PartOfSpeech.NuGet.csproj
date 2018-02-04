@@ -19,10 +19,11 @@
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\</OutputPath>
+    <OutputPath>..\..\LocalNuGet\imbNLP.PartOfSpeech.NuGet\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Debug\imbNLP.PartOfSpeech.NuGet.xml</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -35,6 +36,16 @@
   </PropertyGroup>
   <PropertyGroup>
     <ApplicationIcon>imbNLP.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'ReleaseInstall|AnyCPU'">
+    <OutputPath>bin\ReleaseInstall\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <DocumentationFile>..\..\LocalNuGet\imbNLP.PartOfSpeech.NuGet\imbNLP.PartOfSpeech.NuGet.xml</DocumentationFile>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Properties\VersionInfo.cs" />
@@ -90,34 +101,34 @@
       <HintPath>..\packages\HtmlAgilityPack.1.6.5\lib\Net40\HtmlAgilityPack.dll</HintPath>
     </Reference>
     <Reference Include="imbACE.Core, Version=0.1.1.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\imbACE.0.1.2.8\lib\net40\imbACE.Core.dll</HintPath>
+      <HintPath>..\packages\imbACE.0.1.2.15\lib\net40\imbACE.Core.dll</HintPath>
     </Reference>
     <Reference Include="imbACE.Network, Version=0.1.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\imbACE.0.1.2.8\lib\net40\imbACE.Network.dll</HintPath>
+      <HintPath>..\packages\imbACE.0.1.2.15\lib\net40\imbACE.Network.dll</HintPath>
     </Reference>
     <Reference Include="imbACE.Services, Version=0.1.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\imbACE.0.1.2.8\lib\net40\imbACE.Services.dll</HintPath>
+      <HintPath>..\packages\imbACE.0.1.2.15\lib\net40\imbACE.Services.dll</HintPath>
     </Reference>
     <Reference Include="imbCommonModels, Version=0.1.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\imbWEM.CommonData.0.1.2.15\lib\net40\imbCommonModels.dll</HintPath>
+      <HintPath>..\packages\imbWEM.CommonData.0.1.2.17\lib\net40\imbCommonModels.dll</HintPath>
     </Reference>
     <Reference Include="imbMiningContext, Version=0.1.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\imbWEM.CommonData.0.1.2.15\lib\net40\imbMiningContext.dll</HintPath>
+      <HintPath>..\packages\imbWEM.CommonData.0.1.2.17\lib\net40\imbMiningContext.dll</HintPath>
     </Reference>
-    <Reference Include="imbSCI.Core, Version=0.1.6603.21539, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\imbSCI.0.1.2.24\lib\net40\imbSCI.Core.dll</HintPath>
+    <Reference Include="imbSCI.Core, Version=0.1.6609.8147, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\imbSCI.0.1.2.31\lib\net40\imbSCI.Core.dll</HintPath>
     </Reference>
     <Reference Include="imbSCI.Data, Version=0.1.6603.21536, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\imbSCI.0.1.2.24\lib\net40\imbSCI.Data.dll</HintPath>
+      <HintPath>..\packages\imbSCI.0.1.2.31\lib\net40\imbSCI.Data.dll</HintPath>
     </Reference>
-    <Reference Include="imbSCI.DataComplex, Version=0.1.6603.21541, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\imbSCI.0.1.2.24\lib\net40\imbSCI.DataComplex.dll</HintPath>
+    <Reference Include="imbSCI.DataComplex, Version=0.1.6609.8148, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\imbSCI.0.1.2.31\lib\net40\imbSCI.DataComplex.dll</HintPath>
     </Reference>
     <Reference Include="imbSCI.Graph, Version=0.0.1.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\imbSCI.Graph.0.1.0\lib\net40\imbSCI.Graph.dll</HintPath>
+      <HintPath>..\packages\imbSCI.Graph.0.1.0.12\lib\net40\imbSCI.Graph.dll</HintPath>
     </Reference>
-    <Reference Include="imbSCI.Reporting, Version=0.1.6603.21543, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\imbSCI.0.1.2.24\lib\net40\imbSCI.Reporting.dll</HintPath>
+    <Reference Include="imbSCI.Reporting, Version=0.1.6609.8149, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\imbSCI.0.1.2.31\lib\net40\imbSCI.Reporting.dll</HintPath>
     </Reference>
     <Reference Include="LinqStatistics, Version=2.1.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\LinqStatistics.2.1.0\lib\net40\LinqStatistics.dll</HintPath>
@@ -135,6 +146,12 @@
       <HintPath>..\packages\PGK.Extensions.2011.6\lib\PGK.Extensions.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\imbNLP.PartOfSpeech\imbNLP.PartOfSpeech.csproj">
+      <Project>{3f7d6e9b-9442-47db-ac2e-3bfe38e644d5}</Project>
+      <Name>imbNLP.PartOfSpeech</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

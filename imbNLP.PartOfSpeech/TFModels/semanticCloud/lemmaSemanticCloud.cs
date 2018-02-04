@@ -44,11 +44,16 @@ using imbSCI.Core.math;
 using System.Xml.Serialization;
 using imbACE.Network.extensions;
 using System.IO;
+using System.Drawing;
 using imbSCI.Core.reporting;
+using imbSCI.Core.reporting.colors;
+
 using imbNLP.PartOfSpeech.pipelineForPos.subject;
 using imbSCI.Graph.Converters;
 using imbNLP.PartOfSpeech.TFModels.webLemma.table;
 using imbSCI.Graph.FreeGraph;
+using imbSCI.Graph.DGML;
+using imbSCI.Graph.DGML.core;
 
 namespace imbNLP.PartOfSpeech.TFModels.semanticCloud
 {
@@ -71,6 +76,70 @@ namespace imbNLP.PartOfSpeech.TFModels.semanticCloud
     /// <seealso cref="imbNLP.PartOfSpeech.TFModels.semanticCloud.core.freeGraph" />
     public class lemmaSemanticCloud:freeGraph
     {
+
+        /// <summary>
+        /// Generates simple-styled graph
+        /// </summary>
+        /// <param name="addLegend">if set to <c>true</c> [add legend].</param>
+        /// <returns></returns>
+        public DirectedGraph GetSimpleGraph(Boolean addLegend=true)
+        {
+            DirectedGraph output = new DirectedGraph();
+            
+            output.Title = name;
+            output.Layout = imbSCI.Graph.DGML.enums.GraphLayoutEnum.Sugiyama;
+            output.NeighborhoodDistance = 20;
+
+            var res = output.Categories.AddOrGetCategory(0, "Reserve Term", "");
+            var sec = output.Categories.AddOrGetCategory(1, "Secondary Term", "");
+            var prim = output.Categories.AddOrGetCategory(2, "Primary Term", "");
+
+            res.Stroke = Color.LightGray.toHexColor();
+            res.StrokeThinkness = 2;
+            res.Background = Color.WhiteSmoke.toHexColor();
+            res.StrokeDashArray = "5,2,5,2";
+            sec.Stroke = Color.Gray.toHexColor();
+            sec.StrokeThinkness = 4;
+            sec.Background = Color.WhiteSmoke.toHexColor();
+            prim.Stroke = Color.Black.toHexColor();
+            prim.StrokeThinkness = 6;
+            prim.Background = Color.WhiteSmoke.toHexColor();
+
+
+            foreach (freeGraphNodeBase node in nodes)
+            {
+                Node nd = output.Nodes.AddNode(node.name, node.name + " " + node.weight.ToString("F4"));
+                nd.Category = node.type.ToString();
+            }
+
+            foreach (freeGraphLinkBase link in links)
+            {
+                Link l = new Link(link.nodeNameA, link.nodeNameB);
+
+                freeGraphNodeBase tn = GetNode(link.nodeNameB);
+                
+                
+                output.Links.Add(l);
+            }
+
+            if (addLegend)
+            {
+                var legendNode = output.Nodes.AddNode("TermCategory", "LEGEND");
+                var resNode = output.Nodes.AddNode("TCRES", "Reserve Term");
+                resNode.Category = res.Id;
+                var secNode = output.Nodes.AddNode("TCSEC", "Secondary Term");
+                secNode.Category = sec.Id;
+                var primNode = output.Nodes.AddNode("TCPRIM", "Primary Term");
+                primNode.Category = prim.Id;
+
+                output.Links.AddLink(legendNode, resNode, "Term Category");
+                output.Links.AddLink(legendNode, secNode, "Term Category");
+                output.Links.AddLink(legendNode, primNode, "Term Category");
+            }
+
+
+            return output;
+        }
 
 
         public static freeGraphToDMGL GetDGMLConverter()

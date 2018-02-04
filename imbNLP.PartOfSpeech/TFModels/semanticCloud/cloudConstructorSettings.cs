@@ -48,7 +48,8 @@ namespace imbNLP.PartOfSpeech.TFModels.semanticCloud
     {
         none,
         standard,
-        complex
+        complex,
+        alternative
     }
 
     public class cloudConstructorSettings
@@ -170,6 +171,12 @@ namespace imbNLP.PartOfSpeech.TFModels.semanticCloud
         public Boolean doAdjustLinkWeightByChunkSize { get; set; } = true;
 
 
+        /// <summary>
+        /// Gets or sets the term in chunk lower limit.
+        /// </summary>
+        /// <value>
+        /// The term in chunk lower limit.
+        /// </value>
         public Int32 termInChunkLowerLimit { get; set; } = 0;
 
         [XmlAttribute]
