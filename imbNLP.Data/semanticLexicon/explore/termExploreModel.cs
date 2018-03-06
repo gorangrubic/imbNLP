@@ -58,8 +58,9 @@ namespace imbNLP.Data.semanticLexicon.explore
     using imbSCI.DataComplex.extensions.data.formats;
     using imbSCI.DataComplex.extensions.text;
     using imbSCI.DataComplex.special;
-    using imbNLP.Data.extended.tokenGraphs;
+    
     using imbSCI.Core.extensions.data;
+    using imbNLP.PartOfSpeech.lexicUnit.tokenGraphs;
 
     /// <summary>
     /// Temp object to explore a term

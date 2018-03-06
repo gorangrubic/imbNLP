@@ -66,7 +66,7 @@ namespace imbNLP.PartOfSpeech.pipeline.core
         public pipelineModelForContentToken(String modelName):base(null, modelName)
         {
 
-            
+            Label = "CP Pipeline Model";
         }
 
     }

@@ -60,6 +60,7 @@ namespace imbNLP.PartOfSpeech.pipelineForPos.node
         public pipelineTokenGenericAnnotation()
         {
             _nodeType = pipelineNodeTypeEnum.transformer;
+            SetLabel();
         }
 
         /// <summary>

@@ -32,6 +32,10 @@ namespace imbNLP.Data.extended.dict.core
     using System;
     using System.Data;
 
+    
+
+
+
     /// <summary>
     /// Base class for token query resolver
     /// </summary>

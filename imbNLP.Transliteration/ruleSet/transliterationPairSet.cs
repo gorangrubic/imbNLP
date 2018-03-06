@@ -41,6 +41,7 @@ namespace imbNLP.Transliteration.ruleSet
     /// <summary>
     /// Single alphabet-2-alphabet mapping
     /// </summary>
+    [Serializable]
     public class transliterationPairSet
     {
         

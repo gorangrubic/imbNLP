@@ -71,7 +71,7 @@ namespace imbNLP.PartOfSpeech.pipeline.mcRepoNodes
         public pipelinePageTaskBuilderNode(IBlockComposer __composer)
         {
             _nodeType = pipelineNodeTypeEnum.taskBuilder;
-
+            SetLabel();
             blockComposer = __composer;
         }
 

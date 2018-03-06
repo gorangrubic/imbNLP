@@ -85,8 +85,8 @@ namespace imbNLP.PartOfSpeech.pipeline.mcRepoNodes
 
             takeSetup = __takeSetup;
             //repoManager = new imbMCManager();
+            SetLabel();
 
-            
         }
 
         /// <summary>

@@ -47,6 +47,7 @@ namespace imbNLP.PartOfSpeech.resourceProviders.core
     /// <para>The tag collection is new imbNLP API structure for morphosyntactic context of a token</para>
     /// <para>The collection is not designed to be serialized, it should be converted to string by a <see cref="resourceConverterForGramaticTags"/> instance before saved.</para>
     /// </remarks>
+    [Serializable]
     public class grammaticTagCollection
     {
 

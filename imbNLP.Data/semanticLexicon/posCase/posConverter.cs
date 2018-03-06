@@ -29,12 +29,6 @@
 // ------------------------------------------------------------------------------------------------------------------
 namespace imbNLP.Data.semanticLexicon.posCase
 {
-    using System;
-    using System.Collections.Generic;
-    using System.ComponentModel;
-    using System.Linq;
-    using System.Text.RegularExpressions;
-    using System.Xml.Serialization;
     using BrightstarDB.EntityFramework;
     using imbACE.Core.commands.menu;
     using imbACE.Core.core;
@@ -43,12 +37,16 @@ namespace imbNLP.Data.semanticLexicon.posCase
     using imbACE.Services.terminal;
     using imbNLP.Data.extended.domain;
     using imbNLP.Data.extended.unitex;
+    using imbNLP.Data.extended.wordnet;
     using imbNLP.Data.semanticLexicon.core;
     using imbNLP.Data.semanticLexicon.explore;
     using imbNLP.Data.semanticLexicon.morphology;
     using imbNLP.Data.semanticLexicon.procedures;
     using imbNLP.Data.semanticLexicon.source;
     using imbNLP.Data.semanticLexicon.term;
+    using imbNLP.PartOfSpeech.flags.basic;
+    using imbSCI.Core.extensions.data;
+    using imbSCI.Core.extensions.enumworks;
     using imbSCI.Core.extensions.io;
     using imbSCI.Core.extensions.text;
     using imbSCI.Core.files.folders;
@@ -61,10 +59,12 @@ namespace imbNLP.Data.semanticLexicon.posCase
     using imbSCI.DataComplex.extensions.data.formats;
     using imbSCI.DataComplex.extensions.text;
     using imbSCI.DataComplex.special;
-    using imbSCI.Core.extensions.enumworks;
-    using imbNLP.Data.extended.wordnet;
-    using imbNLP.PartOfSpeech.flags.basic;
-    using imbSCI.Core.extensions.data;
+    using System;
+    using System.Collections.Generic;
+    using System.ComponentModel;
+    using System.Linq;
+    using System.Text.RegularExpressions;
+    using System.Xml.Serialization;
 
     public static class posConverter
     {

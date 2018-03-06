@@ -41,6 +41,7 @@ using System.Text;
 using System.Xml.Serialization;
 using System.ComponentModel;
 using imbSCI.Core.attributes;
+using imbNLP.PartOfSpeech.TFModels.semanticCloudWeaver;
 
 namespace imbNLP.PartOfSpeech.TFModels.semanticCloud
 {
@@ -158,8 +159,14 @@ namespace imbNLP.PartOfSpeech.TFModels.semanticCloud
 
             }
 
+            output.Add(cloudWeaver.ToString());
+
             return output;
         }
+
+
+        public lemmaSemanticWeaver cloudWeaver { get; set; } = new lemmaSemanticWeaver();
+
 
         public cloudConstructorAlgorithm algorithm { get; set; } = cloudConstructorAlgorithm.complex;
 

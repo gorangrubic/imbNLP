@@ -52,7 +52,7 @@ namespace imbNLP.PartOfSpeech.resourceProviders.core
 
 
     
-
+    [Serializable]
     public class multitextIndexedResolver : textResourceIndexBase
     {
         public multitextIndexedResolver()

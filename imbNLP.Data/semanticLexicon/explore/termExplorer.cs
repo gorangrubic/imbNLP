@@ -65,6 +65,7 @@ namespace imbNLP.Data.semanticLexicon.explore
     using imbNLP.Data.extended.namedEntities;
     using imbNLP.Data.extended.wordnet;
     using imbNLP.PartOfSpeech.flags.basic;
+    using imbNLP.PartOfSpeech.providers.dictionary.apertium;
 
     public class termExplorer:imbBindable
     {
@@ -410,7 +411,7 @@ namespace imbNLP.Data.semanticLexicon.explore
 
 
 
-            apertiumDictionaryResult result = languageManagerApertium.manager.query(suggests, apertiumDictQueryScope.exact, apertiumDictNeedleSide.serbian);
+            apertiumDictionaryResult result = languageManagerApertium.manager.query(suggests, apertiumDictQueryScope.exact, apertiumDictNeedleSide.native);
             if (result.Any())
             {
                 List<termExploreItem> gramCheck = new List<termExploreItem>();
@@ -452,7 +453,7 @@ namespace imbNLP.Data.semanticLexicon.explore
                     }
                 }
 
-                exploreModel.translations.AddRange(result.GetEnglish());
+                exploreModel.translations.AddRange(result.GetTranslatedWords());
                 
 
 

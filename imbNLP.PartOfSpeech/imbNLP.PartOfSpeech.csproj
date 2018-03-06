@@ -28,11 +28,11 @@
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
-    <OutputPath>..\..\..\imbWBI_Release\</OutputPath>
+    <OutputPath>bin\Release\</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <DocumentationFile>..\..\..\imbWBI_Release\imbNLP.PartOfSpeech.xml</DocumentationFile>
+    <DocumentationFile>bin\Release\imbNLP.PartOfSpeech.xml</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup>
     <ApplicationIcon>imbNLP.ico</ApplicationIcon>
@@ -88,37 +88,37 @@
       <HintPath>..\packages\HtmlAgilityPack.1.6.5\lib\Net40\HtmlAgilityPack.dll</HintPath>
     </Reference>
     <Reference Include="imbACE.Core, Version=0.1.1.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\imbACE.0.1.2.15\lib\net40\imbACE.Core.dll</HintPath>
+      <HintPath>..\packages\imbACE.0.1.2.16\lib\net40\imbACE.Core.dll</HintPath>
     </Reference>
     <Reference Include="imbACE.Network, Version=0.1.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\imbACE.0.1.2.15\lib\net40\imbACE.Network.dll</HintPath>
+      <HintPath>..\packages\imbACE.0.1.2.16\lib\net40\imbACE.Network.dll</HintPath>
     </Reference>
     <Reference Include="imbACE.Services, Version=0.1.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\imbACE.0.1.2.15\lib\net40\imbACE.Services.dll</HintPath>
+      <HintPath>..\packages\imbACE.0.1.2.16\lib\net40\imbACE.Services.dll</HintPath>
     </Reference>
     <Reference Include="imbCommonModels, Version=0.1.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\imbWEM.CommonData.0.1.2.17\lib\net40\imbCommonModels.dll</HintPath>
+      <HintPath>..\..\imbWBI\packages\imbWEM.CommonData.1.0.1.2\lib\net40\imbCommonModels.dll</HintPath>
     </Reference>
     <Reference Include="imbMiningContext, Version=0.1.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\imbWEM.CommonData.0.1.2.17\lib\net40\imbMiningContext.dll</HintPath>
+      <HintPath>..\..\imbWBI\packages\imbWEM.CommonData.1.0.1.2\lib\net40\imbMiningContext.dll</HintPath>
     </Reference>
     <Reference Include="imbNLP.Transliteration, Version=0.1.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\imbWBI\packages\imbNLP.Transliteration.0.1.2.1\lib\net40\imbNLP.Transliteration.dll</HintPath>
+      <HintPath>..\..\imbWBI\packages\imbNLP.Transliteration.0.1.2.2\lib\net40\imbNLP.Transliteration.dll</HintPath>
     </Reference>
-    <Reference Include="imbSCI.Core, Version=0.1.6609.8147, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\imbSCI.0.1.2.31\lib\net40\imbSCI.Core.dll</HintPath>
+    <Reference Include="imbSCI.Core, Version=0.1.6624.5850, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\imbSCI.0.1.2.49\lib\net40\imbSCI.Core.dll</HintPath>
     </Reference>
-    <Reference Include="imbSCI.Data, Version=0.1.6603.21536, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\imbSCI.0.1.2.31\lib\net40\imbSCI.Data.dll</HintPath>
+    <Reference Include="imbSCI.Data, Version=0.1.6620.43132, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\imbSCI.0.1.2.49\lib\net40\imbSCI.Data.dll</HintPath>
     </Reference>
-    <Reference Include="imbSCI.DataComplex, Version=0.1.6609.8148, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\imbSCI.0.1.2.31\lib\net40\imbSCI.DataComplex.dll</HintPath>
+    <Reference Include="imbSCI.DataComplex, Version=0.1.6624.5852, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\imbSCI.0.1.2.49\lib\net40\imbSCI.DataComplex.dll</HintPath>
     </Reference>
     <Reference Include="imbSCI.Graph, Version=0.0.1.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\imbSCI.Graph.0.1.0.12\lib\net40\imbSCI.Graph.dll</HintPath>
+      <HintPath>..\packages\imbSCI.Graph.0.1.0.27\lib\net40\imbSCI.Graph.dll</HintPath>
     </Reference>
-    <Reference Include="imbSCI.Reporting, Version=0.1.6609.8149, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\imbSCI.0.1.2.31\lib\net40\imbSCI.Reporting.dll</HintPath>
+    <Reference Include="imbSCI.Reporting, Version=0.1.6624.5852, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\imbSCI.0.1.2.49\lib\net40\imbSCI.Reporting.dll</HintPath>
     </Reference>
     <Reference Include="LinqStatistics, Version=2.1.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\LinqStatistics.2.1.0\lib\net40\LinqStatistics.dll</HintPath>
@@ -136,6 +136,9 @@
       <HintPath>..\packages\PGK.Extensions.2011.6\lib\PGK.Extensions.dll</HintPath>
     </Reference>
     <Reference Include="PresentationCore" />
+    <Reference Include="Svg, Version=2.2.1.39233, Culture=neutral, PublicKeyToken=12a0bac221edeae2, processorArchitecture=MSIL">
+      <HintPath>..\..\imbWBI\packages\Svg.2.3.0\lib\net35\Svg.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
@@ -148,6 +151,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="analysis\NamespaceDoc.cs" />
+    <Compile Include="analysis\nGramsModeEnum.cs" />
+    <Compile Include="analysis\nGramsSimilarityEquationEnum.cs" />
+    <Compile Include="analysis\wordAnalysisTools.cs" />
+    <Compile Include="analysis\wordSimilarityComponent.cs" />
+    <Compile Include="analysis\wordSimilarityPair.cs" />
+    <Compile Include="analysis\wordSimilarityResultSet.cs" />
     <Compile Include="decomposing\block\blockComposerSM.cs" />
     <Compile Include="decomposing\block\IBlockComposer.cs" />
     <Compile Include="decomposing\chunk\chunkComposerBasic.cs" />
@@ -159,6 +169,11 @@
     <Compile Include="decomposing\stream\streamComposerBasic.cs" />
     <Compile Include="decomposing\token\ITokenComposer.cs" />
     <Compile Include="decomposing\token\tokenComposerBasic.cs" />
+    <Compile Include="evaluation\terms\NamespaceDoc.cs" />
+    <Compile Include="evaluation\terms\termQualification.cs" />
+    <Compile Include="evaluation\terms\termQualificationAnswer.cs" />
+    <Compile Include="evaluation\terms\termQualificationComponent.cs" />
+    <Compile Include="evaluation\terms\termQualificationList.cs" />
     <Compile Include="flags\basic\pos_adjectiveType.cs" />
     <Compile Include="flags\basic\pos_adverbType.cs" />
     <Compile Include="flags\basic\pos_animatness.cs" />
@@ -184,6 +199,7 @@
     <Compile Include="flags\basic\pos_verbType.cs" />
     <Compile Include="flags\data\dat_business.cs" />
     <Compile Include="flags\equalizationTable.cs" />
+    <Compile Include="flags\posFlagExtensions.cs" />
     <Compile Include="flags\token\cnt_containerType.cs" />
     <Compile Include="flags\token\cnt_level.cs" />
     <Compile Include="flags\token\tkn_contains.cs" />
@@ -193,15 +209,19 @@
     <Compile Include="flags\token\tkn_specialforms.cs" />
     <Compile Include="flags\token\tkn_stream.cs" />
     <Compile Include="GlobalSuppressions.cs" />
-    <Compile Include="lexicUnit\lexicFormatType.cs" />
-    <Compile Include="lexicUnit\lexicGrammarCase.cs" />
-    <Compile Include="lexicUnit\lexicGraph.cs" />
-    <Compile Include="lexicUnit\lexicGraphNodeType.cs" />
-    <Compile Include="lexicUnit\lexicGraphSet.cs" />
-    <Compile Include="lexicUnit\lexicGraphSetWithLemma.cs" />
-    <Compile Include="lexicUnit\lexicInflection.cs" />
-    <Compile Include="lexicUnit\lexicLemmaInTypeNode.cs" />
-    <Compile Include="lexicUnit\lexicQuery.cs" />
+    <Compile Include="lexicUnit\lexicGraphs\lexicFormatType.cs" />
+    <Compile Include="lexicUnit\lexicGraphs\lexicGrammarCase.cs" />
+    <Compile Include="lexicUnit\lexicGraphs\lexicGraph.cs" />
+    <Compile Include="lexicUnit\lexicGraphs\lexicGraphNodeType.cs" />
+    <Compile Include="lexicUnit\lexicGraphs\lexicGraphSet.cs" />
+    <Compile Include="lexicUnit\lexicGraphs\lexicGraphSetWithLemma.cs" />
+    <Compile Include="lexicUnit\lexicGraphs\lexicInflection.cs" />
+    <Compile Include="lexicUnit\lexicGraphs\lexicLemmaInTypeNode.cs" />
+    <Compile Include="lexicUnit\lexicGraphs\lexicQuery.cs" />
+    <Compile Include="lexicUnit\tokenGraphs\tokenGraph.cs" />
+    <Compile Include="lexicUnit\tokenGraphs\tokenGraphNode.cs" />
+    <Compile Include="lexicUnit\tokenGraphs\tokenGraphNodeType.cs" />
+    <Compile Include="lexicUnit\tokenGraphs\tokenGraphSet.cs" />
     <Compile Include="map\textMap.cs" />
     <Compile Include="map\textMapContainer.cs" />
     <Compile Include="nlpTools\itmConstructorTypeManager.cs" />
@@ -211,6 +231,7 @@
     <Compile Include="pipelineForPos\node\pipelineHTMLTagDetection.cs" />
     <Compile Include="pipelineForPos\render\contentTokenSubjectRender.cs" />
     <Compile Include="pipelineForPos\render\contentTokenSubjectRenderMode.cs" />
+    <Compile Include="pipelineForPos\render\pipelineToDirectedGraphConvertor.cs" />
     <Compile Include="pipelineForPos\render\subjectRenderLayers.cs" />
     <Compile Include="pipelineForPos\subject\pipelineSubjectTools.cs" />
     <Compile Include="pipelineForPos\subject\pipelineTaskTFDFContentToken.cs" />
@@ -272,19 +293,33 @@
     <Compile Include="pipelineForPos\resourceProviders\core\textResourceResolverBase.cs" />
     <Compile Include="pipelineForPos\resourceProviders\multitext\multitextResourceParser.cs" />
     <Compile Include="pipelineForPos\resourceProviders\NamespaceDoc.cs" />
+    <Compile Include="providers\dictionary\apertium\apertiumDictionaryResult.cs" />
+    <Compile Include="providers\dictionary\apertium\apertiumDictNeedleSide.cs" />
+    <Compile Include="providers\dictionary\apertium\apertiumDictQueryFlag.cs" />
+    <Compile Include="providers\dictionary\apertium\apertiumDictQueryScope.cs" />
+    <Compile Include="providers\dictionary\apertium\apertiumPOSConverter.cs" />
+    <Compile Include="providers\dictionary\apertium\dictionaryResourceApertium.cs" />
+    <Compile Include="providers\dictionary\apertium\dictionaryResourceSetup.cs" />
+    <Compile Include="TFModels\industryDescriptor\industryGraph.cs" />
     <Compile Include="TFModels\industryLemma\core\IIndustryTermModelConstructor.cs" />
     <Compile Include="TFModels\industryLemma\itmConstructorBasic.cs" />
     <Compile Include="TFModels\industryLemma\itmConstructorSettings.cs" />
     <Compile Include="TFModels\semanticCloudMatrix\cloudMatrix.cs" />
+    <Compile Include="TFModels\semanticCloudMatrix\cloudMatrixReductionReport.cs" />
+    <Compile Include="TFModels\semanticCloudMatrix\cloudMatrixReductionReportEntry.cs" />
     <Compile Include="TFModels\semanticCloudMatrix\cloudMatrixSettings.cs" />
+    <Compile Include="TFModels\semanticCloudWeaver\lemmaSemanticWeaver.cs" />
+    <Compile Include="TFModels\semanticCloudWeaver\lemmaSemanticWeaverResult.cs" />
     <Compile Include="TFModels\semanticCloud\cloudConstructor.cs" />
     <Compile Include="TFModels\semanticCloud\cloudConstructorSettings.cs" />
     <Compile Include="TFModels\semanticCloud\lemmaSemanticCloud.cs" />
     <Compile Include="TFModels\semanticCloud\lemmaSemanticConstruct.cs" />
     <Compile Include="TFModels\semanticCloud\SSRMComputation.cs" />
+    <Compile Include="TFModels\streamIndex\tokenStreamIndex.cs" />
     <Compile Include="TFModels\webLemma\chunkConstructorTF.cs" />
     <Compile Include="TFModels\webLemma\ConstructorTFIDFBase.cs" />
     <Compile Include="TFModels\webLemma\core\IWLFConstructor.cs" />
+    <Compile Include="TFModels\webLemma\streamConstructorTF.cs" />
     <Compile Include="TFModels\webLemma\table\webLemmaTerm.cs" />
     <Compile Include="TFModels\webLemma\table\webLemmaTermExtensions.cs" />
     <Compile Include="TFModels\webLemma\table\webLemmaTermPackage.cs" />
@@ -304,6 +339,7 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="decomposing\pages\" />
     <Folder Include="pipelineForPos\postprocess\" />
     <Folder Include="TFModels\semanticCloud\core\" />
   </ItemGroup>

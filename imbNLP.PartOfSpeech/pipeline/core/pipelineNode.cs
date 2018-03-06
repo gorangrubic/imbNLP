@@ -53,6 +53,16 @@ namespace imbNLP.PartOfSpeech.pipeline.core
 
         protected override bool doAutonameFromTypeName { get { return false; } }
 
+
+        public void SetLabel()
+        {
+            String ln = this.GetType().Name.Replace("pipeline", "");
+            ln = ln.Replace("Node", "");
+            ln = ln.Replace("Transformer", "");
+            if (ln.isNullOrEmpty()) ln = name;
+            Label = ln.imbTitleCamelOperation(true); // + " [" + nodeType.ToString() + "]";
+        }
+
         protected pipelineNode()
         {
             if (name.isNullOrEmpty())
@@ -65,6 +75,20 @@ namespace imbNLP.PartOfSpeech.pipeline.core
                 name = name.imbTitleCamelOperation(true).imbGetAbbrevation(5, true);
             }
         }
+
+
+        private String _Label;
+        /// <summary>
+        /// Title of the node, to be displayed in graphs
+        /// </summary>
+        public String Label
+        {
+            get {
+                if (_Label.isNullOrEmpty()) return name;
+                return _Label; }
+            set { _Label = value; }
+        }
+
 
 
         /// <summary>

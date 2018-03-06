@@ -45,7 +45,7 @@ namespace imbNLP.PartOfSpeech.pipeline.machine
 {
 
     /// <summary>
-    /// 
+    /// Result of an pipeline machine processing
     /// </summary>
     public class pipelineModelExecutionContext
     {
@@ -205,6 +205,27 @@ namespace imbNLP.PartOfSpeech.pipeline.machine
         /// </value>
         public ConcurrentStack<IPipelineTask> finishedTasks { get; protected set; } = new ConcurrentStack<IPipelineTask>();
 
+
+        public String GetSignature()
+        {
+            StringBuilder sb = new StringBuilder();
+
+            sb.AppendLine("# Model: " + model.name);
+
+
+            sb.AppendLine("## Exit bin - Exit by type");
+            foreach (var exitByTypePair in exitByType)
+            {
+                sb.AppendLine(String.Format("{0,-20} : {1,20}", exitByTypePair.Key.Name, exitByTypePair.Value.Count));
+            }
+            sb.AppendLine("## Exit bin - Exit by level");
+            foreach (var exitByTypePair in exitByLevel)
+            {
+                sb.AppendLine(String.Format("{0,-20} : {1,20}", exitByTypePair.Key.ToString(), exitByTypePair.Value.Count));
+            }
+
+            return sb.ToString();
+        }
 
         public Dictionary<Type, ConcurrentBag<IPipelineTaskSubject>> exitByType { get; protected set; } = new Dictionary<Type, ConcurrentBag<IPipelineTaskSubject>>();
 

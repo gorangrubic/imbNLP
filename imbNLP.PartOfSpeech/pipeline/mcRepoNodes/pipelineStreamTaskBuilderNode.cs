@@ -60,6 +60,7 @@ namespace imbNLP.PartOfSpeech.pipeline.mcRepoNodes
         {
             _nodeType = pipelineNodeTypeEnum.taskBuilder;
             tokenComposer = composer;
+            SetLabel();
         }
 
         /// <summary>

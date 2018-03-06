@@ -51,13 +51,23 @@ namespace imbNLP.PartOfSpeech.pipeline.machine
 
         }
 
+
+        /// <summary> If true it will do something </summary>
+        [Category("Switch")]
+        [DisplayName("doSharePipelineCollectionInTheSession")]
+        [Description("If true it will do something")]
+        public Boolean doSharePipelineCollectionInTheSession { get; set; } = true;
+
+
+
+
         /// <summary> number of parallel task to take and run in one iterations </summary>
         [Category("Count")]
         [DisplayName("TaskTake")]
         [imb(imbAttributeName.measure_letter, "TC")]
         [imb(imbAttributeName.measure_setUnit, "n")]
         [Description("number of parallel task to take and run in one iterations")] // [imb(imbAttributeName.measure_important)][imb(imbAttributeName.reporting_valueformat, "")]
-        public Int32 TaskTake { get; set; } = 8;
+        public Int32 TaskTake { get; set; } = 1;
 
 
 
@@ -77,7 +87,15 @@ namespace imbNLP.PartOfSpeech.pipeline.machine
         [imb(imbAttributeName.measure_letter, "C_t")]
         [imb(imbAttributeName.measure_setUnit, "ms")]
         [Description("Miliseconds for delay tick before status check ")] // [imb(imbAttributeName.measure_important)][imb(imbAttributeName.reporting_valueformat, "")]
-        public Int32 TickForCheck { get; set; } = 100;
+        public Int32 TickForCheck { get; set; } = 25;
+
+
+
+        /// <summary> If true it will do something </summary>
+        [Category("Switch")]
+        [DisplayName("doUseParallelExecution")]
+        [Description("If true it will do something")]
+        public Boolean doUseParallelExecution { get; set; } = false;
 
 
 

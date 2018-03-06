@@ -46,6 +46,7 @@ using imbNLP.PartOfSpeech.resourceProviders.core;
 using imbSCI.Core.extensions.data;
 using imbSCI.Core.extensions.text;
 using imbSCI.Core.extensions.typeworks;
+using imbSCI.Core.reporting;
 using imbSCI.Data;
 using imbSCI.Data.collection.graph;
 using imbSCI.Data.interfaces;
@@ -77,6 +78,60 @@ namespace imbNLP.PartOfSpeech.decomposing.chunk
 
             return output;
         }
+
+        public override List<pipelineTaskSubjectContentToken> process(IEnumerable<pipelineTaskSubjectContentToken> _input, ILogBuilder logger)
+        {
+            settings.checkReady();
+
+            List<pipelineTaskSubjectContentToken> output = new List<pipelineTaskSubjectContentToken>();
+            List<pipelineTaskSubjectContentToken> next = new List<pipelineTaskSubjectContentToken>();
+
+            next = _input.ToList();
+
+            next.Sort((x, y) => String.CompareOrdinal(x.currentForm, y.currentForm));
+
+
+            while (currentIteration > 0)
+            {
+                List<pipelineTaskSubjectContentToken> MCNext = new List<pipelineTaskSubjectContentToken>();
+
+
+                foreach (pipelineTaskSubjectContentToken sub in next)
+                {
+                    MCNext.AddRange(processIteration(sub), true);
+
+                }
+
+                if (settings.keepAllInOutput)
+                {
+                    output.AddRange(MCNext, true);
+                }
+                else
+                {
+                    output = MCNext;
+                }
+
+                logger.log("[" + currentIteration + "] chunk construction in[" + next.Count + "] new[" + MCNext.Count + "] out[" + output.Count + "]");
+
+                if (next.Count == output.Count)
+                {
+                    logger.log("Aborting the process since last iteation produced no changes");
+                    break;
+                }
+                next = MCNext.ToList();
+
+                if (MCNext.Count == 0) break;
+                currentIteration--;
+            }
+
+
+            return output;
+
+
+            //return base.process(_input, logger);    
+        }
+
+
 
         protected override List<pipelineTaskSubjectContentToken> processIteration(pipelineTaskSubjectContentToken streamSubject)
         {
@@ -111,15 +166,15 @@ namespace imbNLP.PartOfSpeech.decomposing.chunk
 
             subjectRenderLayers layers = new subjectRenderLayers();
 
-            settings.checkReady();
+          
 
             foreach (chunkMatchRule rule in settings.rules)
             {
                 
                 textMap<pipelineTaskSubjectContentToken> typeTagFormMap = layers.render(streamSubject, rule.renderMode);
 
-                var mchs = rule.regex.Matches(typeTagFormMap.render);
-                var mchs_s = typeTagFormMap.Select(mchs);
+                MatchCollection mchs = rule.regex.Matches(typeTagFormMap.render);
+                List<List<pipelineTaskSubjectContentToken>> mchs_s = typeTagFormMap.Select(mchs);
 
                 List<List<pipelineTaskSubjectContentToken>> mchs_subjects = new List<List<pipelineTaskSubjectContentToken>>();
                 foreach (List<pipelineTaskSubjectContentToken> mg in mchs_s)
@@ -138,20 +193,23 @@ namespace imbNLP.PartOfSpeech.decomposing.chunk
                     }
                 }
 
-                
+
                 foreach (List<pipelineTaskSubjectContentToken> mGroup in mchs_subjects)
                 {
-                    String tkn = "";
+                    String tkn = imbStringGenerators.getRandomString(4);
 
                     Boolean createChunk = true;
+
+                    foreach (pipelineTaskSubjectContentToken s in mGroup)
+                    {
+                        tkn = tkn + s.name;
+                    }
+
+
                     if (rule.flagTypesToMatch.Any())
                     {
                         Dictionary<Type, Object> flags = new Dictionary<Type, object>();
 
-                        foreach (pipelineTaskSubjectContentToken s in mGroup)
-                        {
-                            tkn = tkn + s.name;
-                        }
 
 
                         foreach (pipelineTaskSubjectContentToken s in mGroup)
@@ -172,7 +230,7 @@ namespace imbNLP.PartOfSpeech.decomposing.chunk
 
                                 if (settings.doCheckGramTagCriteria)
                                 {
-                                    if (flags[flagType] != fl) 
+                                    if (flags[flagType] != fl)
                                     {
                                         createChunk = false;
                                         break;
@@ -221,8 +279,10 @@ namespace imbNLP.PartOfSpeech.decomposing.chunk
                         {
                             s.mcElement.removeFromParent();
                             chunk.Add(s.mcElement);
+
                             s.removeFromParent();
                             chunkSubject.Add(s);
+
                             if (isFirstSubject)
                             {
                                 commonFlags.AddRange(s.flagBag, true);

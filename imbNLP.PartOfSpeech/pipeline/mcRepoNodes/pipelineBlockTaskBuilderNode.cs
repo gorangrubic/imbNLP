@@ -60,6 +60,7 @@ namespace imbNLP.PartOfSpeech.pipeline.mcRepoNodes
         {
             _nodeType = pipelineNodeTypeEnum.taskBuilder;
             streamComposer = __streamComposer;
+            SetLabel();
         }
 
         /// <summary>
@@ -96,6 +97,7 @@ namespace imbNLP.PartOfSpeech.pipeline.mcRepoNodes
                 streamSubject.mcElement = stream;
                 streamSubject.name = stream.name;
                 streamSubject.currentForm = stream.content;
+                streamSubject.initialForm = stream.content;
                 streamSubject.parent = realSubject;
                 realSubject.Add(streamSubject);
 

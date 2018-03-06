@@ -62,8 +62,10 @@ using imbNLP.PartOfSpeech.TFModels.webLemma.table;
 namespace imbNLP.PartOfSpeech.TFModels.webLemma
 {
 
+
+
     /// <summary>
-    /// 
+    /// Chunk Frequency Table constructor
     /// </summary>
     /// <seealso cref="imbNLP.PartOfSpeech.TFModels.webLemma.core.IWLFConstructor" />
     public class chunkConstructorTF:ConstructorTFIDFBase, IWLFConstructor
@@ -91,7 +93,7 @@ namespace imbNLP.PartOfSpeech.TFModels.webLemma
 
         }
 
-        public wlfConstructorSettings settings { get; set; } = new wlfConstructorSettings();
+       // public wlfConstructorSettings settings { get; set; } = new wlfConstructorSettings();
 
 
 
@@ -110,6 +112,7 @@ namespace imbNLP.PartOfSpeech.TFModels.webLemma
         /// <param name="chunks">The source.</param>
         /// <param name="document_level">The document level.</param>
         /// <param name="table">The table.</param>
+        /// <param name="parser">The parser.</param>
         /// <param name="logger">The logger.</param>
         /// <param name="forSingleWebSite">if set to <c>true</c> [for single web site].</param>
         /// <returns></returns>
@@ -120,8 +123,12 @@ namespace imbNLP.PartOfSpeech.TFModels.webLemma
 
             TFDFCounter counter = new TFDFCounter();
 
+            var listChunks = chunks.ToList();
 
-            foreach (pipelineTaskSubjectContentToken mcSubject in chunks)
+            listChunks.Sort((x, y) => String.CompareOrdinal(x.currentForm,y.currentForm));
+
+
+            foreach (pipelineTaskSubjectContentToken mcSubject in listChunks)
             {
                 //var page = mcSubject.GetParentOfType<pipelineTaskMCPageSubject>();
 
@@ -144,18 +151,22 @@ namespace imbNLP.PartOfSpeech.TFModels.webLemma
         /// <summary>
         /// Constructs the webLemmaTable
         /// </summary>
-        /// <param name="tableName">Name of the table.</param>
-        /// <param name="parser">The parser.</param>
         /// <param name="counter">The counter.</param>
         /// <param name="logger">The logger.</param>
+        /// <param name="table">The table.</param>
+        /// <param name="forSingleWebSite">if set to <c>true</c> [for single web site].</param>
         /// <returns></returns>
         public webLemmaTermTable process(TFDFCounter counter, ILogBuilder logger, webLemmaTermTable table, Boolean forSingleWebSite=false)
         {
             List<String> tfdfList = counter.GetIndexForms();
+
+            tfdfList.Sort(String.CompareOrdinal);
+
+
             Int32 i = 0;
             Int32 c = 0;
             Int32 li = 0;
-            Int32 limit = tfdfList.Count() + 100;
+            Int32 limit = tfdfList.Count() + 500;
 
           
             List<webLemmaTerm> lemmas = new List<webLemmaTerm>();
@@ -177,23 +188,29 @@ namespace imbNLP.PartOfSpeech.TFModels.webLemma
 
 
                     webLemmaTerm lemma = new webLemmaTerm();
-                    lemma.nominalForm = cn.indexForm;
-                    lemma.name = cn.indexForm;
+
 
                     if (cn != null)
                     {
+                        lemma.nominalForm = cn.indexForm;
+                        lemma.name = cn.indexForm;
+
                         foreach (pipelineTaskSubjectContentToken cntPair in cn.items)
                         {
-                            imbMCDocument document = cntPair.mcElement.GetParentOfType<imbMCDocument>();
-                            documents.AddUnique(document);
-
-
-                            imbMCDocumentSet docSet = document.parent as imbMCDocumentSet;
-                            if (docSet != null)
+                            imbMCDocument document = cntPair?.mcElement?.GetParentOfType<imbMCDocument>();
+                            if (document != null)
                             {
-                                documentSet.AddUnique(docSet);
-                            }
+                                documents.AddUnique(document);
 
+
+                                imbMCDocumentSet docSet = document?.parent as imbMCDocumentSet;
+                                if (docSet != null)
+                                {
+                                    documentSet.AddUnique(docSet);
+                                }
+                            }
+                            termFrequency += 1;
+                            /*
                             if (cntPair.flagBag.Contains(cnt_containerType.link))
                             {
                                 termFrequency += settings.anchorTextFactor;
@@ -205,23 +222,23 @@ namespace imbNLP.PartOfSpeech.TFModels.webLemma
                             else
                             {
                                 termFrequency += settings.contentTextFactor;
-                            }
+                            }*/
 
-                            lemma.otherForms.AddUnique(cntPair.initialForm);
+                           // lemma.otherForms.AddUnique(cntPair.initialForm);
                         }
 
-                        lemma.otherForms.AddUnique(cn.indexForm);
+                        lemma.documentSetFrequency = documentSet.Count;
+                        lemma.AFreqPoints = cn.items.Count();
+                        lemma.documentFrequency = documents.Count;
+                        lemma.termFrequency = termFrequency;
+                        lemmas.Add(lemma);
                     }
                     else
                     {
                         //lemma.otherForms.AddUnique(cn.items);
                     }
 
-                    lemma.documentSetFrequency = documentSet.Count;
-                    lemma.AFreqPoints = cn.items.Count();
-                    lemma.documentFrequency = documents.Count;
-                    lemma.termFrequency = termFrequency;
-                    lemmas.Add(lemma);
+
                     
 
 

@@ -53,8 +53,20 @@ namespace imbNLP.PartOfSpeech.pipeline.core
         /// <param name="returnHost">if set to <c>true</c> it will return this node, if set to <c>false</c> it will return newly created node for fluid operation</param>
         /// <returns>this node (<c>returnHost</c> is true) or newly added node</returns>
         IPipelineNode AddNode(IPipelineNode node, Boolean returnHost = false);
-        
 
+
+        /// <summary>
+        /// Display name, used for reporting purposes
+        /// </summary>
+        /// <value>
+        /// The label.
+        /// </value>
+        String Label { get; }
+
+        /// <summary>
+        /// Automatically sets label
+        /// </summary>
+        void SetLabel();
 
         /// <summary>
         /// Processes the specified task and returns the next node to go into

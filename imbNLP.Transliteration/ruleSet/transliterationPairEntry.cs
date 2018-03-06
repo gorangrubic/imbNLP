@@ -40,6 +40,7 @@ namespace imbNLP.Transliteration.ruleSet
     /// <summary>
     /// Single entry of transliteration rules
     /// </summary>
+    [Serializable]
     public class transliterationPairEntry
     {
         public transliterationPairEntry() { }

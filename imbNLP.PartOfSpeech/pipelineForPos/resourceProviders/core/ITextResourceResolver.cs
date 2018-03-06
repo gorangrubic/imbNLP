@@ -64,6 +64,13 @@ namespace imbNLP.PartOfSpeech.resourceProviders.core
         lexicInflection GetLexicUnit(String key, ILogBuilder logger = null);
         void LoadLexicResource(ILogBuilder output, String resourceFilePath);
         void SaveUsedCache(string localLemmaResourcePath, Boolean clearCache = true);
+        /// <summary>
+        /// Gets the lemma set for inflection.
+        /// </summary>
+        /// <param name="inflection">The inflection.</param>
+        /// <param name="allInflections">All inflections.</param>
+        /// <param name="logger">The logger.</param>
+        /// <returns></returns>
         lexicGraphSetWithLemma GetLemmaSetForInflection(String inflection, List<String> allInflections, ILogBuilder logger = null);
         
     }

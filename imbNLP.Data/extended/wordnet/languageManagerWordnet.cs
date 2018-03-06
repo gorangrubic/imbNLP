@@ -35,7 +35,7 @@ namespace imbNLP.Data.extended.wordnet
     using System.IO;
     using System.Linq;
     using imbNLP.Data.extended.dict.core;
-    using imbNLP.Data.extended.tokenGraphs;
+    
     using imbSCI.Data;
     using imbSCI.Data.interfaces;
     using imbSCI.Core.reporting;
@@ -46,6 +46,7 @@ namespace imbNLP.Data.extended.wordnet
     using imbSCI.DataComplex.extensions.data.formats;
     using imbSCI.Data.enums.reporting;
     using imbNLP.Transliteration;
+    using imbNLP.PartOfSpeech.lexicUnit.tokenGraphs;
 
     /// <summary>
     /// WordNET Serbian and English

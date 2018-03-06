@@ -54,12 +54,15 @@ namespace imbNLP.PartOfSpeech.resourceProviders.core
     using imbNLP.Transliteration.ruleSet;
     using imbACE.Core;
     using imbSCI.Core.extensions.io;
+    using imbSCI.Core.files.folders;
+    using Accord.IO;
 
 
     /// <summary>
     /// Common base for lexical resources based on indexed nested dictionaries. Higher performance then direct file search based.
     /// </summary>
     /// <seealso cref="imbSCI.Data.collection.nested.aceDictionaryLetterIndexSet{imbNLP.PartOfSpeech.lexicUnit.lexicInflection}" />
+    [Serializable]
     public abstract class textResourceIndexBase : aceDictionaryLetterIndexSet<lexicInflection>, ITextResourceResolver
     {
 
@@ -296,13 +299,13 @@ namespace imbNLP.PartOfSpeech.resourceProviders.core
         }
 
         /// <summary>
-        /// It will get all inflections of the same lemma, if <c>allInflections</c> it will remove all other matches from there remove it from the inflections list
+        /// It will get all inflections of the same lemma, if <c>allInflections</c> is supplied, it will remove all matched inflectional form from the list. 
         /// </summary>
         /// <param name="inflection">The inflection.</param>
         /// <param name="allInflections">All inflections.</param>
         /// <param name="logger">The logger.</param>
         /// <returns></returns>
-        public lexicGraphSetWithLemma GetLemmaSetForInflection(String inflection, List<String> allInflections, ILogBuilder logger=null)
+        public lexicGraphSetWithLemma GetLemmaSetForInflection(String inflection, List<String> allInflections=null, ILogBuilder logger=null)
         {
 
             if (!isLoaded) LoadLexicResource(logger, resourcePath);
@@ -433,7 +436,8 @@ namespace imbNLP.PartOfSpeech.resourceProviders.core
             output.log("Start of loading lexic resource [" + pt + "]");
             //   Parallel.ForEach(lines, new ParallelOptions { MaxDegreeOfParallelism=1 }, (line) =>
 
-            Parallel.ForEach(lines, (line) =>
+            Parallel.ForEach(lines, new ParallelOptions { MaxDegreeOfParallelism = 1 }, (line) =>
+           //  Parallel.ForEach(lines, (line) =>
             {
                 string inflectForm = "";
                 string lemma = "";
@@ -546,11 +550,147 @@ namespace imbNLP.PartOfSpeech.resourceProviders.core
             isLoaded = true;
         }
 
+        /// <summary>
+        /// Gets the signature.
+        /// </summary>
+        /// <returns></returns>
+        public new String GetSignature() {
+
+            StringBuilder sb = new StringBuilder();
+
+            sb.AppendLine("Source file:                     " + resourcePath);
+
+            sb.AppendLine("Registered lemma index count:    " + registratedLemmaIndex.Count);
+            sb.AppendLine("Items:                           " + items.Count);
+
+            sb.AppendLine(base.GetSignature());
+
+            return sb.ToString();
+
+        }
 
 
         private Object SetLock = new Object();
 
         private Object LemmaIndexLock = new Object();
+
+
+
+        /// <summary>
+        /// Saves the bin try.
+        /// </summary>
+        /// <param name="pathToCachedFile">The path to cached file.</param>
+        /// <param name="logger">The logger.</param>
+        /// <param name="overwrite">if set to <c>true</c> [overwrite].</param>
+        /// <returns></returns>
+        public Boolean SaveBinTry(String pathToCachedFile, ILogBuilder logger, Boolean overwrite=false) {
+            String directoryName = Path.GetDirectoryName(pathToCachedFile);
+            String filePrefix = Path.GetFileNameWithoutExtension(pathToCachedFile);
+
+            folderNode folder = new DirectoryInfo(directoryName);
+
+            Boolean binLoaded = SaveBin(folder, logger, overwrite, filePrefix);
+           
+            return binLoaded;
+        }
+
+
+        /// <summary>
+        /// Loads the bin try.
+        /// </summary>
+        /// <param name="pathToCachedFile">The path to cached file.</param>
+        /// <param name="logger">The logger.</param>
+        /// <returns></returns>
+        public Boolean LoadBinTry(String pathToCachedFile, ILogBuilder logger) {
+
+            String directoryName = Path.GetDirectoryName(pathToCachedFile);
+            String filePrefix = Path.GetFileNameWithoutExtension(pathToCachedFile);
+
+            folderNode folder = new DirectoryInfo(directoryName);
+
+            Boolean binLoaded = LoadBin(folder, logger, filePrefix);
+            if (binLoaded)
+            {
+                isLoaded = true;
+            }
+            return binLoaded;
+        }
+
+        /// <summary>
+        /// Loads the bin.
+        /// </summary>
+        /// <param name="folder">The folder.</param>
+        /// <param name="logger">The logger.</param>
+        /// <param name="filenamePrefix">The filename prefix.</param>
+        public Boolean LoadBin(folderNode folder, ILogBuilder logger, String filenamePrefix = "lexicResource") {
+
+            var files = folder.findFiles(filenamePrefix + "_*.bin", SearchOption.TopDirectoryOnly);
+            Int32 c = 0;
+            foreach (var pair in files)
+            {
+                String filename = Path.GetFileNameWithoutExtension(pair);
+                String letter = filename.Replace(filenamePrefix + "_", "");
+
+
+                ConcurrentDictionary<String, lexicInflection> dict = Accord.IO.Serializer.Load<ConcurrentDictionary<String, lexicInflection>>(pair);
+                if (dict.Any())
+                {
+                    c++;
+                    logger.log("File [" + filename + "] loaded --> index [" + letter + "]");
+                    if (items.ContainsKey(letter))
+                    {
+                        items[letter].Clear();
+                        items[letter].AddRange(dict);
+                    }
+                    else
+                    {
+                        items.TryAdd(letter, dict);
+                    }
+                    
+                }
+            }
+
+            if (c > 0)
+            {
+                logger.log("[" + c + "] lexic files loaded from [" + folder.path + "]");
+                return true;
+            }
+            return false;
+
+        }
+
+        /// <summary>
+        /// Saves the bin.
+        /// </summary>
+        /// <param name="folder">The folder.</param>
+        /// <param name="logger">The logger.</param>
+        /// <param name="skipExisting">if set to <c>true</c> [skip existing].</param>
+        /// <param name="filenamePrefix">The filename prefix.</param>
+        public Boolean SaveBin(folderNode folder, ILogBuilder logger, Boolean skipExisting=true, String filenamePrefix="lexicResource") {
+
+            Int32 c = 0;
+            foreach (var pair in items)
+            {
+                String pbin = folder.pathFor(filenamePrefix + "_" + pair.Key + ".bin", imbSCI.Data.enums.getWritableFileMode.none, "Binary serialized lexic entries starting with [" + pair.Key + "]");
+                if (skipExisting && File.Exists(pbin))
+                {
+                    logger.log("File [" + pbin + "] exists. Skipping binary serialization");
+                }
+                else
+                {
+                    ConcurrentDictionary<String, lexicInflection> dict = pair.Value;
+                    dict.Save(pbin);
+                    c++;
+                }
+            }
+
+            if (c > 0)
+            {
+                logger.log("[" + c + "] lexic files serialized to [" + folder.path + "]");
+                return true;
+            }
+            return false;
+        }
 
     }
 

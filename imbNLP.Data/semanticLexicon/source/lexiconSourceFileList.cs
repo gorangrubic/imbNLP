@@ -152,9 +152,9 @@ namespace imbNLP.Data.semanticLexicon.source
         {
             Clear();
 
-            aceLog.log("Sefault resource paths for Lexicon Source file list");
+            aceLog.log("Default resource paths for Lexicon Source file list");
 
-            findAndAdd(lexiconSourceTypeEnum.apertium, "apertium_*.dix", aceLog.loger);
+            findAndAdd(lexiconSourceTypeEnum.apertium, "apertium-*.dix", aceLog.loger);
 
             findAndAdd(lexiconSourceTypeEnum.serbianWordNet, "*wordnet*.csv", aceLog.loger);
             findAndAdd(lexiconSourceTypeEnum.englishWordNet, "*wordnet*.xlsx", aceLog.loger);

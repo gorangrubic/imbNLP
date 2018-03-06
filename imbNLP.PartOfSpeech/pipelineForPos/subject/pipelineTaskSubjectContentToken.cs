@@ -34,6 +34,7 @@ using imbNLP.PartOfSpeech.lexicUnit;
 using imbNLP.PartOfSpeech.pipeline.core;
 using imbNLP.PartOfSpeech.pipeline.machine;
 using imbSCI.Core.extensions.data;
+using imbSCI.Core.extensions.text;
 using imbSCI.Core.files.fileDataStructure;
 using imbSCI.Data.collection.graph;
 using System;
@@ -50,6 +51,7 @@ namespace imbNLP.PartOfSpeech.pipelineForPos.subject
     /// Task subject for content token
     /// </summary>
     /// <seealso cref="imbNLP.PartOfSpeech.pipeline.machine.IPipelineTaskSubject" />
+    [Serializable]
     public class pipelineTaskSubjectContentToken : graphNodeCustom, IPipelineTaskSubject
     {
         public pipelineTaskSubjectContentToken()
@@ -58,8 +60,37 @@ namespace imbNLP.PartOfSpeech.pipelineForPos.subject
         }
 
 
+        private String _Label;
+        /// <summary>
+        /// String used for graph display
+        /// </summary>
+        public String Label
+        {
+            get {
+                if (_Label.isNullOrEmpty())
+                {
+                    return name;
+                }
+                return _Label;
+            }
+            set { _Label = value; }
+        }
 
-        public IFileDataStructure fileDataStructure { get; set; }
+        public virtual void SetLabel()
+        {
+            if (mcElement == null)
+            {
+                _Label = currentForm.or(initialForm, contentLevelType.keyToString());
+            }
+            else
+            {
+                String lb = mcElement.name.or(mcElement.content);
+                _Label = lb;
+            }
+        }
+
+        
+        protected IFileDataStructure fileDataStructure { get; set; }
 
 
         public imbMCDocumentElement mcElement { get; set; }

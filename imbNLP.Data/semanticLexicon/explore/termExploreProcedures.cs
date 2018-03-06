@@ -62,11 +62,13 @@ namespace imbNLP.Data.semanticLexicon.explore
     using imbSCI.DataComplex.extensions.text;
     using imbSCI.DataComplex.special;
     using imbSCI.Data.enums;
-    using imbNLP.Data.extended.tokenGraphs;
+    
     using imbNLP.Data.extended.apertium;
     using imbNLP.Data.extended.wordnet;
     using imbSCI.Data.interfaces;
     using imbSCI.Core.files.search;
+    using imbNLP.PartOfSpeech.lexicUnit.tokenGraphs;
+    using imbNLP.PartOfSpeech.providers.dictionary.apertium;
 
     public static class termExploreProcedures
     {
@@ -250,7 +252,7 @@ namespace imbNLP.Data.semanticLexicon.explore
             }else { 
                 model.translations.AddRange(result.getAllLeafs().getNames());
 
-                languageManagerApertium.manager.queryByGraphNode(result, apertiumDictQueryScope.exact, apertiumDictNeedleSide.english);
+                languageManagerApertium.manager.queryByGraphNode(result, apertiumDictQueryScope.exact, apertiumDictNeedleSide.translated);
                 string st = result.ToStringTreeview();
                 if (response != null) response.Append(st);
 
@@ -297,11 +299,11 @@ namespace imbNLP.Data.semanticLexicon.explore
             model = getSynonymsWithSerbianWordNet(model, response);
             tokenGraph result = model.graph;
 
-            languageManagerApertium.manager.queryByGraphNode(model.graph, apertiumDictQueryScope.exact, apertiumDictNeedleSide.serbian);
+            languageManagerApertium.manager.queryByGraphNode(model.graph, apertiumDictQueryScope.exact, apertiumDictNeedleSide.native);
 
             model.translations.AddRange(result.getAllLeafs().getNames());
 
-            languageManagerApertium.manager.queryByGraphNode(result, apertiumDictQueryScope.exact, apertiumDictNeedleSide.english);
+            languageManagerApertium.manager.queryByGraphNode(result, apertiumDictQueryScope.exact, apertiumDictNeedleSide.translated);
             string st = result.ToStringTreeview();
             if (response != null) response.Append(st);
 
@@ -391,7 +393,7 @@ namespace imbNLP.Data.semanticLexicon.explore
                     response.consoleAltColorToggle();
                 }
 
-                languageManagerApertium.manager.queryByGraphNode(result, apertiumDictQueryScope.exact, apertiumDictNeedleSide.english);
+                languageManagerApertium.manager.queryByGraphNode(result, apertiumDictQueryScope.exact, apertiumDictNeedleSide.translated);
                 model.wordnetSynonyms.AddRange(result.getAllLeafs().getDeepest().getNames());
 
                 if (response != null)
@@ -520,8 +522,8 @@ namespace imbNLP.Data.semanticLexicon.explore
             foreach (termExploreModel model in outset)
             {
                 var result = languageManagerApertium.manager.queryForSynonyms(model.lemma.inputForm, apertiumDictQueryScope.exact);
-                var srb = result.GetSerbian();
-                var eng = result.GetEnglish();
+                var srb = result.GetNativeWords();
+                var eng = result.GetTranslatedWords();
                 model.translations.AddRange(eng);
                 model.synonyms.AddRange(srb);
                 response.AppendLine("term[" + word + "]->model[" + c.ToString() + "]->lemma[" + model.lemma.inputForm + "] --> Apertium.dic ==> srb[" + srb.Count() + "] eng[" + eng.Count() + "]");
@@ -537,9 +539,9 @@ namespace imbNLP.Data.semanticLexicon.explore
 
                 
 
-                var synTrans = languageManagerApertium.manager.query(model.wordnetSynonyms, apertiumDictQueryScope.exact, apertiumDictNeedleSide.english);
+                var synTrans = languageManagerApertium.manager.query(model.wordnetSynonyms, apertiumDictQueryScope.exact, apertiumDictNeedleSide.translated);
 
-                model.wordnetSynonymSerbian.AddRange(synTrans.GetSerbian());
+                model.wordnetSynonymSerbian.AddRange(synTrans.GetNativeWords());
 
                 response.AppendLine("WordNet(" + eng.Count() + ") ==> synsets[" + Enumerable.Count(model.wordnetSecondarySymsets) + "]  synEng[" + Enumerable.Count(model.wordnetSynonyms) + "] ==> synSrb[" + Enumerable.Count(model.wordnetSynonymSerbian)+"]");
 

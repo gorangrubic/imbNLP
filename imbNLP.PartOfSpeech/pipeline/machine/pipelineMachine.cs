@@ -77,7 +77,7 @@ namespace imbNLP.PartOfSpeech.pipeline.machine
         /// <value>
         /// The n parallel tasks.
         /// </value>
-        public Int32 nParallelTasks { get; set; } = 8;
+        public Int32 nParallelTasks { get; set; } = 1;
 
 
 
@@ -161,11 +161,14 @@ namespace imbNLP.PartOfSpeech.pipeline.machine
             }
 
             statusExplain();
+
             
-            Task runMasterTask = new Task(() =>
-            {
-                runSeparate(output);
-            });
+                Task runMasterTask = new Task(() =>
+                {
+                    runSeparate(output);
+                });
+
+            
 
             machineRunning = true;
 
@@ -261,19 +264,39 @@ namespace imbNLP.PartOfSpeech.pipeline.machine
 
                 state = pipelineMachineState.runningTaskTake;
 
-                Parallel.ForEach(taskTake, (IPipelineTask task) =>
+                if (settings.doUseParallelExecution)
                 {
-                    try
+                    Parallel.ForEach(taskTake, (IPipelineTask task) =>
                     {
-                        task.StartProcess(output);
-                    } catch (Exception ex)
+                        try
+                        {
+                            task.StartProcess(output);
+                        }
+                        catch (Exception ex)
+                        {
+                            logger.log("Pipeline task exception:" + ex.Message);
+                            throw;
+                        }
+
+
+                    });
+                }
+                else
+                {
+                    foreach (var task in taskTake)
                     {
-                        logger.log("Pipeline task exception:" + ex.Message);
-                        throw;
+                        try
+                        {
+                            task.StartProcess(output);
+                        }
+                        catch (Exception ex)
+                        {
+                            logger.log("Pipeline task exception:" + ex.Message);
+                            throw;
+                        }
                     }
 
-
-                });
+                }
 
 
                 output.finishedTasks.PushRange(taskTake.ToArray());

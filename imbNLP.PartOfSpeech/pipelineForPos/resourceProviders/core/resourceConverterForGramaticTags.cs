@@ -59,6 +59,7 @@ namespace imbNLP.PartOfSpeech.resourceProviders.core
     /// <remarks>
     /// <para>The specification is declared in a Excel file, that follows particular structure.</para>
     /// </remarks>
+    [Serializable]
     public class resourceConverterForGramaticTags
     {
 

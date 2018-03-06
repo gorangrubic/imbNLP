@@ -66,7 +66,7 @@ namespace imbNLP.PartOfSpeech.pipelineForPos.node
             inverseUse = __inverseUse;
 
             tryLoading();
-          
+            SetLabel();
 
         }
 

@@ -54,6 +54,8 @@ namespace imbNLP.PartOfSpeech.pipelineForPos.node
         public pipelineContentTokenLevelDistribution()
         {
             _nodeType = pipelineNodeTypeEnum.distributor;
+            SetLabel();
+            Label = "Distributor";
         }
 
         public IPipelineNode chunkPipeline { get; set; } = null;

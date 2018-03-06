@@ -63,6 +63,7 @@ namespace imbNLP.PartOfSpeech.pipelineForPos.node
          //   String fpath = appManager.Application.folder_resources.findFile(resPath, SearchOption.AllDirectories);
 
             resolver = new tableReplaceResolver(resPath, null);
+            SetLabel();
         }
 
         /// <summary>

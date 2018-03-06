@@ -98,6 +98,10 @@ namespace imbNLP.PartOfSpeech.TFModels.webLemma.table
         private Object addLock = new Object();
 
 
+        /// <summary>
+        /// Adds the specified term.
+        /// </summary>
+        /// <param name="term">The term.</param>
         public void Add(webLemmaTerm term)
         {
             DeployLemma(term);

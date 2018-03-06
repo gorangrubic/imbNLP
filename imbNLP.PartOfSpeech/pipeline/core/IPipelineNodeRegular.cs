@@ -40,8 +40,19 @@ using System.Text;
 namespace imbNLP.PartOfSpeech.pipeline.core
 {
 
+    /// <summary>
+    /// Regular node
+    /// </summary>
+    /// <seealso cref="imbNLP.PartOfSpeech.pipeline.core.IPipelineNode" />
     public interface IPipelineNodeRegular:IPipelineNode
     {
+
+
+        /// <summary>
+        /// Automatically sets label
+        /// </summary>
+        void SetLabel();
+
         /// <summary>
         /// Gets or sets the forward predefined - overrides default <see cref="IPipelineNode.forward"/> behaviour
         /// </summary>

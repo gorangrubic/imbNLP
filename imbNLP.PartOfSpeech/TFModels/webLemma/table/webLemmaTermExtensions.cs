@@ -46,9 +46,60 @@ using imbSCI.Core.math;
 namespace imbNLP.PartOfSpeech.TFModels.webLemma.table
 {
 
+    /// <summary>
+    /// Extension methods for <see cref="webLemmaTermTable"/>
+    /// </summary>
     public static class webLemmaTermExtensions
     {
 
+        /// <summary>
+        /// Gets the lemmas, matching <c>queryTerms</c>, sorted by weight (in the <c>table</c>)
+        /// </summary>
+        /// <param name="table">webLemmaTermTable to be queried</param>
+        /// <param name="queryTerms">The query terms, strings to query <c>table</c></param>
+        /// <param name="takeTopN">Number of top ranked lemmas, by <see cref="termLemmaBase.weight"/>, descending.</param>
+        /// <returns>List of matched webLemmaTerms</returns>
+        public static List<String> GetLemmasInStringSorted(this webLemmaTermTable table, IEnumerable<String> queryTerms, Int32 takeTopN=-1)
+        {
+            var list = table.GetLemmasSorted(queryTerms, takeTopN);
+            List<String> output = new List<string>();
+            list.ForEach(x => output.Add(x.lemmaForm));
+            return output;
+        }
+
+        /// <summary>
+        /// Gets the lemmas, matching <c>queryTerms</c>, sorted by weight (in the <c>table</c>)
+        /// </summary>
+        /// <param name="table">webLemmaTermTable to be queried</param>
+        /// <param name="queryTerms">The query terms, strings to query <c>table</c></param>
+        /// <param name="takeTopN">Number of top ranked lemmas, by <see cref="termLemmaBase.weight"/>, descending.</param>
+        /// <returns>List of matched webLemmaTerms</returns>
+        public static List<webLemmaTerm> GetLemmasSorted(this webLemmaTermTable table, IEnumerable<String> queryTerms, Int32 takeTopN=-1)
+        {
+            // ------------ selection of key terms
+            List<webLemmaTerm> terms = new List<webLemmaTerm>();
+            foreach (String tkn in queryTerms)
+            {
+
+                var lm = table.ResolveLemmaForTerm(tkn);
+                if (lm != null)
+                {
+                    terms.Add(lm);
+                }
+            }
+            terms.Sort((x, y) => y.weight.CompareTo(x.weight));
+            if (takeTopN == -1) takeTopN = terms.Count;
+            var list = terms.Take(Math.Min(takeTopN, terms.Count)).ToList();
+            return list;
+        }
+
+
+
+        /// <summary>
+        /// Recomputes the term frequencies.
+        /// </summary>
+        /// <param name="lemmas">The lemmas.</param>
+        /// <param name="logger">The logger.</param>
         public static void RecomputeTermFrequencies(this IEnumerable<webLemmaTerm> lemmas, ILogBuilder logger)
         {
             Int32 TFMax = lemmas.Max(x => x.AFreqPoints);

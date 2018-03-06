@@ -27,6 +27,8 @@
 // Email: hardy@veles.rs
 // </summary>
 // ------------------------------------------------------------------------------------------------------------------
+using imbNLP.PartOfSpeech.flags.basic;
+using imbSCI.Core.extensions.data;
 using imbSCI.DataComplex.special;
 using System;
 using System.Collections.Generic;
@@ -36,20 +38,7 @@ using System.Text;
 namespace imbNLP.PartOfSpeech.flags
 {
 
-    /*
-    public class generalEqualizationTables {
 
-
-        public translationTable<tkn_, IConvertible> 
-
-        public generalEqualizationTables()
-        {
-
-        }
-
-
-    }
-    */
 
 
 

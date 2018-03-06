@@ -54,6 +54,7 @@ using imbNLP.PartOfSpeech.TFModels.webLemma.table;
 using imbSCI.Graph.FreeGraph;
 using imbSCI.Graph.DGML;
 using imbSCI.Graph.DGML.core;
+using imbNLP.PartOfSpeech.analysis;
 
 namespace imbNLP.PartOfSpeech.TFModels.semanticCloud
 {
@@ -76,6 +77,9 @@ namespace imbNLP.PartOfSpeech.TFModels.semanticCloud
     /// <seealso cref="imbNLP.PartOfSpeech.TFModels.semanticCloud.core.freeGraph" />
     public class lemmaSemanticCloud:freeGraph
     {
+
+        [XmlIgnore]
+        public semanticCloudWeaver.lemmaSemanticWeaverResult weaverReport { get; set; }
 
         /// <summary>
         /// Generates simple-styled graph
@@ -142,6 +146,10 @@ namespace imbNLP.PartOfSpeech.TFModels.semanticCloud
         }
 
 
+        /// <summary>
+        /// Gets the DGML converter - with categories defined
+        /// </summary>
+        /// <returns></returns>
         public static freeGraphToDMGL GetDGMLConverter()
         {
             freeGraphToDMGL converterToDMGL = new freeGraphToDMGL(new imbSCI.Graph.Converters.tools.GraphStylerSettings());
@@ -152,7 +160,15 @@ namespace imbNLP.PartOfSpeech.TFModels.semanticCloud
             return converterToDMGL;
         }
 
-        
+
+        /// <summary>
+        /// Returns ratio: number of links divided by number of nodes
+        /// </summary>
+        /// <returns></returns>
+        public Double GetLinkPerNodeRatio()
+        {
+            return CountLinks().GetRatio(CountNodes());
+        }
 
 
 
@@ -382,6 +398,7 @@ namespace imbNLP.PartOfSpeech.TFModels.semanticCloud
         /// <param name="lemmas">The lemmas.</param>
         /// <param name="expansionSteps">The expansion steps.</param>
         /// <param name="options">The options.</param>
+        /// <param name="typeToMin">todo: describe typeToMin parameter on ExpandTermsToCloud</param>
         /// <returns></returns>
         public lemmaSemanticCloud ExpandTermsToCloud(IEnumerable<String> lemmas, Int32 expansionSteps, Boolean typeToMin=true, lemmaExpansionOptions options = lemmaExpansionOptions.initialWeightFromParent | lemmaExpansionOptions.weightAsSemanticDistanceFromParent)
         {
@@ -519,7 +536,9 @@ namespace imbNLP.PartOfSpeech.TFModels.semanticCloud
             Dictionary<String, webLemmaTerm> lemmaDictionary = lemmas.GetLemmaDictionary();
             Dictionary<String, webLemmaTerm> outputDictionary = new Dictionary<string, webLemmaTerm>();
 
-            aceDictionarySet<String, webLemmaTerm> lemmaSet = new aceDictionarySet<string, webLemmaTerm>();
+            Dictionary<String, List<webLemmaTerm>> lemmaSet = new Dictionary<string, List<webLemmaTerm>>();
+
+            //aceDictionarySet<String, webLemmaTerm> lemmaSet = new aceDictionarySet<string, webLemmaTerm>();
 
             List<String> terms = lemmaDictionary.Keys.ToList();
 
@@ -527,8 +546,10 @@ namespace imbNLP.PartOfSpeech.TFModels.semanticCloud
 
             foreach (String term in terms)
             {
+                lemmaSet.Add(term, new List<webLemmaTerm>());
                 lemmaSet[term].Add(lemmaDictionary[term]);
-                
+                //lemmaSet[term].Add(lemmaDictionary[term]);
+
             }
 
             foreach (String term in terms)
@@ -543,11 +564,10 @@ namespace imbNLP.PartOfSpeech.TFModels.semanticCloud
                     {
                         lem.weight = lem.weight.GetRatio(termResult.Count);
                     }
-                    lemmaSet.Add(node.name, lem);
-                    if (!outputDictionary.ContainsKey(node.name))
-                    {
-                        outputDictionary.Add(node.name, lem);
-                    }
+
+                    if (!lemmaSet.ContainsKey(node.name)) lemmaSet.Add(node.name, new List<webLemmaTerm>());
+                    lemmaSet[node.name].Add(lem);
+
                 }
             }
 

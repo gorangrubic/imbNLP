@@ -51,6 +51,12 @@ namespace imbNLP.PartOfSpeech.pipelineForPos.subject
             contentLevelType = cnt_level.mcPage;
         }
 
+        public override void SetLabel()
+        {
+            base.SetLabel();
+            Label = MCPage.name;
+        }
+
         public imbMCWebPage MCPage { get; set; }
 
         public imbMCDocument MCDoc { get; set; }

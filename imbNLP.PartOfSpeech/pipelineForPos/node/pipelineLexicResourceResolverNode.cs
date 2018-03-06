@@ -68,6 +68,7 @@ namespace imbNLP.PartOfSpeech.pipelineForPos.node
             parser = new multitextResourceParser(resPath, specPath);
 
             _nodeType = pipelineNodeTypeEnum.transformer;
+            SetLabel();
         }
 
         /// <summary>

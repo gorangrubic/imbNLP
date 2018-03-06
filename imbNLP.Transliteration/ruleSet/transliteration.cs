@@ -40,6 +40,7 @@ namespace imbNLP.Transliteration.ruleSet
     /// <summary>
     /// Helper class 
     /// </summary>
+    
     public static class transliteration
     {
         public const String DEF_MEMBER_SEPARATOR = ":";

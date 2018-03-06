@@ -80,6 +80,17 @@ namespace imbNLP.PartOfSpeech.TFModels.semanticCloudMatrix
     }
 
 
+    public enum cloudMatrixReductionAction {
+
+        unknown,
+        LPFRemoval,
+        CF_function,
+        LowPassFilter,
+        Microweight,
+        Demotion,
+    }
+
+
     /// <summary>
     /// Matrix of overlaping temrs in <see cref="lemmaSemanticCloud"/>
     /// </summary>
@@ -378,13 +389,22 @@ namespace imbNLP.PartOfSpeech.TFModels.semanticCloudMatrix
         }
 
 
-        public lemmaSemanticCloud GetUnifiedCloud()
+        public lemmaSemanticCloud GetUnifiedCloud(String nameForCloud="")
         {
             lemmaSemanticCloud output = new lemmaSemanticCloud();
-            output.name = "UnifiedCloud";
+            if (nameForCloud.isNullOrEmpty())
+            {
+                output.name = "UnifiedCloud";
+            }
+            else
+            {
+                output.name = nameForCloud;
+            }
+            
             output.description = "Created as union of clouds: ";
             var builder = new StringBuilder();
             builder.Append(output.description);
+            
 
             foreach (lemmaSemanticCloud x in this.Get1stKeys())
             {
@@ -400,6 +420,12 @@ namespace imbNLP.PartOfSpeech.TFModels.semanticCloudMatrix
             
         }
 
+        /// <summary>
+        /// Exports the text report
+        /// </summary>
+        /// <param name="folder">The folder.</param>
+        /// <param name="reduced">if set to <c>true</c> [reduced].</param>
+        /// <param name="prefix">The prefix.</param>
         public void ExportTextReports(folderNode folder, Boolean reduced, String prefix="")
         {
             
@@ -414,9 +440,16 @@ namespace imbNLP.PartOfSpeech.TFModels.semanticCloudMatrix
                 fn = fn + "_overlap.txt";
                 fn = folder.pathFor(fn, imbSCI.Data.enums.getWritableFileMode.overwrite, "Cloud Frequency report for all terms in the Cloud Matrix");
                 List<String> lines = new List<string>();
-                foreach (var ci in srt)
+                foreach (string ci in srt)
                 {
-                    lines.Add(String.Format("{1}  :   {0}", ci, c[ci]));
+                    if (reduced)
+                    {
+                        if (c[ci] > 1) lines.Add(String.Format("{1}  :   {0}", ci, c[ci]-1));
+                    }
+                    else
+                    {
+                        lines.Add(String.Format("{1}  :   {0}", ci, c[ci]));
+                    }
                 }
                 File.WriteAllLines(fn, lines);
             }
@@ -430,15 +463,35 @@ namespace imbNLP.PartOfSpeech.TFModels.semanticCloudMatrix
         public instanceCountCollection<String> GetCounter(Boolean ofCurrentState = true)
         {
             instanceCountCollection<String> counter = new instanceCountCollection<string>();
-            lemmaSemanticCloud cloud = null;
+            //lemmaSemanticCloud cloud = null;
+
+            List<String> doneAnalysis = new List<string>();
+
 
             foreach (lemmaSemanticCloud x in this.Get1stKeys())
             {
-                if (cloud == null) cloud = x;
+                //if (cloud == null) cloud = x;
 
-
-                if (ofCurrentState)
+                foreach (lemmaSemanticCloud y in this.Get2ndKeys(x))
                 {
+
+
+                    //if (!doneAnalysis.Any(d => d.Contains(x.className) && d.Contains(y.className)))
+                    //{
+                    //    if (x != y)
+                    //    {
+                            var nd = this[x, y];
+                            foreach (var n in nd)
+                            {
+                                counter.AddInstance(n.name);
+                            }
+
+                    //        doneAnalysis.Add(x.className + " " + y.className);
+                    //    }
+                    //}
+                    /*
+                    if (ofCurrentState)
+                    {
 
                         var nd = x.nodes;
                         foreach (var n in nd)
@@ -446,21 +499,26 @@ namespace imbNLP.PartOfSpeech.TFModels.semanticCloudMatrix
                             counter.AddInstance(n.name);
                         }
 
-                } else
-                {
-                    
-                        var nd = this[x, cloud];
-                        foreach (var n in nd)
-                        {
-                            counter.AddInstance(n.name);
-                        }
+                    }
+                    else
+                    {
 
+                       
+
+                    }*/
                 }
 
             }
 
-            counter.reCalculate();
-            return counter;
+            instanceCountCollection<String> output = new instanceCountCollection<string>();
+            foreach (String n in counter.Keys)
+            {
+                output.AddInstance(n, Convert.ToInt32(Math.Sqrt(counter[n])));
+            }
+
+
+            output.reCalculate();
+            return output;
         }
 
 
@@ -470,16 +528,23 @@ namespace imbNLP.PartOfSpeech.TFModels.semanticCloudMatrix
         /// </summary>
         /// <param name="settings">The settings.</param>
         /// <param name="logger">The logger.</param>
-        /// <returns>Notes about reduced weights</returns>
-        public List<String> TransformClouds(cloudMatrixSettings settings, ILogBuilder logger)
+        /// <param name="reductionReportName">Name of the reduction report.</param>
+        /// <returns>
+        /// Notes about reduced weights
+        /// </returns>
+        public cloudMatrixReductionReport TransformClouds(cloudMatrixSettings settings, ILogBuilder logger, String reductionReportName="")
         {
-            List<String> reductions = new List<string>();
+            cloudMatrixReductionReport reductions = new cloudMatrixReductionReport();
+            reductions.name = reductionReportName;
+
 
             instanceCountCollection<String> counter = GetCounter(false);
             List<String> passNames = new List<string>();
             List<String> removeNames = new List<string>();
+            List<String> removeByLPFNames = new List<string>();
+            List<String> setMiniNames = new List<string>();
 
-            lemmaSemanticCloud cloud = this.First().Key;
+            //  lemmaSemanticCloud cloud = this.First().Key;
 
             MinCloudFrequency = counter.minFreq;
             MaxCloudFrequency = counter.maxFreq;
@@ -488,21 +553,21 @@ namespace imbNLP.PartOfSpeech.TFModels.semanticCloudMatrix
 
             if (!settings.isActive)
             {
-                logger.log(cloud.className + ": Cloud matrix disabled");
+                logger.log("Cloud matrix disabled");
                 return reductions;
             }
             if (settings.isFilterInAdaptiveMode)
             {
-                lowPass = (MinCloudFrequency-1) + lowPass;
+                lowPass = (MinCloudFrequency - 1) + lowPass;
                 if (lowPass > MaxCloudFrequency) lowPass = MaxCloudFrequency;
-                if (lowPass < 0) lowPass = 0;
-                logger.log(cloud.className + ": Cloud matrix filter in adaptive mode - cut off frequency set: " + lowPass);
+                if (lowPass < 1) lowPass = 1;
+                logger.log(": Cloud matrix filter in adaptive mode - cut off frequency set: " + lowPass);
             }
 
+
             var sorted = counter.getSorted();
-
+            // <------------------------------------------------------------------------------------------ LOW PASS FILTER LIST
             List<String> doNotReduceWeight = new List<string>();
-
             foreach (String n in sorted) // <--------- performing cut of filter
             {
                 if (settings.doCutOffByCloudFrequency)
@@ -517,50 +582,85 @@ namespace imbNLP.PartOfSpeech.TFModels.semanticCloudMatrix
                     if (passOk)
                     {
                         passNames.AddUnique(n);
-                    } else
+                    }
+                    else
                     {
                         if (settings.doAssignMicroWeightInsteadOfRemoval)
                         {
-                            passNames.AddUnique(n);
-                            var node = cloud.GetNode(n, true);
-                            node.weight = settings.microWeightNoiseGate;
-                            reductions.Add("[" + n + "] weight set to the microWeightNoiseGate limit");
-                            doNotReduceWeight.Add(n);
-                        } else
-                        {
-                            removeNames.AddUnique(n);
-                            reductions.Add("[" + n + "] was removed");
+                           // passNames.AddUnique(n);
+
+                            setMiniNames.AddUnique(n);
+
+
+
+                           // reductions.Add("All", n,    "[" + n + "] weight set to the microWeightNoiseGate limit");
+//                            doNotReduceWeight.Add(n);
                         }
-                        
+                        else
+                        {
+                            removeByLPFNames.AddUnique(n);
+                            //reductions.Add("[" + n + "] was removed");
+                        }
+
                     }
-                } else
+                }
+                else
                 {
                     passNames.Add(n);
                 }
             }
 
-            if (settings.doDivideWeightWithCloudFrequency || settings.doUseSquareFunctionOfCF)
+            // <------------------------------------------------------------------------------------------ LOW PASS FILTER LIST
+
+            foreach (lemmaSemanticCloud y in this.Get1stKeys())
             {
-                foreach (lemmaSemanticCloud y in this.Get1stKeys())
+                y.RebuildIndex();
+                y.description = y.description + " filtered version of cloud";
+
+                reductions.Nodes += y.CountNodes();
+                reductions.InitialWeight += y.nodes.Sum(x => x.weight);
+            }
+
+
+
+
+
+
+            foreach (lemmaSemanticCloud cloud in this.Get1stKeys())
+            {
+                // <--- apply LPF
+
+                foreach (String setMini in setMiniNames)
                 {
+                    var node = cloud.GetNode(setMini, true);
+                    if (node != null)
+                    {
+                        reductions.Add(cloud.name, node.name, node.weight, settings.microWeightNoiseGate, cloudMatrixReductionAction.LowPassFilter);
+                        node.weight = settings.microWeightNoiseGate;
+                    }
+                }
+
+
+                if (settings.doDivideWeightWithCloudFrequency || settings.doUseSquareFunctionOfCF)
+                {
+
                     Int32 rem = 0;
                     foreach (String n in passNames)
                     {
-                        
-
-                        var node = y.GetNode(n, true);
+                        var node = cloud.GetNode(n, true);
                         if (node != null)
                         {
                             Double cf = counter[n];
 
                             if (settings.doDemoteAnyRepeatingSecondaryTerm)
                             {
-                                if (cf > 0)
+                                if (cf > 1)
                                 {
                                     if (node.type == 1)
                                     {
                                         node.type = 0;
-                                        reductions.Add("Secondary term: [" + node.name + "] demoted to reserve");
+                                        reductions.Add(cloud.name, node.name, node.weight, node.weight, cloudMatrixReductionAction.Demotion);
+                                        
                                         //node.weight = node.weight * 0.5;
                                     }
                                 }
@@ -569,21 +669,24 @@ namespace imbNLP.PartOfSpeech.TFModels.semanticCloudMatrix
 
                             if (settings.doRemoveAnyRepeatingPrimaryTerm)
                             {
-                                if (cf > 0)
+                                if (cf > 1)
                                 {
                                     if (node.type == 2)
                                     {
-                                        reductions.Add("Primary term: [" + node.name + "] removed");
+                                        reductions.Add(cloud.name, node.name, node.weight, 0, cloudMatrixReductionAction.Demotion);
+                                        
                                         node.weight = 0;
                                     }
                                 }
-                            } else if (settings.doDemoteAnyRepeatingPrimaryTerm)
+                            }
+                            else if (settings.doDemoteAnyRepeatingPrimaryTerm)
                             {
-                                if (cf > 0)
+                                if (cf > 1)
                                 {
                                     if (node.type == 2)
                                     {
-                                        reductions.Add("Primary term: [" + node.name + "] demoted to secondary");
+                                        reductions.Add(cloud.name, node.name, node.weight, node.weight, cloudMatrixReductionAction.Demotion);
+                                        
                                         //node.weight = node.weight * 0.5;
                                         node.type = 1;
                                     }
@@ -596,22 +699,23 @@ namespace imbNLP.PartOfSpeech.TFModels.semanticCloudMatrix
 
                                 if (node.weight > 0)
                                 {
-                                    var cfd = cf + 1;
+                                    //var cfd = cf + 1;
 
-                                    if (cfd > 1)
+                                    if (cf > 1)
                                     {
                                         Double nw = node.weight;
                                         if (settings.doUseSquareFunctionOfCF)
                                         {
-                                            node.weight = node.weight.GetRatio(cfd * cfd);
+                                            node.weight = node.weight.GetRatio(cf * cf);
                                         }
                                         else
                                         {
-                                            node.weight = node.weight.GetRatio(cfd);
+                                            node.weight = node.weight.GetRatio(cf);
                                         }
                                         if (nw > node.weight)
                                         {
-                                            reductions.Add("Term [" + node.name + "] weight [" + nw.ToString("F5") + "] reduced to [" + node.weight + "] in " + y.className + " CF[" + cf + "]");
+                                            reductions.Add(cloud.name, node.name, nw, node.weight, cloudMatrixReductionAction.CF_function);
+                                           // reductions.Add("Term [" + node.name + "] weight [" + nw.ToString("F5") + "] reduced to [" + node.weight + "] in " + cloud.className + " CF[" + cf + "]");
 
                                         }
                                     }
@@ -627,39 +731,58 @@ namespace imbNLP.PartOfSpeech.TFModels.semanticCloudMatrix
                                     if (node.weight < settings.microWeightNoiseGate)
                                     {
 
-                                        y.Remove(n);
+                                        removeNames.AddUnique(n);
+                                        //y.Remove(n);
                                         rem++;
                                     }
                                 }
                             }
                         }
-                      
-                    }
-                    if (rem > 0)
-                    {
 
-                        logger.log(y.className + ": Micro-weight noise filter removed[" + rem.ToString("D6") + "] in[" + this[cloud, y].Count.ToString("D6") + "] out[" + y.CountNodes().ToString("D6") + "]");
                     }
+
+                    
                 }
+                
             }
 
-            foreach (lemmaSemanticCloud y in this.Get2ndKeys(cloud))
+            foreach (lemmaSemanticCloud y in this.Get1stKeys())
             {
                 Int32 rem = 0;
                 foreach (String n in removeNames)
                 {
+                    var node = y.GetNode(n);
                     if (y.Remove(n))
                     {
                         rem++;
+                        reductions.Add(y.name, node.name, node.weight, 0, cloudMatrixReductionAction.Microweight);
+                        //reductions.Add("Term [" + n + "] removed from [" + y.className + "]");
                     }
                 }
-                logger.log(String.Format("[{0,-20}] Terms cut-off from removed [{1,-10:D6}] of [{2,-10:D6}] - total[{3,-10:D6}]",  y.className, rem, this[cloud, y].Count,  y.CountNodes()));
+
+                foreach (String n in removeByLPFNames)
+                {
+                    var node = y.GetNode(n);
+                    if (y.Remove(n))
+                    {
+                        rem++;
+                        reductions.Add(y.name, node.name, node.weight, 0, cloudMatrixReductionAction.LPFRemoval);
+                    }
+                }
+
+                if (rem > 0)
+                {
+                    logger.log(y.className + ": Terms removed[" + rem.ToString("D6") + "] left[" + y.CountNodes().ToString("D6") + "]");
+                }
             }
 
-            foreach (lemmaSemanticCloud y in this.Get2ndKeys(cloud))
+            foreach (lemmaSemanticCloud y in this.Get1stKeys())
             {
                 y.RebuildIndex();
                 y.description = y.description + " filtered version of cloud";
+
+             //   reductions.Nodes += y.CountNodes();
+                reductions.ReducedWeight += y.nodes.Sum(x => x.weight);
             }
 
             logger.log("Clouds transformation done.");

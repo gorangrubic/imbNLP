@@ -80,7 +80,7 @@ namespace imbNLP.PartOfSpeech.pipeline.postprocessor
         /// <param name="_input">The input.</param>
         /// <param name="logger">The logger.</param>
         /// <returns></returns>
-        public List<T> process(IEnumerable<T> _input, ILogBuilder logger)
+        public virtual List<T> process(IEnumerable<T> _input, ILogBuilder logger)
         {
             List<T> output = new List<T>();
             List<T> next = new List<T>();
@@ -94,7 +94,7 @@ namespace imbNLP.PartOfSpeech.pipeline.postprocessor
 
                 foreach (T sub in next)
                 {
-                    MCNext.AddRange(processIteration(sub));
+                    MCNext.AddRange(processIteration(sub), true);
 
                 }
 

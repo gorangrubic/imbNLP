@@ -1,0 +1,1459 @@
+<?xml version="1.0" encoding="utf-8"?>
+<webLemmaTermPackage xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <name>constructions_generalChunks</name>
+  <description />
+  <lemmas>
+    <webLemmaTerm>
+      <nominalForm>aluminijumski  konstrukcija</nominalForm>
+      <AFreqPoints>15</AFreqPoints>
+      <weight>0.31340133685962945</weight>
+      <name>aluminijumski  konstrukcija</name>
+      <otherFormsStr />
+      <documentSetFrequency>1</documentSetFrequency>
+      <documentFrequency>15</documentFrequency>
+      <termFrequency>0.086705202312138727</termFrequency>
+      <documentFactor>1.8531680973566984</documentFactor>
+    </webLemmaTerm>
+    <webLemmaTerm>
+      <nominalForm>antikorozivan  zaštita</nominalForm>
+      <AFreqPoints>1</AFreqPoints>
+      <weight>0.051425157256721941</weight>
+      <name>antikorozivan  zaštita</name>
+      <otherFormsStr />
+      <documentSetFrequency>1</documentSetFrequency>
+      <documentFrequency>1</documentFrequency>
+      <termFrequency>0.0057803468208092483</termFrequency>
+      <documentFactor>4.5612182984589085</documentFactor>
+    </webLemmaTerm>
+    <webLemmaTerm>
+      <nominalForm>automatski  linija</nominalForm>
+      <AFreqPoints>1</AFreqPoints>
+      <weight>0.051425157256721941</weight>
+      <name>automatski  linija</name>
+      <otherFormsStr />
+      <documentSetFrequency>1</documentSetFrequency>
+      <documentFrequency>1</documentFrequency>
+      <termFrequency>0.0057803468208092483</termFrequency>
+      <documentFactor>4.5612182984589085</documentFactor>
+    </webLemmaTerm>
+    <webLemmaTerm>
+      <nominalForm>autorski  prav</nominalForm>
+      <AFreqPoints>15</AFreqPoints>
+      <weight>0.31340133685962945</weight>
+      <name>autorski  prav</name>
+      <otherFormsStr />
+      <documentSetFrequency>1</documentSetFrequency>
+      <documentFrequency>15</documentFrequency>
+      <termFrequency>0.086705202312138727</termFrequency>
+      <documentFactor>1.8531680973566984</documentFactor>
+    </webLemmaTerm>
+    <webLemmaTerm>
+      <nominalForm>betonski  baza</nominalForm>
+      <AFreqPoints>1</AFreqPoints>
+      <weight>0.051425157256721941</weight>
+      <name>betonski  baza</name>
+      <otherFormsStr />
+      <documentSetFrequency>1</documentSetFrequency>
+      <documentFrequency>1</documentFrequency>
+      <termFrequency>0.0057803468208092483</termFrequency>
+      <documentFactor>4.5612182984589085</documentFactor>
+    </webLemmaTerm>
+    <webLemmaTerm>
+      <nominalForm>betonski  stopa</nominalForm>
+      <AFreqPoints>1</AFreqPoints>
+      <weight>0.051425157256721941</weight>
+      <name>betonski  stopa</name>
+      <otherFormsStr />
+      <documentSetFrequency>1</documentSetFrequency>
+      <documentFrequency>1</documentFrequency>
+      <termFrequency>0.0057803468208092483</termFrequency>
+      <documentFactor>4.5612182984589085</documentFactor>
+    </webLemmaTerm>
+    <webLemmaTerm>
+      <nominalForm>božićni  praznik</nominalForm>
+      <AFreqPoints>2</AFreqPoints>
+      <weight>0.087220629446894016</weight>
+      <name>božićni  praznik</name>
+      <otherFormsStr />
+      <documentSetFrequency>1</documentSetFrequency>
+      <documentFrequency>2</documentFrequency>
+      <termFrequency>0.011560693641618497</termFrequency>
+      <documentFactor>3.8680711178989635</documentFactor>
+    </webLemmaTerm>
+    <webLemmaTerm>
+      <nominalForm>bravarski  rad</nominalForm>
+      <AFreqPoints>2</AFreqPoints>
+      <weight>0.10285031451344388</weight>
+      <name>bravarski  rad</name>
+      <otherFormsStr />
+      <documentSetFrequency>1</documentSetFrequency>
+      <documentFrequency>1</documentFrequency>
+      <termFrequency>0.011560693641618497</termFrequency>
+      <documentFactor>4.5612182984589085</documentFactor>
+    </webLemmaTerm>
+    <webLemmaTerm>
+      <nominalForm>cinkovanje  sa  dimenzija</nominalForm>
+      <AFreqPoints>1</AFreqPoints>
+      <weight>0.051425157256721941</weight>
+      <name>cinkovanje  sa  dimenzija</name>
+      <otherFormsStr />
+      <documentSetFrequency>1</documentSetFrequency>
+      <documentFrequency>1</documentFrequency>
+      <termFrequency>0.0057803468208092483</termFrequency>
+      <documentFactor>4.5612182984589085</documentFactor>
+    </webLemmaTerm>
+    <webLemmaTerm>
+      <nominalForm>crn  metalurgija</nominalForm>
+      <AFreqPoints>1</AFreqPoints>
+      <weight>0.051425157256721941</weight>
+      <name>crn  metalurgija</name>
+      <otherFormsStr />
+      <documentSetFrequency>1</documentSetFrequency>
+      <documentFrequency>1</documentFrequency>
+      <termFrequency>0.0057803468208092483</termFrequency>
+      <documentFactor>4.5612182984589085</documentFactor>
+    </webLemmaTerm>
+    <webLemmaTerm>
+      <nominalForm>dati  dimenzija</nominalForm>
+      <AFreqPoints>1</AFreqPoints>
+      <weight>0.051425157256721941</weight>
+      <name>dati  dimenzija</name>
+      <otherFormsStr />
+      <documentSetFrequency>1</documentSetFrequency>
+      <documentFrequency>1</documentFrequency>
+      <termFrequency>0.0057803468208092483</termFrequency>
+      <documentFactor>4.5612182984589085</documentFactor>
+    </webLemmaTerm>
+    <webLemmaTerm>
+      <nominalForm>dekorativan  osvetljenje</nominalForm>
+      <AFreqPoints>1</AFreqPoints>
+      <weight>0.051425157256721941</weight>
+      <name>dekorativan  osvetljenje</name>
+      <otherFormsStr />
+      <documentSetFrequency>1</documentSetFrequency>
+      <documentFrequency>1</documentFrequency>
+      <termFrequency>0.0057803468208092483</termFrequency>
+      <documentFactor>4.5612182984589085</documentFactor>
+    </webLemmaTerm>
+    <webLemmaTerm>
+      <nominalForm>diplomiran  inženjer</nominalForm>
+      <AFreqPoints>1</AFreqPoints>
+      <weight>0.051425157256721941</weight>
+      <name>diplomiran  inženjer</name>
+      <otherFormsStr />
+      <documentSetFrequency>1</documentSetFrequency>
+      <documentFrequency>1</documentFrequency>
+      <termFrequency>0.0057803468208092483</termFrequency>
+      <documentFactor>4.5612182984589085</documentFactor>
+    </webLemmaTerm>
+    <webLemmaTerm>
+      <nominalForm>dodatan  promena</nominalForm>
+      <AFreqPoints>1</AFreqPoints>
+      <weight>0.051425157256721941</weight>
+      <name>dodatan  promena</name>
+      <otherFormsStr />
+      <documentSetFrequency>1</documentSetFrequency>
+      <documentFrequency>1</documentFrequency>
+      <termFrequency>0.0057803468208092483</termFrequency>
+      <documentFactor>4.5612182984589085</documentFactor>
+    </webLemmaTerm>
+    <webLemmaTerm>
+      <nominalForm>dodeliti  priznanje</nominalForm>
+      <AFreqPoints>2</AFreqPoints>
+      <weight>0.087220629446894016</weight>
+      <name>dodeliti  priznanje</name>
+      <otherFormsStr />
+      <documentSetFrequency>1</documentSetFrequency>
+      <documentFrequency>2</documentFrequency>
+      <termFrequency>0.011560693641618497</termFrequency>
+      <documentFactor>3.8680711178989635</documentFactor>
+    </webLemmaTerm>
+    <webLemmaTerm>
+      <nominalForm>drugi  emisija</nominalForm>
+      <AFreqPoints>2</AFreqPoints>
+      <weight>0.10285031451344388</weight>
+      <name>drugi  emisija</name>
+      <otherFormsStr />
+      <documentSetFrequency>1</documentSetFrequency>
+      <documentFrequency>1</documentFrequency>
+      <termFrequency>0.011560693641618497</termFrequency>
+      <documentFactor>4.5612182984589085</documentFactor>
+    </webLemmaTerm>
+    <webLemmaTerm>
+      <nominalForm>drugi  namena</nominalForm>
+      <AFreqPoints>1</AFreqPoints>
+      <weight>0.051425157256721941</weight>
+      <name>drugi  namena</name>
+      <otherFormsStr />
+      <documentSetFrequency>1</documentSetFrequency>
+      <documentFrequency>1</documentFrequency>
+      <termFrequency>0.0057803468208092483</termFrequency>
+      <documentFactor>4.5612182984589085</documentFactor>
+    </webLemmaTerm>
+    <webLemmaTerm>
+      <nominalForm>drugi  vrsta</nominalForm>
+      <AFreqPoints>1</AFreqPoints>
+      <weight>0.051425157256721941</weight>
+      <name>drugi  vrsta</name>
+      <otherFormsStr />
+      <documentSetFrequency>1</documentSetFrequency>
+      <documentFrequency>1</documentFrequency>
+      <termFrequency>0.0057803468208092483</termFrequency>
+      <documentFactor>4.5612182984589085</documentFactor>
+    </webLemmaTerm>
+    <webLemmaTerm>
+      <nominalForm>dvokrilan  kapija</nominalForm>
+      <AFreqPoints>1</AFreqPoints>
+      <weight>0.051425157256721941</weight>
+      <name>dvokrilan  kapija</name>
+      <otherFormsStr />
+      <documentSetFrequency>1</documentSetFrequency>
+      <documentFrequency>1</documentFrequency>
+      <termFrequency>0.0057803468208092483</termFrequency>
+      <documentFactor>4.5612182984589085</documentFactor>
+    </webLemmaTerm>
+    <webLemmaTerm>
+      <nominalForm>elektrostatski  farbanje</nominalForm>
+      <AFreqPoints>1</AFreqPoints>
+      <weight>0.051425157256721941</weight>
+      <name>elektrostatski  farbanje</name>
+      <otherFormsStr />
+      <documentSetFrequency>1</documentSetFrequency>
+      <documentFrequency>1</documentFrequency>
+      <termFrequency>0.0057803468208092483</termFrequency>
+      <documentFactor>4.5612182984589085</documentFactor>
+    </webLemmaTerm>
+    <webLemmaTerm>
+      <nominalForm>energetski  efikasnost</nominalForm>
+      <AFreqPoints>1</AFreqPoints>
+      <weight>0.051425157256721941</weight>
+      <name>energetski  efikasnost</name>
+      <otherFormsStr />
+      <documentSetFrequency>1</documentSetFrequency>
+      <documentFrequency>1</documentFrequency>
+      <termFrequency>0.0057803468208092483</termFrequency>
+      <documentFactor>4.5612182984589085</documentFactor>
+    </webLemmaTerm>
+    <webLemmaTerm>
+      <nominalForm>faza  tok  proces</nominalForm>
+      <AFreqPoints>1</AFreqPoints>
+      <weight>0.051425157256721941</weight>
+      <name>faza  tok  proces</name>
+      <otherFormsStr />
+      <documentSetFrequency>1</documentSetFrequency>
+      <documentFrequency>1</documentFrequency>
+      <termFrequency>0.0057803468208092483</termFrequency>
+      <documentFactor>4.5612182984589085</documentFactor>
+    </webLemmaTerm>
+    <webLemmaTerm>
+      <nominalForm>gazeće  površina</nominalForm>
+      <AFreqPoints>1</AFreqPoints>
+      <weight>0.051425157256721941</weight>
+      <name>gazeće  površina</name>
+      <otherFormsStr />
+      <documentSetFrequency>1</documentSetFrequency>
+      <documentFrequency>1</documentFrequency>
+      <termFrequency>0.0057803468208092483</termFrequency>
+      <documentFactor>4.5612182984589085</documentFactor>
+    </webLemmaTerm>
+    <webLemmaTerm>
+      <nominalForm>gradski  toplana</nominalForm>
+      <AFreqPoints>1</AFreqPoints>
+      <weight>0.051425157256721941</weight>
+      <name>gradski  toplana</name>
+      <otherFormsStr />
+      <documentSetFrequency>1</documentSetFrequency>
+      <documentFrequency>1</documentFrequency>
+      <termFrequency>0.0057803468208092483</termFrequency>
+      <documentFactor>4.5612182984589085</documentFactor>
+    </webLemmaTerm>
+    <webLemmaTerm>
+      <nominalForm>građevinski  bravarija</nominalForm>
+      <AFreqPoints>1</AFreqPoints>
+      <weight>0.051425157256721941</weight>
+      <name>građevinski  bravarija</name>
+      <otherFormsStr />
+      <documentSetFrequency>1</documentSetFrequency>
+      <documentFrequency>1</documentFrequency>
+      <termFrequency>0.0057803468208092483</termFrequency>
+      <documentFactor>4.5612182984589085</documentFactor>
+    </webLemmaTerm>
+    <webLemmaTerm>
+      <nominalForm>građevinski  operativa</nominalForm>
+      <AFreqPoints>1</AFreqPoints>
+      <weight>0.051425157256721941</weight>
+      <name>građevinski  operativa</name>
+      <otherFormsStr />
+      <documentSetFrequency>1</documentSetFrequency>
+      <documentFrequency>1</documentFrequency>
+      <termFrequency>0.0057803468208092483</termFrequency>
+      <documentFactor>4.5612182984589085</documentFactor>
+    </webLemmaTerm>
+    <webLemmaTerm>
+      <nominalForm>hala  sa  montaža</nominalForm>
+      <AFreqPoints>3</AFreqPoints>
+      <weight>0.130830944170341</weight>
+      <name>hala  sa  montaža</name>
+      <otherFormsStr />
+      <documentSetFrequency>1</documentSetFrequency>
+      <documentFrequency>2</documentFrequency>
+      <termFrequency>0.017341040462427744</termFrequency>
+      <documentFactor>3.8680711178989635</documentFactor>
+    </webLemmaTerm>
+    <webLemmaTerm>
+      <nominalForm>hemijski  priprema</nominalForm>
+      <AFreqPoints>2</AFreqPoints>
+      <weight>0.087220629446894016</weight>
+      <name>hemijski  priprema</name>
+      <otherFormsStr />
+      <documentSetFrequency>1</documentSetFrequency>
+      <documentFrequency>2</documentFrequency>
+      <termFrequency>0.011560693641618497</termFrequency>
+      <documentFactor>3.8680711178989635</documentFactor>
+    </webLemmaTerm>
+    <webLemmaTerm>
+      <nominalForm>hidrauličan  korpa</nominalForm>
+      <AFreqPoints>6</AFreqPoints>
+      <weight>0.21477283314103238</weight>
+      <name>hidrauličan  korpa</name>
+      <otherFormsStr />
+      <documentSetFrequency>1</documentSetFrequency>
+      <documentFrequency>4</documentFrequency>
+      <termFrequency>0.034682080924855488</termFrequency>
+      <documentFactor>3.1749239373390181</documentFactor>
+    </webLemmaTerm>
+    <webLemmaTerm>
+      <nominalForm>hidrauličan  makaze</nominalForm>
+      <AFreqPoints>4</AFreqPoints>
+      <weight>0.14318188876068827</weight>
+      <name>hidrauličan  makaze</name>
+      <otherFormsStr />
+      <documentSetFrequency>2</documentSetFrequency>
+      <documentFrequency>4</documentFrequency>
+      <termFrequency>0.023121387283236993</termFrequency>
+      <documentFactor>3.1749239373390181</documentFactor>
+    </webLemmaTerm>
+    <webLemmaTerm>
+      <nominalForm>hidrauličan  platforma</nominalForm>
+      <AFreqPoints>1</AFreqPoints>
+      <weight>0.051425157256721941</weight>
+      <name>hidrauličan  platforma</name>
+      <otherFormsStr />
+      <documentSetFrequency>1</documentSetFrequency>
+      <documentFrequency>1</documentFrequency>
+      <termFrequency>0.0057803468208092483</termFrequency>
+      <documentFactor>4.5612182984589085</documentFactor>
+    </webLemmaTerm>
+    <webLemmaTerm>
+      <nominalForm>industrijski  primena</nominalForm>
+      <AFreqPoints>1</AFreqPoints>
+      <weight>0.051425157256721941</weight>
+      <name>industrijski  primena</name>
+      <otherFormsStr />
+      <documentSetFrequency>1</documentSetFrequency>
+      <documentFrequency>1</documentFrequency>
+      <termFrequency>0.0057803468208092483</termFrequency>
+      <documentFactor>4.5612182984589085</documentFactor>
+    </webLemmaTerm>
+    <webLemmaTerm>
+      <nominalForm>izvesti  objekat</nominalForm>
+      <AFreqPoints>1</AFreqPoints>
+      <weight>0.051425157256721941</weight>
+      <name>izvesti  objekat</name>
+      <otherFormsStr />
+      <documentSetFrequency>1</documentSetFrequency>
+      <documentFrequency>1</documentFrequency>
+      <termFrequency>0.0057803468208092483</termFrequency>
+      <documentFactor>4.5612182984589085</documentFactor>
+    </webLemmaTerm>
+    <webLemmaTerm>
+      <nominalForm>javan  površina</nominalForm>
+      <AFreqPoints>2</AFreqPoints>
+      <weight>0.10285031451344388</weight>
+      <name>javan  površina</name>
+      <otherFormsStr />
+      <documentSetFrequency>1</documentSetFrequency>
+      <documentFrequency>1</documentFrequency>
+      <termFrequency>0.011560693641618497</termFrequency>
+      <documentFactor>4.5612182984589085</documentFactor>
+    </webLemmaTerm>
+    <webLemmaTerm>
+      <nominalForm>jedan  stran</nominalForm>
+      <AFreqPoints>2</AFreqPoints>
+      <weight>0.10285031451344388</weight>
+      <name>jedan  stran</name>
+      <otherFormsStr />
+      <documentSetFrequency>1</documentSetFrequency>
+      <documentFrequency>1</documentFrequency>
+      <termFrequency>0.011560693641618497</termFrequency>
+      <documentFactor>4.5612182984589085</documentFactor>
+    </webLemmaTerm>
+    <webLemmaTerm>
+      <nominalForm>kamion  sa  kran</nominalForm>
+      <AFreqPoints>6</AFreqPoints>
+      <weight>0.21477283314103238</weight>
+      <name>kamion  sa  kran</name>
+      <otherFormsStr />
+      <documentSetFrequency>1</documentSetFrequency>
+      <documentFrequency>4</documentFrequency>
+      <termFrequency>0.034682080924855488</termFrequency>
+      <documentFactor>3.1749239373390181</documentFactor>
+    </webLemmaTerm>
+    <webLemmaTerm>
+      <nominalForm>klasičan  farbanje</nominalForm>
+      <AFreqPoints>1</AFreqPoints>
+      <weight>0.051425157256721941</weight>
+      <name>klasičan  farbanje</name>
+      <otherFormsStr />
+      <documentSetFrequency>1</documentSetFrequency>
+      <documentFrequency>1</documentFrequency>
+      <termFrequency>0.0057803468208092483</termFrequency>
+      <documentFactor>4.5612182984589085</documentFactor>
+    </webLemmaTerm>
+    <webLemmaTerm>
+      <nominalForm>konačan  montaža</nominalForm>
+      <AFreqPoints>1</AFreqPoints>
+      <weight>0.051425157256721941</weight>
+      <name>konačan  montaža</name>
+      <otherFormsStr />
+      <documentSetFrequency>1</documentSetFrequency>
+      <documentFrequency>1</documentFrequency>
+      <termFrequency>0.0057803468208092483</termFrequency>
+      <documentFactor>4.5612182984589085</documentFactor>
+    </webLemmaTerm>
+    <webLemmaTerm>
+      <nominalForm>kontaktan  mreža</nominalForm>
+      <AFreqPoints>2</AFreqPoints>
+      <weight>0.087220629446894016</weight>
+      <name>kontaktan  mreža</name>
+      <otherFormsStr />
+      <documentSetFrequency>2</documentSetFrequency>
+      <documentFrequency>2</documentFrequency>
+      <termFrequency>0.011560693641618497</termFrequency>
+      <documentFactor>3.8680711178989635</documentFactor>
+    </webLemmaTerm>
+    <webLemmaTerm>
+      <nominalForm>kontinualan  peskarenje</nominalForm>
+      <AFreqPoints>1</AFreqPoints>
+      <weight>0.051425157256721941</weight>
+      <name>kontinualan  peskarenje</name>
+      <otherFormsStr />
+      <documentSetFrequency>1</documentSetFrequency>
+      <documentFrequency>1</documentFrequency>
+      <termFrequency>0.0057803468208092483</termFrequency>
+      <documentFactor>4.5612182984589085</documentFactor>
+    </webLemmaTerm>
+    <webLemmaTerm>
+      <nominalForm>kontinuiran  poboljšanje</nominalForm>
+      <AFreqPoints>1</AFreqPoints>
+      <weight>0.051425157256721941</weight>
+      <name>kontinuiran  poboljšanje</name>
+      <otherFormsStr />
+      <documentSetFrequency>1</documentSetFrequency>
+      <documentFrequency>1</documentFrequency>
+      <termFrequency>0.0057803468208092483</termFrequency>
+      <documentFactor>4.5612182984589085</documentFactor>
+    </webLemmaTerm>
+    <webLemmaTerm>
+      <nominalForm>kovati  gvožđe</nominalForm>
+      <AFreqPoints>32</AFreqPoints>
+      <weight>0.62343292133561468</weight>
+      <name>kovati  gvožđe</name>
+      <otherFormsStr />
+      <documentSetFrequency>2</documentSetFrequency>
+      <documentFrequency>17</documentFrequency>
+      <termFrequency>0.18497109826589594</termFrequency>
+      <documentFactor>1.7280049544026925</documentFactor>
+    </webLemmaTerm>
+    <webLemmaTerm>
+      <nominalForm>krovni  konstrukcija</nominalForm>
+      <AFreqPoints>62</AFreqPoints>
+      <weight>0.76575856460152925</weight>
+      <name>krovni  konstrukcija</name>
+      <otherFormsStr />
+      <documentSetFrequency>4</documentSetFrequency>
+      <documentFrequency>32</documentFrequency>
+      <termFrequency>0.3583815028901734</termFrequency>
+      <documentFactor>1.0954823956591822</documentFactor>
+    </webLemmaTerm>
+    <webLemmaTerm>
+      <nominalForm>kvalitetan  proizvodnja</nominalForm>
+      <AFreqPoints>1</AFreqPoints>
+      <weight>0.051425157256721941</weight>
+      <name>kvalitetan  proizvodnja</name>
+      <otherFormsStr />
+      <documentSetFrequency>1</documentSetFrequency>
+      <documentFrequency>1</documentFrequency>
+      <termFrequency>0.0057803468208092483</termFrequency>
+      <documentFactor>4.5612182984589085</documentFactor>
+    </webLemmaTerm>
+    <webLemmaTerm>
+      <nominalForm>metalan  konstrukcija</nominalForm>
+      <AFreqPoints>12</AFreqPoints>
+      <weight>0.31983231033790727</weight>
+      <name>metalan  konstrukcija</name>
+      <otherFormsStr />
+      <documentSetFrequency>4</documentSetFrequency>
+      <documentFrequency>9</documentFrequency>
+      <termFrequency>0.069364161849710976</termFrequency>
+      <documentFactor>2.3639937211226894</documentFactor>
+    </webLemmaTerm>
+    <webLemmaTerm>
+      <nominalForm>metalurški  proizvod</nominalForm>
+      <AFreqPoints>15</AFreqPoints>
+      <weight>0.31340133685962945</weight>
+      <name>metalurški  proizvod</name>
+      <otherFormsStr />
+      <documentSetFrequency>1</documentSetFrequency>
+      <documentFrequency>15</documentFrequency>
+      <termFrequency>0.086705202312138727</termFrequency>
+      <documentFactor>1.8531680973566984</documentFactor>
+    </webLemmaTerm>
+    <webLemmaTerm>
+      <nominalForm>međuspratni  konstrukcija</nominalForm>
+      <AFreqPoints>1</AFreqPoints>
+      <weight>0.051425157256721941</weight>
+      <name>međuspratni  konstrukcija</name>
+      <otherFormsStr />
+      <documentSetFrequency>1</documentSetFrequency>
+      <documentFrequency>1</documentFrequency>
+      <termFrequency>0.0057803468208092483</termFrequency>
+      <documentFactor>4.5612182984589085</documentFactor>
+    </webLemmaTerm>
+    <webLemmaTerm>
+      <nominalForm>mnogi  grana</nominalForm>
+      <AFreqPoints>1</AFreqPoints>
+      <weight>0.051425157256721941</weight>
+      <name>mnogi  grana</name>
+      <otherFormsStr />
+      <documentSetFrequency>1</documentSetFrequency>
+      <documentFrequency>1</documentFrequency>
+      <termFrequency>0.0057803468208092483</termFrequency>
+      <documentFactor>4.5612182984589085</documentFactor>
+    </webLemmaTerm>
+    <webLemmaTerm>
+      <nominalForm>montažni  hala</nominalForm>
+      <AFreqPoints>41</AFreqPoints>
+      <weight>1</weight>
+      <name>montažni  hala</name>
+      <otherFormsStr />
+      <documentSetFrequency>1</documentSetFrequency>
+      <documentFrequency>11</documentFrequency>
+      <termFrequency>0.23699421965317918</termFrequency>
+      <documentFactor>2.1633230256605382</documentFactor>
+    </webLemmaTerm>
+    <webLemmaTerm>
+      <nominalForm>nacionalan  nagrada</nominalForm>
+      <AFreqPoints>1</AFreqPoints>
+      <weight>0.051425157256721941</weight>
+      <name>nacionalan  nagrada</name>
+      <otherFormsStr />
+      <documentSetFrequency>1</documentSetFrequency>
+      <documentFrequency>1</documentFrequency>
+      <termFrequency>0.0057803468208092483</termFrequency>
+      <documentFactor>4.5612182984589085</documentFactor>
+    </webLemmaTerm>
+    <webLemmaTerm>
+      <nominalForm>noseći  konstrukcija</nominalForm>
+      <AFreqPoints>1</AFreqPoints>
+      <weight>0.051425157256721941</weight>
+      <name>noseći  konstrukcija</name>
+      <otherFormsStr />
+      <documentSetFrequency>1</documentSetFrequency>
+      <documentFrequency>1</documentFrequency>
+      <termFrequency>0.0057803468208092483</termFrequency>
+      <documentFactor>4.5612182984589085</documentFactor>
+    </webLemmaTerm>
+    <webLemmaTerm>
+      <nominalForm>objekat  sa  montaža</nominalForm>
+      <AFreqPoints>12</AFreqPoints>
+      <weight>0.46846709870928521</weight>
+      <name>objekat  sa  montaža</name>
+      <otherFormsStr />
+      <documentSetFrequency>1</documentSetFrequency>
+      <documentFrequency>3</documentFrequency>
+      <termFrequency>0.069364161849710976</termFrequency>
+      <documentFactor>3.4626060097907989</documentFactor>
+    </webLemmaTerm>
+    <webLemmaTerm>
+      <nominalForm>objekat  sa  pokrivanje</nominalForm>
+      <AFreqPoints>1</AFreqPoints>
+      <weight>0.051425157256721941</weight>
+      <name>objekat  sa  pokrivanje</name>
+      <otherFormsStr />
+      <documentSetFrequency>1</documentSetFrequency>
+      <documentFrequency>1</documentFrequency>
+      <termFrequency>0.0057803468208092483</termFrequency>
+      <documentFactor>4.5612182984589085</documentFactor>
+    </webLemmaTerm>
+    <webLemmaTerm>
+      <nominalForm>odgovarajući  licenca</nominalForm>
+      <AFreqPoints>1</AFreqPoints>
+      <weight>0.051425157256721941</weight>
+      <name>odgovarajući  licenca</name>
+      <otherFormsStr />
+      <documentSetFrequency>1</documentSetFrequency>
+      <documentFrequency>1</documentFrequency>
+      <termFrequency>0.0057803468208092483</termFrequency>
+      <documentFactor>4.5612182984589085</documentFactor>
+    </webLemmaTerm>
+    <webLemmaTerm>
+      <nominalForm>oksid  sa  materijal</nominalForm>
+      <AFreqPoints>1</AFreqPoints>
+      <weight>0.051425157256721941</weight>
+      <name>oksid  sa  materijal</name>
+      <otherFormsStr />
+      <documentSetFrequency>1</documentSetFrequency>
+      <documentFrequency>1</documentFrequency>
+      <termFrequency>0.0057803468208092483</termFrequency>
+      <documentFactor>4.5612182984589085</documentFactor>
+    </webLemmaTerm>
+    <webLemmaTerm>
+      <nominalForm>ostali  proizvod</nominalForm>
+      <AFreqPoints>15</AFreqPoints>
+      <weight>0.31340133685962945</weight>
+      <name>ostali  proizvod</name>
+      <otherFormsStr />
+      <documentSetFrequency>1</documentSetFrequency>
+      <documentFrequency>15</documentFrequency>
+      <termFrequency>0.086705202312138727</termFrequency>
+      <documentFactor>1.8531680973566984</documentFactor>
+    </webLemmaTerm>
+    <webLemmaTerm>
+      <nominalForm>ovogodišnji  manifestacija</nominalForm>
+      <AFreqPoints>1</AFreqPoints>
+      <weight>0.051425157256721941</weight>
+      <name>ovogodišnji  manifestacija</name>
+      <otherFormsStr />
+      <documentSetFrequency>1</documentSetFrequency>
+      <documentFrequency>1</documentFrequency>
+      <termFrequency>0.0057803468208092483</termFrequency>
+      <documentFactor>4.5612182984589085</documentFactor>
+    </webLemmaTerm>
+    <webLemmaTerm>
+      <nominalForm>ovogodišnji  sajam</nominalForm>
+      <AFreqPoints>1</AFreqPoints>
+      <weight>0.051425157256721941</weight>
+      <name>ovogodišnji  sajam</name>
+      <otherFormsStr />
+      <documentSetFrequency>1</documentSetFrequency>
+      <documentFrequency>1</documentFrequency>
+      <termFrequency>0.0057803468208092483</termFrequency>
+      <documentFactor>4.5612182984589085</documentFactor>
+    </webLemmaTerm>
+    <webLemmaTerm>
+      <nominalForm>paletni  skladište</nominalForm>
+      <AFreqPoints>1</AFreqPoints>
+      <weight>0.051425157256721941</weight>
+      <name>paletni  skladište</name>
+      <otherFormsStr />
+      <documentSetFrequency>1</documentSetFrequency>
+      <documentFrequency>1</documentFrequency>
+      <termFrequency>0.0057803468208092483</termFrequency>
+      <documentFactor>4.5612182984589085</documentFactor>
+    </webLemmaTerm>
+    <webLemmaTerm>
+      <nominalForm>pešački  staza</nominalForm>
+      <AFreqPoints>1</AFreqPoints>
+      <weight>0.051425157256721941</weight>
+      <name>pešački  staza</name>
+      <otherFormsStr />
+      <documentSetFrequency>1</documentSetFrequency>
+      <documentFrequency>1</documentFrequency>
+      <termFrequency>0.0057803468208092483</termFrequency>
+      <documentFactor>4.5612182984589085</documentFactor>
+    </webLemmaTerm>
+    <webLemmaTerm>
+      <nominalForm>plastičan  deformacija</nominalForm>
+      <AFreqPoints>1</AFreqPoints>
+      <weight>0.051425157256721941</weight>
+      <name>plastičan  deformacija</name>
+      <otherFormsStr />
+      <documentSetFrequency>1</documentSetFrequency>
+      <documentFrequency>1</documentFrequency>
+      <termFrequency>0.0057803468208092483</termFrequency>
+      <documentFactor>4.5612182984589085</documentFactor>
+    </webLemmaTerm>
+    <webLemmaTerm>
+      <nominalForm>pokrivni  lim</nominalForm>
+      <AFreqPoints>1</AFreqPoints>
+      <weight>0.051425157256721941</weight>
+      <name>pokrivni  lim</name>
+      <otherFormsStr />
+      <documentSetFrequency>1</documentSetFrequency>
+      <documentFrequency>1</documentFrequency>
+      <termFrequency>0.0057803468208092483</termFrequency>
+      <documentFactor>4.5612182984589085</documentFactor>
+    </webLemmaTerm>
+    <webLemmaTerm>
+      <nominalForm>poljoprivredni  mehanizacija</nominalForm>
+      <AFreqPoints>1</AFreqPoints>
+      <weight>0.051425157256721941</weight>
+      <name>poljoprivredni  mehanizacija</name>
+      <otherFormsStr />
+      <documentSetFrequency>1</documentSetFrequency>
+      <documentFrequency>1</documentFrequency>
+      <termFrequency>0.0057803468208092483</termFrequency>
+      <documentFactor>4.5612182984589085</documentFactor>
+    </webLemmaTerm>
+    <webLemmaTerm>
+      <nominalForm>poslovan  izvrsnost</nominalForm>
+      <AFreqPoints>1</AFreqPoints>
+      <weight>0.051425157256721941</weight>
+      <name>poslovan  izvrsnost</name>
+      <otherFormsStr />
+      <documentSetFrequency>1</documentSetFrequency>
+      <documentFrequency>1</documentFrequency>
+      <termFrequency>0.0057803468208092483</termFrequency>
+      <documentFactor>4.5612182984589085</documentFactor>
+    </webLemmaTerm>
+    <webLemmaTerm>
+      <nominalForm>postepen  razvoj</nominalForm>
+      <AFreqPoints>15</AFreqPoints>
+      <weight>0.31340133685962945</weight>
+      <name>postepen  razvoj</name>
+      <otherFormsStr />
+      <documentSetFrequency>1</documentSetFrequency>
+      <documentFrequency>15</documentFrequency>
+      <termFrequency>0.086705202312138727</termFrequency>
+      <documentFactor>1.8531680973566984</documentFactor>
+    </webLemmaTerm>
+    <webLemmaTerm>
+      <nominalForm>posuda  pod  pritisak</nominalForm>
+      <AFreqPoints>32</AFreqPoints>
+      <weight>0.66858951863387606</weight>
+      <name>posuda  pod  pritisak</name>
+      <otherFormsStr />
+      <documentSetFrequency>1</documentSetFrequency>
+      <documentFrequency>15</documentFrequency>
+      <termFrequency>0.18497109826589594</termFrequency>
+      <documentFactor>1.8531680973566984</documentFactor>
+    </webLemmaTerm>
+    <webLemmaTerm>
+      <nominalForm>povezan  projekat</nominalForm>
+      <AFreqPoints>8</AFreqPoints>
+      <weight>0.223845037255177</weight>
+      <name>povezan  projekat</name>
+      <otherFormsStr />
+      <documentSetFrequency>1</documentSetFrequency>
+      <documentFrequency>8</documentFrequency>
+      <termFrequency>0.046242774566473986</termFrequency>
+      <documentFactor>2.4817767567790727</documentFactor>
+    </webLemmaTerm>
+    <webLemmaTerm>
+      <nominalForm>povoljan  cena</nominalForm>
+      <AFreqPoints>2</AFreqPoints>
+      <weight>0.087220629446894016</weight>
+      <name>povoljan  cena</name>
+      <otherFormsStr />
+      <documentSetFrequency>2</documentSetFrequency>
+      <documentFrequency>2</documentFrequency>
+      <termFrequency>0.011560693641618497</termFrequency>
+      <documentFactor>3.8680711178989635</documentFactor>
+    </webLemmaTerm>
+    <webLemmaTerm>
+      <nominalForm>poznat  kupac</nominalForm>
+      <AFreqPoints>1</AFreqPoints>
+      <weight>0.051425157256721941</weight>
+      <name>poznat  kupac</name>
+      <otherFormsStr />
+      <documentSetFrequency>1</documentSetFrequency>
+      <documentFrequency>1</documentFrequency>
+      <termFrequency>0.0057803468208092483</termFrequency>
+      <documentFactor>4.5612182984589085</documentFactor>
+    </webLemmaTerm>
+    <webLemmaTerm>
+      <nominalForm>prateći  industrija</nominalForm>
+      <AFreqPoints>1</AFreqPoints>
+      <weight>0.051425157256721941</weight>
+      <name>prateći  industrija</name>
+      <otherFormsStr />
+      <documentSetFrequency>1</documentSetFrequency>
+      <documentFrequency>1</documentFrequency>
+      <termFrequency>0.0057803468208092483</termFrequency>
+      <documentFactor>4.5612182984589085</documentFactor>
+    </webLemmaTerm>
+    <webLemmaTerm>
+      <nominalForm>pravni  forma</nominalForm>
+      <AFreqPoints>1</AFreqPoints>
+      <weight>0.051425157256721941</weight>
+      <name>pravni  forma</name>
+      <otherFormsStr />
+      <documentSetFrequency>1</documentSetFrequency>
+      <documentFrequency>1</documentFrequency>
+      <termFrequency>0.0057803468208092483</termFrequency>
+      <documentFactor>4.5612182984589085</documentFactor>
+    </webLemmaTerm>
+    <webLemmaTerm>
+      <nominalForm>prestižan  priznanje</nominalForm>
+      <AFreqPoints>1</AFreqPoints>
+      <weight>0.051425157256721941</weight>
+      <name>prestižan  priznanje</name>
+      <otherFormsStr />
+      <documentSetFrequency>1</documentSetFrequency>
+      <documentFrequency>1</documentFrequency>
+      <termFrequency>0.0057803468208092483</termFrequency>
+      <documentFactor>4.5612182984589085</documentFactor>
+    </webLemmaTerm>
+    <webLemmaTerm>
+      <nominalForm>prethodan  generacija</nominalForm>
+      <AFreqPoints>3</AFreqPoints>
+      <weight>0.1171167746773213</weight>
+      <name>prethodan  generacija</name>
+      <otherFormsStr />
+      <documentSetFrequency>1</documentSetFrequency>
+      <documentFrequency>3</documentFrequency>
+      <termFrequency>0.017341040462427744</termFrequency>
+      <documentFactor>3.4626060097907989</documentFactor>
+    </webLemmaTerm>
+    <webLemmaTerm>
+      <nominalForm>privredan  komora</nominalForm>
+      <AFreqPoints>1</AFreqPoints>
+      <weight>0.051425157256721941</weight>
+      <name>privredan  komora</name>
+      <otherFormsStr />
+      <documentSetFrequency>1</documentSetFrequency>
+      <documentFrequency>1</documentFrequency>
+      <termFrequency>0.0057803468208092483</termFrequency>
+      <documentFactor>4.5612182984589085</documentFactor>
+    </webLemmaTerm>
+    <webLemmaTerm>
+      <nominalForm>privremen  ograđivanje</nominalForm>
+      <AFreqPoints>1</AFreqPoints>
+      <weight>0.051425157256721941</weight>
+      <name>privremen  ograđivanje</name>
+      <otherFormsStr />
+      <documentSetFrequency>1</documentSetFrequency>
+      <documentFrequency>1</documentFrequency>
+      <termFrequency>0.0057803468208092483</termFrequency>
+      <documentFactor>4.5612182984589085</documentFactor>
+    </webLemmaTerm>
+    <webLemmaTerm>
+      <nominalForm>procesni  oprema</nominalForm>
+      <AFreqPoints>3</AFreqPoints>
+      <weight>0.130830944170341</weight>
+      <name>procesni  oprema</name>
+      <otherFormsStr />
+      <documentSetFrequency>2</documentSetFrequency>
+      <documentFrequency>2</documentFrequency>
+      <termFrequency>0.017341040462427744</termFrequency>
+      <documentFactor>3.8680711178989635</documentFactor>
+    </webLemmaTerm>
+    <webLemmaTerm>
+      <nominalForm>profesionalan  podrška</nominalForm>
+      <AFreqPoints>1</AFreqPoints>
+      <weight>0.051425157256721941</weight>
+      <name>profesionalan  podrška</name>
+      <otherFormsStr />
+      <documentSetFrequency>1</documentSetFrequency>
+      <documentFrequency>1</documentFrequency>
+      <termFrequency>0.0057803468208092483</termFrequency>
+      <documentFactor>4.5612182984589085</documentFactor>
+    </webLemmaTerm>
+    <webLemmaTerm>
+      <nominalForm>putni  ograda</nominalForm>
+      <AFreqPoints>14</AFreqPoints>
+      <weight>0.39172881519655978</weight>
+      <name>putni  ograda</name>
+      <otherFormsStr />
+      <documentSetFrequency>1</documentSetFrequency>
+      <documentFrequency>8</documentFrequency>
+      <termFrequency>0.080924855491329481</termFrequency>
+      <documentFactor>2.4817767567790727</documentFactor>
+    </webLemmaTerm>
+    <webLemmaTerm>
+      <nominalForm>putnički  automobil</nominalForm>
+      <AFreqPoints>1</AFreqPoints>
+      <weight>0.051425157256721941</weight>
+      <name>putnički  automobil</name>
+      <otherFormsStr />
+      <documentSetFrequency>1</documentSetFrequency>
+      <documentFrequency>1</documentFrequency>
+      <termFrequency>0.0057803468208092483</termFrequency>
+      <documentFactor>4.5612182984589085</documentFactor>
+    </webLemmaTerm>
+    <webLemmaTerm>
+      <nominalForm>radionički  detalj</nominalForm>
+      <AFreqPoints>30</AFreqPoints>
+      <weight>0.62680267371925891</weight>
+      <name>radionički  detalj</name>
+      <otherFormsStr />
+      <documentSetFrequency>1</documentSetFrequency>
+      <documentFrequency>15</documentFrequency>
+      <termFrequency>0.17341040462427745</termFrequency>
+      <documentFactor>1.8531680973566984</documentFactor>
+    </webLemmaTerm>
+    <webLemmaTerm>
+      <nominalForm>radni  platforma</nominalForm>
+      <AFreqPoints>2</AFreqPoints>
+      <weight>0.10285031451344388</weight>
+      <name>radni  platforma</name>
+      <otherFormsStr />
+      <documentSetFrequency>1</documentSetFrequency>
+      <documentFrequency>1</documentFrequency>
+      <termFrequency>0.011560693641618497</termFrequency>
+      <documentFactor>4.5612182984589085</documentFactor>
+    </webLemmaTerm>
+    <webLemmaTerm>
+      <nominalForm>rashladni  kula</nominalForm>
+      <AFreqPoints>1</AFreqPoints>
+      <weight>0.051425157256721941</weight>
+      <name>rashladni  kula</name>
+      <otherFormsStr />
+      <documentSetFrequency>1</documentSetFrequency>
+      <documentFrequency>1</documentFrequency>
+      <termFrequency>0.0057803468208092483</termFrequency>
+      <documentFactor>4.5612182984589085</documentFactor>
+    </webLemmaTerm>
+    <webLemmaTerm>
+      <nominalForm>različit  boja</nominalForm>
+      <AFreqPoints>2</AFreqPoints>
+      <weight>0.087220629446894016</weight>
+      <name>različit  boja</name>
+      <otherFormsStr />
+      <documentSetFrequency>1</documentSetFrequency>
+      <documentFrequency>2</documentFrequency>
+      <termFrequency>0.011560693641618497</termFrequency>
+      <documentFactor>3.8680711178989635</documentFactor>
+    </webLemmaTerm>
+    <webLemmaTerm>
+      <nominalForm>različit  namena</nominalForm>
+      <AFreqPoints>4</AFreqPoints>
+      <weight>0.17444125889378803</weight>
+      <name>različit  namena</name>
+      <otherFormsStr />
+      <documentSetFrequency>1</documentSetFrequency>
+      <documentFrequency>2</documentFrequency>
+      <termFrequency>0.023121387283236993</termFrequency>
+      <documentFactor>3.8680711178989635</documentFactor>
+    </webLemmaTerm>
+    <webLemmaTerm>
+      <nominalForm>referentan  partner</nominalForm>
+      <AFreqPoints>15</AFreqPoints>
+      <weight>0.31340133685962945</weight>
+      <name>referentan  partner</name>
+      <otherFormsStr />
+      <documentSetFrequency>1</documentSetFrequency>
+      <documentFrequency>15</documentFrequency>
+      <termFrequency>0.086705202312138727</termFrequency>
+      <documentFactor>1.8531680973566984</documentFactor>
+    </webLemmaTerm>
+    <webLemmaTerm>
+      <nominalForm>referentan  projekat</nominalForm>
+      <AFreqPoints>15</AFreqPoints>
+      <weight>0.31340133685962945</weight>
+      <name>referentan  projekat</name>
+      <otherFormsStr />
+      <documentSetFrequency>1</documentSetFrequency>
+      <documentFrequency>15</documentFrequency>
+      <termFrequency>0.086705202312138727</termFrequency>
+      <documentFactor>1.8531680973566984</documentFactor>
+    </webLemmaTerm>
+    <webLemmaTerm>
+      <nominalForm>reklamni  totem</nominalForm>
+      <AFreqPoints>30</AFreqPoints>
+      <weight>0.62680267371925891</weight>
+      <name>reklamni  totem</name>
+      <otherFormsStr />
+      <documentSetFrequency>1</documentSetFrequency>
+      <documentFrequency>15</documentFrequency>
+      <termFrequency>0.17341040462427745</termFrequency>
+      <documentFactor>1.8531680973566984</documentFactor>
+    </webLemmaTerm>
+    <webLemmaTerm>
+      <nominalForm>reprezentativan  rad</nominalForm>
+      <AFreqPoints>1</AFreqPoints>
+      <weight>0.051425157256721941</weight>
+      <name>reprezentativan  rad</name>
+      <otherFormsStr />
+      <documentSetFrequency>1</documentSetFrequency>
+      <documentFrequency>1</documentFrequency>
+      <termFrequency>0.0057803468208092483</termFrequency>
+      <documentFactor>4.5612182984589085</documentFactor>
+    </webLemmaTerm>
+    <webLemmaTerm>
+      <nominalForm>rezervni  delov</nominalForm>
+      <AFreqPoints>18</AFreqPoints>
+      <weight>0.37608160423155534</weight>
+      <name>rezervni  delov</name>
+      <otherFormsStr />
+      <documentSetFrequency>1</documentSetFrequency>
+      <documentFrequency>15</documentFrequency>
+      <termFrequency>0.10404624277456648</termFrequency>
+      <documentFactor>1.8531680973566984</documentFactor>
+    </webLemmaTerm>
+    <webLemmaTerm>
+      <nominalForm>rešetkast  konstrukcija</nominalForm>
+      <AFreqPoints>1</AFreqPoints>
+      <weight>0.051425157256721941</weight>
+      <name>rešetkast  konstrukcija</name>
+      <otherFormsStr />
+      <documentSetFrequency>1</documentSetFrequency>
+      <documentFrequency>1</documentFrequency>
+      <termFrequency>0.0057803468208092483</termFrequency>
+      <documentFactor>4.5612182984589085</documentFactor>
+    </webLemmaTerm>
+    <webLemmaTerm>
+      <nominalForm>salon  sa  magacin</nominalForm>
+      <AFreqPoints>1</AFreqPoints>
+      <weight>0.051425157256721941</weight>
+      <name>salon  sa  magacin</name>
+      <otherFormsStr />
+      <documentSetFrequency>1</documentSetFrequency>
+      <documentFrequency>1</documentFrequency>
+      <termFrequency>0.0057803468208092483</termFrequency>
+      <documentFactor>4.5612182984589085</documentFactor>
+    </webLemmaTerm>
+    <webLemmaTerm>
+      <nominalForm>sam  tehnika</nominalForm>
+      <AFreqPoints>1</AFreqPoints>
+      <weight>0.051425157256721941</weight>
+      <name>sam  tehnika</name>
+      <otherFormsStr />
+      <documentSetFrequency>1</documentSetFrequency>
+      <documentFrequency>1</documentFrequency>
+      <termFrequency>0.0057803468208092483</termFrequency>
+      <documentFactor>4.5612182984589085</documentFactor>
+    </webLemmaTerm>
+    <webLemmaTerm>
+      <nominalForm>saradnja  sa  telekom</nominalForm>
+      <AFreqPoints>1</AFreqPoints>
+      <weight>0.051425157256721941</weight>
+      <name>saradnja  sa  telekom</name>
+      <otherFormsStr />
+      <documentSetFrequency>1</documentSetFrequency>
+      <documentFrequency>1</documentFrequency>
+      <termFrequency>0.0057803468208092483</termFrequency>
+      <documentFactor>4.5612182984589085</documentFactor>
+    </webLemmaTerm>
+    <webLemmaTerm>
+      <nominalForm>savremen  oprema</nominalForm>
+      <AFreqPoints>1</AFreqPoints>
+      <weight>0.051425157256721941</weight>
+      <name>savremen  oprema</name>
+      <otherFormsStr />
+      <documentSetFrequency>1</documentSetFrequency>
+      <documentFrequency>1</documentFrequency>
+      <termFrequency>0.0057803468208092483</termFrequency>
+      <documentFactor>4.5612182984589085</documentFactor>
+    </webLemmaTerm>
+    <webLemmaTerm>
+      <nominalForm>sklad  sa  standard</nominalForm>
+      <AFreqPoints>1</AFreqPoints>
+      <weight>0.051425157256721941</weight>
+      <name>sklad  sa  standard</name>
+      <otherFormsStr />
+      <documentSetFrequency>1</documentSetFrequency>
+      <documentFrequency>1</documentFrequency>
+      <termFrequency>0.0057803468208092483</termFrequency>
+      <documentFactor>4.5612182984589085</documentFactor>
+    </webLemmaTerm>
+    <webLemmaTerm>
+      <nominalForm>sklad  sa  zahtev</nominalForm>
+      <AFreqPoints>1</AFreqPoints>
+      <weight>0.051425157256721941</weight>
+      <name>sklad  sa  zahtev</name>
+      <otherFormsStr />
+      <documentSetFrequency>1</documentSetFrequency>
+      <documentFrequency>1</documentFrequency>
+      <termFrequency>0.0057803468208092483</termFrequency>
+      <documentFactor>4.5612182984589085</documentFactor>
+    </webLemmaTerm>
+    <webLemmaTerm>
+      <nominalForm>sledeće  operacija</nominalForm>
+      <AFreqPoints>1</AFreqPoints>
+      <weight>0.051425157256721941</weight>
+      <name>sledeće  operacija</name>
+      <otherFormsStr />
+      <documentSetFrequency>1</documentSetFrequency>
+      <documentFrequency>1</documentFrequency>
+      <termFrequency>0.0057803468208092483</termFrequency>
+      <documentFactor>4.5612182984589085</documentFactor>
+    </webLemmaTerm>
+    <webLemmaTerm>
+      <nominalForm>sledeći  oprema</nominalForm>
+      <AFreqPoints>1</AFreqPoints>
+      <weight>0.051425157256721941</weight>
+      <name>sledeći  oprema</name>
+      <otherFormsStr />
+      <documentSetFrequency>1</documentSetFrequency>
+      <documentFrequency>1</documentFrequency>
+      <termFrequency>0.0057803468208092483</termFrequency>
+      <documentFactor>4.5612182984589085</documentFactor>
+    </webLemmaTerm>
+    <webLemmaTerm>
+      <nominalForm>sportski  hala</nominalForm>
+      <AFreqPoints>3</AFreqPoints>
+      <weight>0.1171167746773213</weight>
+      <name>sportski  hala</name>
+      <otherFormsStr />
+      <documentSetFrequency>2</documentSetFrequency>
+      <documentFrequency>3</documentFrequency>
+      <termFrequency>0.017341040462427744</termFrequency>
+      <documentFactor>3.4626060097907989</documentFactor>
+    </webLemmaTerm>
+    <webLemmaTerm>
+      <nominalForm>srećan  nov</nominalForm>
+      <AFreqPoints>2</AFreqPoints>
+      <weight>0.087220629446894016</weight>
+      <name>srećan  nov</name>
+      <otherFormsStr />
+      <documentSetFrequency>1</documentSetFrequency>
+      <documentFrequency>2</documentFrequency>
+      <termFrequency>0.011560693641618497</termFrequency>
+      <documentFactor>3.8680711178989635</documentFactor>
+    </webLemmaTerm>
+    <webLemmaTerm>
+      <nominalForm>stambeni  zgrada</nominalForm>
+      <AFreqPoints>1</AFreqPoints>
+      <weight>0.051425157256721941</weight>
+      <name>stambeni  zgrada</name>
+      <otherFormsStr />
+      <documentSetFrequency>1</documentSetFrequency>
+      <documentFrequency>1</documentFrequency>
+      <termFrequency>0.0057803468208092483</termFrequency>
+      <documentFactor>4.5612182984589085</documentFactor>
+    </webLemmaTerm>
+    <webLemmaTerm>
+      <nominalForm>telekomunikacioni  stub</nominalForm>
+      <AFreqPoints>1</AFreqPoints>
+      <weight>0.051425157256721941</weight>
+      <name>telekomunikacioni  stub</name>
+      <otherFormsStr />
+      <documentSetFrequency>1</documentSetFrequency>
+      <documentFrequency>1</documentFrequency>
+      <termFrequency>0.0057803468208092483</termFrequency>
+      <documentFactor>4.5612182984589085</documentFactor>
+    </webLemmaTerm>
+    <webLemmaTerm>
+      <nominalForm>tipski  hala</nominalForm>
+      <AFreqPoints>30</AFreqPoints>
+      <weight>0.62680267371925891</weight>
+      <name>tipski  hala</name>
+      <otherFormsStr />
+      <documentSetFrequency>1</documentSetFrequency>
+      <documentFrequency>15</documentFrequency>
+      <termFrequency>0.17341040462427745</termFrequency>
+      <documentFactor>1.8531680973566984</documentFactor>
+    </webLemmaTerm>
+    <webLemmaTerm>
+      <nominalForm>topao  cinkovanje</nominalForm>
+      <AFreqPoints>15</AFreqPoints>
+      <weight>0.41970944485345685</weight>
+      <name>topao  cinkovanje</name>
+      <otherFormsStr />
+      <documentSetFrequency>1</documentSetFrequency>
+      <documentFrequency>8</documentFrequency>
+      <termFrequency>0.086705202312138727</termFrequency>
+      <documentFactor>2.4817767567790727</documentFactor>
+    </webLemmaTerm>
+    <webLemmaTerm>
+      <nominalForm>trajan  opredeljenje</nominalForm>
+      <AFreqPoints>1</AFreqPoints>
+      <weight>0.051425157256721941</weight>
+      <name>trajan  opredeljenje</name>
+      <otherFormsStr />
+      <documentSetFrequency>1</documentSetFrequency>
+      <documentFrequency>1</documentFrequency>
+      <termFrequency>0.0057803468208092483</termFrequency>
+      <documentFactor>4.5612182984589085</documentFactor>
+    </webLemmaTerm>
+    <webLemmaTerm>
+      <nominalForm>udarni  ploča</nominalForm>
+      <AFreqPoints>1</AFreqPoints>
+      <weight>0.051425157256721941</weight>
+      <name>udarni  ploča</name>
+      <otherFormsStr />
+      <documentSetFrequency>1</documentSetFrequency>
+      <documentFrequency>1</documentFrequency>
+      <termFrequency>0.0057803468208092483</termFrequency>
+      <documentFactor>4.5612182984589085</documentFactor>
+    </webLemmaTerm>
+    <webLemmaTerm>
+      <nominalForm>uporedan  standard</nominalForm>
+      <AFreqPoints>28</AFreqPoints>
+      <weight>0.58501582880464165</weight>
+      <name>uporedan  standard</name>
+      <otherFormsStr />
+      <documentSetFrequency>1</documentSetFrequency>
+      <documentFrequency>15</documentFrequency>
+      <termFrequency>0.16184971098265896</termFrequency>
+      <documentFactor>1.8531680973566984</documentFactor>
+    </webLemmaTerm>
+    <webLemmaTerm>
+      <nominalForm>urediti  infrastruktura</nominalForm>
+      <AFreqPoints>1</AFreqPoints>
+      <weight>0.051425157256721941</weight>
+      <name>urediti  infrastruktura</name>
+      <otherFormsStr />
+      <documentSetFrequency>1</documentSetFrequency>
+      <documentFrequency>1</documentFrequency>
+      <termFrequency>0.0057803468208092483</termFrequency>
+      <documentFactor>4.5612182984589085</documentFactor>
+    </webLemmaTerm>
+    <webLemmaTerm>
+      <nominalForm>vanredan  sednica</nominalForm>
+      <AFreqPoints>3</AFreqPoints>
+      <weight>0.130830944170341</weight>
+      <name>vanredan  sednica</name>
+      <otherFormsStr />
+      <documentSetFrequency>1</documentSetFrequency>
+      <documentFrequency>2</documentFrequency>
+      <termFrequency>0.017341040462427744</termFrequency>
+      <documentFactor>3.8680711178989635</documentFactor>
+    </webLemmaTerm>
+    <webLemmaTerm>
+      <nominalForm>vanredan  skupština</nominalForm>
+      <AFreqPoints>1</AFreqPoints>
+      <weight>0.051425157256721941</weight>
+      <name>vanredan  skupština</name>
+      <otherFormsStr />
+      <documentSetFrequency>1</documentSetFrequency>
+      <documentFrequency>1</documentFrequency>
+      <termFrequency>0.0057803468208092483</termFrequency>
+      <documentFactor>4.5612182984589085</documentFactor>
+    </webLemmaTerm>
+    <webLemmaTerm>
+      <nominalForm>važeći  norma</nominalForm>
+      <AFreqPoints>3</AFreqPoints>
+      <weight>0.1171167746773213</weight>
+      <name>važeći  norma</name>
+      <otherFormsStr />
+      <documentSetFrequency>1</documentSetFrequency>
+      <documentFrequency>3</documentFrequency>
+      <termFrequency>0.017341040462427744</termFrequency>
+      <documentFactor>3.4626060097907989</documentFactor>
+    </webLemmaTerm>
+    <webLemmaTerm>
+      <nominalForm>velik  fleksibilnost</nominalForm>
+      <AFreqPoints>1</AFreqPoints>
+      <weight>0.051425157256721941</weight>
+      <name>velik  fleksibilnost</name>
+      <otherFormsStr />
+      <documentSetFrequency>1</documentSetFrequency>
+      <documentFrequency>1</documentFrequency>
+      <termFrequency>0.0057803468208092483</termFrequency>
+      <documentFactor>4.5612182984589085</documentFactor>
+    </webLemmaTerm>
+    <webLemmaTerm>
+      <nominalForm>velik  izdržljivost</nominalForm>
+      <AFreqPoints>1</AFreqPoints>
+      <weight>0.051425157256721941</weight>
+      <name>velik  izdržljivost</name>
+      <otherFormsStr />
+      <documentSetFrequency>1</documentSetFrequency>
+      <documentFrequency>1</documentFrequency>
+      <termFrequency>0.0057803468208092483</termFrequency>
+      <documentFactor>4.5612182984589085</documentFactor>
+    </webLemmaTerm>
+    <webLemmaTerm>
+      <nominalForm>velik  mapa</nominalForm>
+      <AFreqPoints>3</AFreqPoints>
+      <weight>0.130830944170341</weight>
+      <name>velik  mapa</name>
+      <otherFormsStr />
+      <documentSetFrequency>2</documentSetFrequency>
+      <documentFrequency>2</documentFrequency>
+      <termFrequency>0.017341040462427744</termFrequency>
+      <documentFactor>3.8680711178989635</documentFactor>
+    </webLemmaTerm>
+    <webLemmaTerm>
+      <nominalForm>velik  potreba</nominalForm>
+      <AFreqPoints>1</AFreqPoints>
+      <weight>0.051425157256721941</weight>
+      <name>velik  potreba</name>
+      <otherFormsStr />
+      <documentSetFrequency>1</documentSetFrequency>
+      <documentFrequency>1</documentFrequency>
+      <termFrequency>0.0057803468208092483</termFrequency>
+      <documentFactor>4.5612182984589085</documentFactor>
+    </webLemmaTerm>
+    <webLemmaTerm>
+      <nominalForm>vezni  objekat</nominalForm>
+      <AFreqPoints>1</AFreqPoints>
+      <weight>0.051425157256721941</weight>
+      <name>vezni  objekat</name>
+      <otherFormsStr />
+      <documentSetFrequency>1</documentSetFrequency>
+      <documentFrequency>1</documentFrequency>
+      <termFrequency>0.0057803468208092483</termFrequency>
+      <documentFactor>4.5612182984589085</documentFactor>
+    </webLemmaTerm>
+    <webLemmaTerm>
+      <nominalForm>visok  stepen</nominalForm>
+      <AFreqPoints>1</AFreqPoints>
+      <weight>0.051425157256721941</weight>
+      <name>visok  stepen</name>
+      <otherFormsStr />
+      <documentSetFrequency>1</documentSetFrequency>
+      <documentFrequency>1</documentFrequency>
+      <termFrequency>0.0057803468208092483</termFrequency>
+      <documentFactor>4.5612182984589085</documentFactor>
+    </webLemmaTerm>
+    <webLemmaTerm>
+      <nominalForm>zaokružiti  proces</nominalForm>
+      <AFreqPoints>1</AFreqPoints>
+      <weight>0.051425157256721941</weight>
+      <name>zaokružiti  proces</name>
+      <otherFormsStr />
+      <documentSetFrequency>1</documentSetFrequency>
+      <documentFrequency>1</documentFrequency>
+      <termFrequency>0.0057803468208092483</termFrequency>
+      <documentFactor>4.5612182984589085</documentFactor>
+    </webLemmaTerm>
+    <webLemmaTerm>
+      <nominalForm>zavariti  cev</nominalForm>
+      <AFreqPoints>1</AFreqPoints>
+      <weight>0.051425157256721941</weight>
+      <name>zavariti  cev</name>
+      <otherFormsStr />
+      <documentSetFrequency>1</documentSetFrequency>
+      <documentFrequency>1</documentFrequency>
+      <termFrequency>0.0057803468208092483</termFrequency>
+      <documentFactor>4.5612182984589085</documentFactor>
+    </webLemmaTerm>
+    <webLemmaTerm>
+      <nominalForm>zavarivanje  kod  ministarstvo</nominalForm>
+      <AFreqPoints>1</AFreqPoints>
+      <weight>0.051425157256721941</weight>
+      <name>zavarivanje  kod  ministarstvo</name>
+      <otherFormsStr />
+      <documentSetFrequency>1</documentSetFrequency>
+      <documentFrequency>1</documentFrequency>
+      <termFrequency>0.0057803468208092483</termFrequency>
+      <documentFactor>4.5612182984589085</documentFactor>
+    </webLemmaTerm>
+    <webLemmaTerm>
+      <nominalForm>zavarivač  sa  atest</nominalForm>
+      <AFreqPoints>1</AFreqPoints>
+      <weight>0.051425157256721941</weight>
+      <name>zavarivač  sa  atest</name>
+      <otherFormsStr />
+      <documentSetFrequency>1</documentSetFrequency>
+      <documentFrequency>1</documentFrequency>
+      <termFrequency>0.0057803468208092483</termFrequency>
+      <documentFactor>4.5612182984589085</documentFactor>
+    </webLemmaTerm>
+    <webLemmaTerm>
+      <nominalForm>zaštitni  ograda</nominalForm>
+      <AFreqPoints>6</AFreqPoints>
+      <weight>0.23423354935464261</weight>
+      <name>zaštitni  ograda</name>
+      <otherFormsStr />
+      <documentSetFrequency>1</documentSetFrequency>
+      <documentFrequency>3</documentFrequency>
+      <termFrequency>0.034682080924855488</termFrequency>
+      <documentFactor>3.4626060097907989</documentFactor>
+    </webLemmaTerm>
+    <webLemmaTerm>
+      <nominalForm>zemljani  površina</nominalForm>
+      <AFreqPoints>1</AFreqPoints>
+      <weight>0.051425157256721941</weight>
+      <name>zemljani  površina</name>
+      <otherFormsStr />
+      <documentSetFrequency>1</documentSetFrequency>
+      <documentFrequency>1</documentFrequency>
+      <termFrequency>0.0057803468208092483</termFrequency>
+      <documentFactor>4.5612182984589085</documentFactor>
+    </webLemmaTerm>
+    <webLemmaTerm>
+      <nominalForm>značajan  nagrada</nominalForm>
+      <AFreqPoints>1</AFreqPoints>
+      <weight>0.051425157256721941</weight>
+      <name>značajan  nagrada</name>
+      <otherFormsStr />
+      <documentSetFrequency>1</documentSetFrequency>
+      <documentFrequency>1</documentFrequency>
+      <termFrequency>0.0057803468208092483</termFrequency>
+      <documentFactor>4.5612182984589085</documentFactor>
+    </webLemmaTerm>
+    <webLemmaTerm>
+      <nominalForm>čeličan  elemenat</nominalForm>
+      <AFreqPoints>16</AFreqPoints>
+      <weight>0.33429475931693803</weight>
+      <name>čeličan  elemenat</name>
+      <otherFormsStr />
+      <documentSetFrequency>1</documentSetFrequency>
+      <documentFrequency>15</documentFrequency>
+      <termFrequency>0.092485549132947972</termFrequency>
+      <documentFactor>1.8531680973566984</documentFactor>
+    </webLemmaTerm>
+    <webLemmaTerm>
+      <nominalForm>čeličan  konstrukcija</nominalForm>
+      <AFreqPoints>173</AFreqPoints>
+      <weight>0.18590033075657794</weight>
+      <name>čeličan  konstrukcija</name>
+      <otherFormsStr />
+      <documentSetFrequency>8</documentSetFrequency>
+      <documentFrequency>87</documentFrequency>
+      <termFrequency>1</termFrequency>
+      <documentFactor>0.095310179804324935</documentFactor>
+    </webLemmaTerm>
+    <webLemmaTerm>
+      <nominalForm>čeličan  ograda</nominalForm>
+      <AFreqPoints>2</AFreqPoints>
+      <weight>0.087220629446894016</weight>
+      <name>čeličan  ograda</name>
+      <otherFormsStr />
+      <documentSetFrequency>1</documentSetFrequency>
+      <documentFrequency>2</documentFrequency>
+      <termFrequency>0.011560693641618497</termFrequency>
+      <documentFactor>3.8680711178989635</documentFactor>
+    </webLemmaTerm>
+    <webLemmaTerm>
+      <nominalForm>čeličan  profil</nominalForm>
+      <AFreqPoints>31</AFreqPoints>
+      <weight>0.64769609617656743</weight>
+      <name>čeličan  profil</name>
+      <otherFormsStr />
+      <documentSetFrequency>1</documentSetFrequency>
+      <documentFrequency>15</documentFrequency>
+      <termFrequency>0.1791907514450867</termFrequency>
+      <documentFactor>1.8531680973566984</documentFactor>
+    </webLemmaTerm>
+    <webLemmaTerm>
+      <nominalForm>širok  paleta</nominalForm>
+      <AFreqPoints>2</AFreqPoints>
+      <weight>0.087220629446894016</weight>
+      <name>širok  paleta</name>
+      <otherFormsStr />
+      <documentSetFrequency>1</documentSetFrequency>
+      <documentFrequency>2</documentFrequency>
+      <termFrequency>0.011560693641618497</termFrequency>
+      <documentFactor>3.8680711178989635</documentFactor>
+    </webLemmaTerm>
+    <webLemmaTerm>
+      <nominalForm>širok  primena</nominalForm>
+      <AFreqPoints>1</AFreqPoints>
+      <weight>0.051425157256721941</weight>
+      <name>širok  primena</name>
+      <otherFormsStr />
+      <documentSetFrequency>1</documentSetFrequency>
+      <documentFrequency>1</documentFrequency>
+      <termFrequency>0.0057803468208092483</termFrequency>
+      <documentFactor>4.5612182984589085</documentFactor>
+    </webLemmaTerm>
+    <webLemmaTerm>
+      <nominalForm>širok  registracija</nominalForm>
+      <AFreqPoints>1</AFreqPoints>
+      <weight>0.051425157256721941</weight>
+      <name>širok  registracija</name>
+      <otherFormsStr />
+      <documentSetFrequency>1</documentSetFrequency>
+      <documentFrequency>1</documentFrequency>
+      <termFrequency>0.0057803468208092483</termFrequency>
+      <documentFactor>4.5612182984589085</documentFactor>
+    </webLemmaTerm>
+    <webLemmaTerm>
+      <nominalForm>širok  spektar</nominalForm>
+      <AFreqPoints>1</AFreqPoints>
+      <weight>0.051425157256721941</weight>
+      <name>širok  spektar</name>
+      <otherFormsStr />
+      <documentSetFrequency>1</documentSetFrequency>
+      <documentFrequency>1</documentFrequency>
+      <termFrequency>0.0057803468208092483</termFrequency>
+      <documentFactor>4.5612182984589085</documentFactor>
+    </webLemmaTerm>
+  </lemmas>
+</webLemmaTermPackage>

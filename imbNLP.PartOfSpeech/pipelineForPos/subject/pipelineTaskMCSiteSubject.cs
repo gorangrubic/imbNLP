@@ -50,6 +50,14 @@ namespace imbNLP.PartOfSpeech.pipelineForPos.subject
         {
             contentLevelType = cnt_level.mcSite;
         }
+        public override void SetLabel()
+        {
+            base.SetLabel();
+            if (MCSite != null)
+            {
+                Label = MCSite.name;
+            }
+        }
 
         public imbMCWebSite MCSite { get; set; }
     }

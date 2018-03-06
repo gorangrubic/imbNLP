@@ -36,10 +36,14 @@ using System.Text;
 
 namespace imbNLP.PartOfSpeech.resourceProviders
 {
+    [Serializable]
     public class lexicResolverSettings
     {
 
+        public lexicResolverSettings()
+        {
 
+        }
 
         /// <summary> If true it will log message on tokens that were not resolved </summary>
         [Category("Switch")]

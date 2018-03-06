@@ -64,6 +64,7 @@ namespace imbNLP.PartOfSpeech.pipelineForPos.node
             _nodeType = pipelineNodeTypeEnum.transformer;
 
             resolver = new tableAnnotationResolver(resourcePath, logger, hostType);
+            SetLabel();
         }
 
         /// <summary>

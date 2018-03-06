@@ -60,6 +60,7 @@ namespace imbNLP.PartOfSpeech.pipelineForPos.node
         public pipelineHTMLTagDetection()
         {
             _nodeType = pipelineNodeTypeEnum.transformer;
+            SetLabel();
         }
 
         /// <summary>

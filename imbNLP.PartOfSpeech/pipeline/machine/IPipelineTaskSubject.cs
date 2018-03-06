@@ -45,6 +45,19 @@ namespace imbNLP.PartOfSpeech.pipeline.machine
     public interface IPipelineTaskSubject:IGraphNode
     {
 
+        /// <summary>
+        /// Auto-sets the label.
+        /// </summary>
+        void SetLabel();
+
+        /// <summary>
+        /// Display label
+        /// </summary>
+        /// <value>
+        /// The label.
+        /// </value>
+        String Label { get; set; }
+
         cnt_level contentLevelType { get; set; }
 
         /// <summary>

@@ -30,7 +30,9 @@
 using imbNLP.PartOfSpeech.lexicUnit;
 using imbNLP.PartOfSpeech.pipeline.machine;
 using imbSCI.Core.extensions.data;
+using imbSCI.Core.extensions.text;
 using imbSCI.Data.collection.graph;
+
 using System;
 using System.Collections;
 using System.Collections.Concurrent;
@@ -54,6 +56,15 @@ namespace imbNLP.PartOfSpeech.pipeline.core
         {
             name = __name;
             if (__parent != null) parent = parent;
+        }
+
+        public void SetLabel()
+        {
+            String ln = this.GetType().Name.Replace("pipeline", "");
+            ln = ln.Replace("Node", "");
+            ln = ln.Replace("Transformer", "");
+            ln = ln + " " + name;
+            Label = ln.imbTitleCamelOperation(true); // + " [" + nodeType.ToString() + "]";
         }
 
         /// <summary>

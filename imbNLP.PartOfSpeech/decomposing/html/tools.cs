@@ -30,6 +30,8 @@
 using HtmlAgilityPack;
 using imbCommonModels.contentBlock;
 using imbCommonModels.structure;
+using imbMiningContext.MCWebPage;
+using imbSCI.Core.math;
 using imbSCI.Data;
 using imbSCI.Data.collection.graph;
 using imbSCI.DataComplex.extensions.text;
@@ -44,6 +46,47 @@ namespace imbNLP.PartOfSpeech.decomposing.html
 {
     public static class tools
     {
+
+        /// <summary>
+        /// Gets the textual extract.
+        /// </summary>
+        /// <param name="source">The source.</param>
+        /// <returns></returns>
+        public static String GetTextualExtract(this imbMCWebPage source)
+        {
+            String extract = source.TextContent.Replace(Environment.NewLine, "").Replace(" ", "").ToLower();
+            return extract;
+        }
+
+        /// <summary>
+        /// Gets the unique pages.
+        /// </summary>
+        /// <param name="source">The source.</param>
+        /// <param name="orderBySize">if set to <c>true</c> [order by size].</param>
+        /// <returns></returns>
+        public static List<imbMCWebPage> GetUniquePages(this IEnumerable<imbMCWebPage> source)
+        {
+            List<imbMCWebPage> output = new List<imbMCWebPage>();
+
+            List<String> hashes = new List<string>();
+
+
+            foreach (imbMCWebPage page in source)
+            {
+                String extr = md5.GetMd5Hash(page.GetTextualExtract());
+
+                if (!hashes.Contains(extr))
+                {
+                    hashes.Add(extr);
+                    output.Add(page);
+                }
+            }
+            
+
+
+
+            return output;
+        }
 
         /// <summary>
         /// Gets the tag and its parent nodes names, until the limit is reached

@@ -94,7 +94,11 @@ namespace imbNLP.PartOfSpeech.TFModels.semanticCloud
         /// ", therefore resulting weight is assigned just by chance! Change cloudConstructor settings bro, to make some sense. - null - cloudConstructor has irrational settings</exception>
         public lemmaSemanticCloud process(webLemmaTermTable chunkTable, webLemmaTermTable termTable, lemmaSemanticCloud output, ILogBuilder logger, List<pipelineTaskMCSiteSubject> subjects, ITextResourceResolver resolver )
         {
-            if (output == null) output = new lemmaSemanticCloud();
+            if (output == null)
+            {
+                output = new lemmaSemanticCloud();
+                output.className = termTable.name;
+            }
 
             switch (settings.algorithm)
             {
@@ -111,9 +115,11 @@ namespace imbNLP.PartOfSpeech.TFModels.semanticCloud
             }
 
             output.RebuildIndex();
-            
-           
 
+
+            output.weaverReport = settings.cloudWeaver.Process(output, logger);
+
+            output.RebuildIndex();
 
             return output;
         }

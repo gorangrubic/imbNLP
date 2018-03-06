@@ -80,6 +80,7 @@ namespace imbNLP.PartOfSpeech.pipelineForPos.node
                 testType |= pipelineRegexTestTypeEnum.tagger;
                 _nodeType |= pipelineNodeTypeEnum.transformer;
             }
+            SetLabel();
         }
 
         /// <summary>

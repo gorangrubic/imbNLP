@@ -41,6 +41,12 @@ using imbNLP.PartOfSpeech.lexicUnit;
 using imbNLP.PartOfSpeech.flags.token;
 using System.Collections;
 using imbSCI.Core.extensions.text;
+using imbNLP.PartOfSpeech.pipeline.core;
+using System.Drawing;
+using imbSCI.Core.reporting.colors;
+using imbSCI.Graph.DGML.core;
+using imbNLP.PartOfSpeech.pipelineForPos.node;
+using imbSCI.Graph.DGML;
 
 namespace imbNLP.PartOfSpeech.pipelineForPos.render
 {
@@ -177,10 +183,13 @@ namespace imbNLP.PartOfSpeech.pipelineForPos.render
 
                     foreach (pos_type pt in posTypeTags)
                     {
-                        sb.Append(pt.ToString());
-                        if (pt != posTypeTags.Last())
+                        if (pt != pos_type.none)
                         {
-                            sb.Append(textMapBase.SUBLEVEL_COMMA);
+                            sb.Append(pt.ToString());
+                            if (pt != posTypeTags.Last())
+                            {
+                                sb.Append(textMapBase.SUBLEVEL_COMMA);
+                            }
                         }
                     }
 

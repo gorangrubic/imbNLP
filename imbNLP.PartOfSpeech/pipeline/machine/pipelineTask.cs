@@ -111,6 +111,8 @@ namespace imbNLP.PartOfSpeech.pipeline.machine
             }
         }
 
+        public const Int32 RETRY = 5;
+
         /// <summary>
         /// Processes the next node, calculates the next life span, moves> currentNode to lastNode         
         /// /// </summary>
@@ -146,25 +148,36 @@ namespace imbNLP.PartOfSpeech.pipeline.machine
 
             }
 
-            try
+            Int32 retry = RETRY;
+            while (retry > 0)
             {
+                try
+                {
 
-                nextNode = currentNode.process(this);
-            } catch (Exception ex)
-            {
-                nextNode = model.trashBin;
+                    nextNode = currentNode.process(this);
+                    retry = 0;
+                }
+                catch (Exception ex)
+                {
 
-                state = pipelineTaskStateEnum.abortingCrash;
+                    retry--;
+                    if (retry < 1)
+                    {
+                        imbACE.Services.terminal.aceTerminalInput.doBeepViaConsole(2600, 500, 2);
+                        nextNode = model.trashBin;
 
-                
+                        state = pipelineTaskStateEnum.abortingCrash;
 
-                context.logger.log("Task [" + GetStringInfo(true) + "] crashed at node [" + currentNode.name + "] (" + currentNode.GetType().Name + ") having path: " + currentNode.path);
-                context.logger.log("Exception message [" + ex.Message + "]");
 
-                context.logger.log(ex.StackTrace);
 
+                        context.logger.log("Task [" + GetStringInfo(true) + "] crashed at node [" + currentNode.name + "] (" + currentNode.GetType().Name + ") having path: " + currentNode.path);
+                        context.logger.log("Exception message [" + ex.Message + "]");
+
+                        context.logger.log(ex.StackTrace);
+                        break;
+                    }
+                }
             }
-
 
 
             if (context.RunInDebugMode)

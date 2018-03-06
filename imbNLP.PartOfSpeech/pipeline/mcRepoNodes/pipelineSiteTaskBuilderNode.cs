@@ -50,6 +50,7 @@ namespace imbNLP.PartOfSpeech.pipeline.mcRepoNodes
     using imbSCI.Data.data.sample;
     using imbNLP.PartOfSpeech.pipelineForPos.subject;
     using imbMiningContext.MCDocumentStructure;
+    using imbNLP.PartOfSpeech.decomposing.html;
 
 
     /// <summary>
@@ -61,20 +62,28 @@ namespace imbNLP.PartOfSpeech.pipeline.mcRepoNodes
     public class pipelineSiteTaskBuilderNode : pipelineNodeRegular<pipelineTaskMCSiteSubject>
     {
 
-        
+        protected Boolean doSortPagesByTextSize { get; set; } = false;
+        protected Boolean doFilterOutDuplicates { get; set; } = true;
 
         protected samplingSettings takeSetup { get; set; }
 
         /// <summary>
         /// Initializes a new instance of the <see cref="pipelineSiteTaskBuilderNode"/> class.
         /// </summary>
-        public pipelineSiteTaskBuilderNode(samplingSettings __takeSetup)
+        public pipelineSiteTaskBuilderNode(samplingSettings __takeSetup, Boolean _doSortPagesByTextSize, Boolean _doFilterOutDuplicates)
         {
             _nodeType = pipelineNodeTypeEnum.taskBuilder;
-
+            doFilterOutDuplicates = _doFilterOutDuplicates;
+            doSortPagesByTextSize = _doSortPagesByTextSize;
             takeSetup = __takeSetup;
-            
+            SetLabel();
 
+        }
+
+
+        public int SortByPageSize(imbMCWebPage page1, imbMCWebPage page2)
+        {
+            return page1.TextContent.Length.CompareTo(page2.TextContent.Length);
         }
 
         /// <summary>
@@ -100,7 +109,14 @@ namespace imbNLP.PartOfSpeech.pipeline.mcRepoNodes
 
             }
 
-            var listPages = repo.GetAllWebPages(realSubject.MCSite, task.context.logger, takeSetup);
+            List<imbMCWebPage> listPages = repo.GetAllWebPages(realSubject.MCSite, null, takeSetup);
+            
+            if (doFilterOutDuplicates) listPages = listPages.GetUniquePages();
+
+            
+
+            if (doSortPagesByTextSize) listPages.Sort(SortByPageSize);
+
                         
             foreach (imbMCWebPage page in listPages)
             {
@@ -114,6 +130,7 @@ namespace imbNLP.PartOfSpeech.pipeline.mcRepoNodes
                 mCPageSubject.MCPage = page;
                // mCPageSubject.name = page.entry.HashCode;
                 mCPageSubject.parent = realSubject;
+                
                 
                 realSubject.Add(mCPageSubject);
 

@@ -36,6 +36,7 @@ using imbSCI.Core.extensions.data;
 using imbSCI.Data.collection.graph;
 using System.Collections.Concurrent;
 using System.Text;
+using imbSCI.Core.extensions.text;
 
 namespace imbNLP.PartOfSpeech.pipeline.core
 {
@@ -85,10 +86,23 @@ namespace imbNLP.PartOfSpeech.pipeline.core
 
 
         /// <summary>
+        /// Automatically sets label
+        /// </summary>
+        public void SetLabel()
+        {
+            String ln = this.GetType().Name.Replace("pipeline", "");
+            ln = ln.Replace("Node", "");
+            ln = ln.Replace("Transformer", "");
+            Label = ln.imbTitleCamelOperation(true); // + " [" + nodeType.ToString() + "]";
+        }
+
+        /// <summary>
         /// Initializes a new instance of the <see cref="pipelineNodeRegular{T}"/> class.
         /// </summary>
         protected pipelineNodeRegular()
         {
+
+
 
         }
 

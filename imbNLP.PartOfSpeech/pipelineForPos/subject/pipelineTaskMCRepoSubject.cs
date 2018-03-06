@@ -38,6 +38,7 @@ using imbSCI.Core.files.fileDataStructure;
 using imbSCI.Data.collection.graph;
 using System.Text;
 using imbMiningContext.MCWebSite;
+using imbSCI.Core.extensions.text;
 
 namespace imbNLP.PartOfSpeech.pipelineForPos.subject
 {
@@ -47,6 +48,16 @@ namespace imbNLP.PartOfSpeech.pipelineForPos.subject
         {
             contentLevelType = cnt_level.mcRepo;
         }
+
+        public override void SetLabel()
+        {
+            base.SetLabel();
+
+
+            Label = MCRepoName.or(Label);
+            
+        }
+
 
         public String MCRepoName { get; set; } = "";
 

@@ -35,23 +35,28 @@ namespace imbNLP.Data.extended.apertium
     using System.Text.RegularExpressions;
     using System.Xml;
     using imbNLP.Data.extended.dict.core;
-    using imbNLP.Data.extended.tokenGraphs;
+    
     using imbSCI.Data;
     using imbSCI.Core.files.search;
     using imbSCI.Data.extensions.data;
+    using imbNLP.PartOfSpeech.providers.dictionary.apertium;
+    using imbNLP.PartOfSpeech.lexicUnit.tokenGraphs;
+
+
+
+
+
+
+
 
     /// <summary>
-    /// 
+    /// Manager for quering Apertium dictionary
     /// </summary>
     /// <seealso cref="tokenQueryResolverBase" />
     public class languageManagerApertium : tokenQueryResolverBase
     {
 
-        public static String FORMAT_EXACT_SRB = "\\<l\\>({0})\\<s";
-        public static String FORMAT_START_SRB = "\\<l\\>({0})";
-        public static String FORMAT_ANYWHERE = "({0})";
-        public static String FORMAT_EXACT_ENG = "\\<r\\>({0})\\<s";
-        public static String FORMAT_START_ENG = "\\<r\\>({0})";
+
 
         /// <summary>
         /// Makes the query.
@@ -62,35 +67,35 @@ namespace imbNLP.Data.extended.apertium
         /// <returns></returns>
         /// <exception cref="NotImplementedException">
         /// </exception>
-        internal String makeQuery(String token, apertiumDictQueryScope scope = apertiumDictQueryScope.startingWith, apertiumDictNeedleSide side = apertiumDictNeedleSide.serbian)
+        internal String makeQuery(String token, apertiumDictQueryScope scope = apertiumDictQueryScope.startingWith, apertiumDictNeedleSide side = apertiumDictNeedleSide.native)
         {
             String query = "";
 
             switch (scope)
             {
                 case apertiumDictQueryScope.anywhere:
-                    query = String.Format(FORMAT_ANYWHERE, token);
+                    query = String.Format(dictionaryResourceApertium.FORMAT_ANYWHERE, token);
                     break;
                 case apertiumDictQueryScope.exact:
-                    if (side == apertiumDictNeedleSide.serbian)
+                    if (side == apertiumDictNeedleSide.native)
                     {
-                        query = String.Format(FORMAT_EXACT_SRB, token);
-                    } else if (side == apertiumDictNeedleSide.english)
+                        query = String.Format(dictionaryResourceApertium.FORMAT_EXACT_SRB, token);
+                    } else if (side == apertiumDictNeedleSide.translated)
                     {
-                        query = String.Format(FORMAT_EXACT_ENG, token);
+                        query = String.Format(dictionaryResourceApertium.FORMAT_EXACT_ENG, token);
                     } else
                     {
                         throw new NotImplementedException();
                     }
                     break;
                 case apertiumDictQueryScope.startingWith:
-                    if (side == apertiumDictNeedleSide.serbian)
+                    if (side == apertiumDictNeedleSide.native)
                     {
-                        query = String.Format(FORMAT_START_SRB, token);
+                        query = String.Format(dictionaryResourceApertium.FORMAT_START_SRB, token);
                     }
-                    else if (side == apertiumDictNeedleSide.english)
+                    else if (side == apertiumDictNeedleSide.translated)
                     {
-                        query = String.Format(FORMAT_START_ENG, token);
+                        query = String.Format(dictionaryResourceApertium.FORMAT_START_ENG, token);
                     }
                     else
                     {
@@ -110,7 +115,7 @@ namespace imbNLP.Data.extended.apertium
         /// <param name="scope">The scope.</param>
         /// <param name="side">The side.</param>
         /// <returns></returns>
-        public apertiumDictionaryResult query(String token, apertiumDictQueryScope scope = apertiumDictQueryScope.startingWith, apertiumDictNeedleSide side = apertiumDictNeedleSide.serbian)
+        public apertiumDictionaryResult query(String token, apertiumDictQueryScope scope = apertiumDictQueryScope.startingWith, apertiumDictNeedleSide side = apertiumDictNeedleSide.native)
         {
             apertiumDictionaryResult output = new apertiumDictionaryResult();
             String query = makeQuery(token, scope, side);
@@ -133,7 +138,7 @@ namespace imbNLP.Data.extended.apertium
         /// <param name="scope">The scope.</param>
         /// <param name="side">The side.</param>
         /// <returns></returns>
-        public apertiumDictionaryResult query(IEnumerable<String> tokens, apertiumDictQueryScope scope = apertiumDictQueryScope.startingWith, apertiumDictNeedleSide side = apertiumDictNeedleSide.serbian)
+        public apertiumDictionaryResult query(IEnumerable<String> tokens, apertiumDictQueryScope scope = apertiumDictQueryScope.startingWith, apertiumDictNeedleSide side = apertiumDictNeedleSide.native)
         {
             apertiumDictionaryResult output = new apertiumDictionaryResult();
             List<String> queryList = new List<string>();
@@ -168,10 +173,10 @@ namespace imbNLP.Data.extended.apertium
         public apertiumDictionaryResult queryForSynonyms(String token, apertiumDictQueryScope scope = apertiumDictQueryScope.startingWith)
         {
             apertiumDictionaryResult output = new apertiumDictionaryResult();
-            apertiumDictionaryResult firstStep = query(token, scope, apertiumDictNeedleSide.serbian);
-            var engList = firstStep.GetEnglish();
+            apertiumDictionaryResult firstStep = query(token, scope, apertiumDictNeedleSide.native);
+            var engList = firstStep.GetTranslatedWords();
 
-            output = query(engList, scope, apertiumDictNeedleSide.english);
+            output = query(engList, scope, apertiumDictNeedleSide.translated);
             return output;
         }
 
@@ -185,11 +190,11 @@ namespace imbNLP.Data.extended.apertium
         /// <param name="scope">The scope.</param>
         /// <param name="side">The side.</param>
         /// <returns></returns>
-        public tokenGraph queryForGraph(String token, apertiumDictQueryScope scope = apertiumDictQueryScope.startingWith, apertiumDictNeedleSide side = apertiumDictNeedleSide.serbian)
+        public tokenGraph queryForGraph(String token, apertiumDictQueryScope scope = apertiumDictQueryScope.startingWith, apertiumDictNeedleSide side = apertiumDictNeedleSide.native)
         {
             var queryRes = query( token , scope, side);
             tokenGraph output = new tokenGraph(token);
-            if (side == apertiumDictNeedleSide.serbian)
+            if (side == apertiumDictNeedleSide.native)
             {
                 output.AddKeyMatches(queryRes, tokenGraphNodeType.word_eng);
             }
@@ -209,7 +214,7 @@ namespace imbNLP.Data.extended.apertium
         /// <param name="scope">The scope.</param>
         /// <param name="side">The side.</param>
         /// <returns></returns>
-        public tokenGraphNode queryByGraphNode(tokenGraphNode graph, apertiumDictQueryScope scope = apertiumDictQueryScope.startingWith, apertiumDictNeedleSide side = apertiumDictNeedleSide.serbian)
+        public tokenGraphNode queryByGraphNode(tokenGraphNode graph, apertiumDictQueryScope scope = apertiumDictQueryScope.startingWith, apertiumDictNeedleSide side = apertiumDictNeedleSide.native)
         {
 
             List<tokenGraphNode> nodes = graph.getAllLeafs().getTyped<tokenGraphNode>();
@@ -218,7 +223,7 @@ namespace imbNLP.Data.extended.apertium
 
             foreach (tokenGraphNode node in nodes)
             {
-                if (side == apertiumDictNeedleSide.serbian)
+                if (side == apertiumDictNeedleSide.native)
                 {
                     node.AddKeyMatches(queryRes, tokenGraphNodeType.word_eng);
                 }
@@ -260,7 +265,7 @@ namespace imbNLP.Data.extended.apertium
         /// <param name="scope">The scope.</param>
         /// <param name="side">The side.</param>
         /// <returns></returns>
-        public tokenGraphSet queryForGraphSet(IEnumerable<String> tokens, apertiumDictQueryScope scope = apertiumDictQueryScope.startingWith, apertiumDictNeedleSide side = apertiumDictNeedleSide.serbian)
+        public tokenGraphSet queryForGraphSet(IEnumerable<String> tokens, apertiumDictQueryScope scope = apertiumDictQueryScope.startingWith, apertiumDictNeedleSide side = apertiumDictNeedleSide.native)
         {
             tokenGraphSet outset = new tokenGraphSet();
 
@@ -268,7 +273,7 @@ namespace imbNLP.Data.extended.apertium
 
             tokenGraphNodeType nType = tokenGraphNodeType.word_eng;
 
-            if (side==apertiumDictNeedleSide.english)
+            if (side==apertiumDictNeedleSide.translated)
             {
                 nType = tokenGraphNodeType.word_srb;
             }
@@ -361,8 +366,9 @@ namespace imbNLP.Data.extended.apertium
             }
             else
             {
+                String filepath = semanticLexicon.semanticLexiconManager.manager.settings.sourceFiles.getFilePaths(semanticLexicon.source.lexiconSourceTypeEnum.apertium).First();
                 dictionaryXml = new XmlDocument();
-                dictionaryXml.LoadXml(semanticLexicon.semanticLexiconManager.manager.settings.sourceFiles.getFilePaths(semanticLexicon.source.lexiconSourceTypeEnum.apertium).First());
+                dictionaryXml.LoadXml(filepath);
             }
             imbLanguageFrameworkManager.log.log("Apertium Serbian dictionary activated:" + isReady.ToString());
         }

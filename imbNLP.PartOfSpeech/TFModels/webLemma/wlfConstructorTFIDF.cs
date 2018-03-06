@@ -61,6 +61,7 @@ using imbNLP.PartOfSpeech.flags.basic;
 using imbNLP.PartOfSpeech.TFModels.webLemma.table;
 using System.Threading;
 using System.Threading.Tasks;
+using imbSCI.Core.extensions.text;
 
 namespace imbNLP.PartOfSpeech.TFModels.webLemma
 {
@@ -120,13 +121,19 @@ namespace imbNLP.PartOfSpeech.TFModels.webLemma
             TFDFCounter counter = new TFDFCounter();
             lock (getAllChildrenLock)
             {
-                source = source.ToList();
+               var listSource = source.ToList();
+               // listSource.Sort((x, y) => String.CompareOrdinal(x.currentForm, y.currentForm));
+                source = listSource;
+                
             }
 
 
 
 
-            var rkns = source.GetSubjectsOfLevel<IPipelineTaskSubject>(new cnt_level[] { cnt_level.mcToken }); // source.GetSubjectChildrenTokenType<pipelineTaskSubjectContentToken, IPipelineTaskSubject>();
+            List<IPipelineTaskSubject> rkns = source.GetSubjectsOfLevel<IPipelineTaskSubject>(new cnt_level[] { cnt_level.mcToken }); // source.GetSubjectChildrenTokenType<pipelineTaskSubjectContentToken, IPipelineTaskSubject>();
+
+            rkns.Sort((x, y) => String.CompareOrdinal(x.currentForm, y.currentForm));
+
             //var tkns = source.GetSubjectsOfLevel(cnt_level.mcToken);
             Int32 shorties = 0;
             foreach (var tkn in rkns)
@@ -313,10 +320,14 @@ namespace imbNLP.PartOfSpeech.TFModels.webLemma
                                         imbMCDocument document = cntPair.mcElement.GetParentOfType<imbMCDocument>();
                                         documents.AddUnique(document);
 
-                                        imbMCDocumentElement docSet = document.parent as imbMCDocumentElement;
+                                        imbMCDocumentElement docSet = document?.parent as imbMCDocumentElement;
                                         if (docSet != null)
                                         {
                                             documentSet.AddUnique(docSet);
+                                        }
+                                        else
+                                        {
+                                            logger.log(cn.indexForm + " (" + cntPair.mcElement.toStringSafe("mcElement=null") + ")");
                                         }
 
                                         if (cntPair.flagBag.Contains(cnt_containerType.link))
