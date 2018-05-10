@@ -313,8 +313,16 @@ namespace imbNLP.Data.semanticLexicon.explore
             return model;
         }
 
-        
 
+
+        /// <summary>
+        /// Method: word -- translation --- synset ---- other synsets --- collecting all words --- translation --- word
+        /// </summary>
+        /// <param name="model">The model.</param>
+        /// <param name="response">The response.</param>
+        /// <param name="disableCodePrefixFilter">if set to <c>true</c> [disable code prefix filter].</param>
+        /// <param name="disableCodeBranchFilter">if set to <c>true</c> [disable code branch filter].</param>
+        /// <returns></returns>
         public static termExploreModel getSynonymsWithWordnetViaApertium(termExploreModel model, ILogBuilder response, bool disableCodePrefixFilter=false, bool disableCodeBranchFilter=false)
         {
             
@@ -408,7 +416,7 @@ namespace imbNLP.Data.semanticLexicon.explore
                     response.consoleAltColorToggle();
                 }
 
-            if (!disableCodeBranchFilter)
+            if (!disableCodeBranchFilter) // <------ removes the symset nodes that contain none of first-level translation words 
             {
                 var codeLevel = result.getAllChildren().getOnLevel(3);
                 List<IObjectWithPathAndChildren> toTakeOut = new List<IObjectWithPathAndChildren>();

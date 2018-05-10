@@ -77,7 +77,16 @@ namespace imbNLP.PartOfSpeech.pipelineForPos.render
         /// The descriptive form: |"kompanijom":"kompanija":N,common,f,s,instrumental:lowerCase,letter,onlyLetters|
         /// </summary>
         descriptive,
+
+        /// <summary>
+        /// The lemma form: clean lemmatic form
+        /// </summary>
         lemmaForm,
+
+
+        xmlModelOfMCDocumentElement,
+
+        
     }
 
 }

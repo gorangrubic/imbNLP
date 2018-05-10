@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<nLPPipelineDSLDDiagram dslVersion="1.0.0.0" Id="118b0ee4-3045-465f-854f-e73b62ac9af9" absoluteBounds="0, 0, 11, 8.5" name="Sample">
+  <exampleModelMoniker Id="e20e77d4-ec57-4dda-919b-ce516bfbf186" />
+  <nestedChildShapes>
+    <exampleShape Id="53c4f469-6cb3-45d6-b44b-1810a848e76c" absoluteBounds="0.5, 1.75, 2, 0.75">
+      <exampleElementMoniker name="/e20e77d4-ec57-4dda-919b-ce516bfbf186/ExampleElement1" />
+    </exampleShape>
+    <exampleShape Id="b7cc9115-88c4-4964-90bd-e8bfcdc9a983" absoluteBounds="3, 0.5, 2, 0.75">
+      <exampleElementMoniker name="/e20e77d4-ec57-4dda-919b-ce516bfbf186/ExampleElement2" />
+    </exampleShape>
+    <exampleConnector Id="d6419a45-9d9f-42ba-ba34-5f894e043de0" edgePoints="[(1.5 : 1.75); (1.5 : 0.875); (3 : 0.875)]" fixedFrom="Algorithm" fixedTo="Algorithm" TargetRelationshipDomainClassId="a7cdcbb0-161b-4135-9dbb-5bbd4bbde37c">
+      <nodes>
+        <exampleShapeMoniker Id="53c4f469-6cb3-45d6-b44b-1810a848e76c" />
+        <exampleShapeMoniker Id="b7cc9115-88c4-4964-90bd-e8bfcdc9a983" />
+      </nodes>
+    </exampleConnector>
+  </nestedChildShapes>
+</nLPPipelineDSLDDiagram>

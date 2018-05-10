@@ -81,7 +81,22 @@ namespace imbNLP.PartOfSpeech.flags.token
         enumeration = 1 << 30,
 
 
-        
+        enbraced = 1 << 40,
+
+        /// <summary>
+        /// Between quotation marks \", ', ``,  
+        /// </summary>
+        quoted = 1 << 41,
+
+        /// <summary>
+        /// The brackets: ( [ {
+        /// </summary>
+        brackets = 1 << 42,
+
+        /// <summary>
+        /// The between comma: ,
+        /// </summary>
+        betweenComma = 1<<43,
 
 
 
@@ -107,6 +122,9 @@ namespace imbNLP.PartOfSpeech.flags.token
         sentenceEclamationEnd = sentenceProperCase | exclamationEnd,
 
         sentenceQuestionEnd = sentenceProperCase | questionEnd,
+
+
+
 
     }
 

@@ -34,6 +34,9 @@ using System.Text;
 
 namespace imbNLP.PartOfSpeech.flags.data
 {
+
+
+
     [Flags]
     public enum dat_business
     {

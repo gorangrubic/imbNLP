@@ -62,6 +62,10 @@ namespace imbNLP.Data.semanticLexicon.procedures
     using imbSCI.Data.enums;
     using System;
 
+    /// <summary>
+    /// Stage zero is about spliting corpora into english, serbian and english-serbian words
+    /// </summary>
+    /// <seealso cref="imbNLP.Data.semanticLexicon.procedures.lexiconTaskBase" />
     public class lexiconConstructTaskZero : lexiconTaskBase
     {
 

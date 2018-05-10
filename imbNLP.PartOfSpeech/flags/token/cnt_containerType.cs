@@ -35,11 +35,19 @@ using System.Text;
 namespace imbNLP.PartOfSpeech.flags.token
 {
 
+
+
+    /// <summary>
+    /// HTML DOM container
+    /// </summary>
     public enum cnt_containerType
     {
 
         none,
 
+        /// <summary>
+        /// The paragraph or other normal text container
+        /// </summary>
         paragraph,
 
         link,

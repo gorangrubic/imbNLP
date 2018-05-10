@@ -1,0 +1,17 @@
+﻿<!--DSL Tools Language Template-->
+<VSTemplate Version="3.0.0" Type="Item" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<TemplateData>
+		<TemplateID>{17e85664-7146-4f34-94a2-363832882c2d}</TemplateID>
+		<Name Package="{c66e3f54-5765-4ab9-a0f5-d773c4063e00}" ID="103"/>
+		<Description Package="{c66e3f54-5765-4ab9-a0f5-d773c4063e00}" ID="102"/>
+		<Icon Package="{c66e3f54-5765-4ab9-a0f5-d773c4063e00}" ID="201" />
+		<ProjectType>CSharp</ProjectType>
+		<SortOrder>360</SortOrder>
+		<DefaultName>NLPPipelineDSLD.imbNLPPipelineDSLD</DefaultName>
+	</TemplateData>
+	<TemplateContent>
+		<ProjectItem TargetFileName="$fileinputname$.imbNLPPipelineDSLD">imbNLPPipelineDSLD.imbNLPPipelineDSLD</ProjectItem>
+		<ProjectItem TargetFileName="$fileinputname$.imbNLPPipelineDSLD.diagram">imbNLPPipelineDSLD.diagram</ProjectItem>
+	</TemplateContent>
+</VSTemplate>
+

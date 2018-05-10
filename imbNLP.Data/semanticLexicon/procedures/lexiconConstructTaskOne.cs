@@ -61,6 +61,10 @@ namespace imbNLP.Data.semanticLexicon.procedures
     using imbSCI.DataComplex.special;
     using imbSCI.Data.enums;
 
+    /// <summary>
+    /// Task one is about lemmatization
+    /// </summary>
+    /// <seealso cref="imbNLP.Data.semanticLexicon.procedures.lexiconTaskBase" />
     public class lexiconConstructTaskOne : lexiconTaskBase
     {
         public lexiconConstructTaskOne() : base()
